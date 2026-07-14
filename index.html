@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Satish Reddy. G, Consultant Orthopaedic Surgeon, Hyderabad</title>
+  <meta name="description" content="Dr. Satish Reddy Gandavarapu, Gold Medallist, fellowship-trained in Italy, UK & Australia. Pioneer of Orthopaedic Oncology in AP & Telangana. Consulting at KIMS Hospital, Ministers Road, Secunderabad." />
+  <link rel="canonical" href="https://drgsreddy.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --navy:       #0A1628;
+      --navy-mid:   #162040;
+      --navy-light: #1E2D4E;
+      --steel:      #4A7FA5;
+      --gold:       #C9A84C;
+      --gold-light: #E2C97E;
+      --cream:      #F8F6F2;
+      --off-white:  #EDE9E0;
+      --gray:       #8A8A8A;
+      --text:       #1A1A2E;
+      --font-d:     'Playfair Display', Georgia, serif;
+      --font-b:     'Inter', system-ui, sans-serif;
+      --max:        1200px;
+      --r:          4px;
+      --t:          0.3s ease;
+    }
+
+    body { font-family: var(--font-b); background: var(--cream); color: var(--text); line-height: 1.7; font-size: 16px; }
+    img  { max-width: 100%; display: block; }
+    a    { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4 { font-family: var(--font-d); line-height: 1.2; }
+    h1 { font-size: clamp(2.2rem, 4.5vw, 3.8rem); font-weight: 700; }
+    h2 { font-size: clamp(1.7rem, 3vw, 2.6rem); font-weight: 600; }
+    h3 { font-size: clamp(1.1rem, 1.8vw, 1.5rem); font-weight: 600; }
+    p  { margin-bottom: 1rem; }
+
+    .eyebrow {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.75rem;
+    }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+    .btn {
+      display: inline-block; padding: 0.85rem 2rem; border-radius: var(--r);
+      font-family: var(--font-b); font-size: 0.9rem; font-weight: 600;
+      letter-spacing: 0.05em; cursor: pointer; transition: all var(--t);
+    }
+    .btn-gold  { background: var(--gold); color: var(--navy); }
+    .btn-gold:hover { background: var(--gold-light); }
+    .btn-outline { border: 1.5px solid rgba(248,246,242,0.5); color: var(--cream); }
+    .btn-outline:hover { border-color: var(--cream); background: rgba(248,246,242,0.08); }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,22,40,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .nav__inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between; height: 68px;
+    }
+    .nav__brand {
+      font-family: var(--font-d); font-size: 1.2rem; font-weight: 700;
+      color: var(--cream); letter-spacing: 0.02em;
+    }
+    .nav__brand span { color: var(--gold); }
+    .nav__links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav__links a {
+      color: rgba(248,246,242,0.8); font-size: 0.88rem; font-weight: 500;
+      transition: color var(--t); letter-spacing: 0.03em;
+    }
+    .nav__links a:hover { color: var(--gold); }
+    .nav__cta {
+      background: var(--gold) !important; color: var(--navy) !important;
+      padding: 0.5rem 1.25rem; border-radius: var(--r); font-weight: 600 !important;
+    }
+    .nav__cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+    .nav__second-opinion { background: rgba(26,158,74,0.15) !important; color: #4ade80 !important; border: 1px solid rgba(26,158,74,0.4) !important; padding: 0.4rem 1rem; border-radius: var(--r); font-weight: 600 !important; font-size: 0.8rem !important; animation: pulse-green 2.5s ease-in-out infinite; }
+    .nav__second-opinion:hover { background: rgba(26,158,74,0.28) !important; color: #6aefb0 !important; }
+    @keyframes pulse-green { 0%, 100% { box-shadow: 0 0 0 0 rgba(26,158,74,0); } 50% { box-shadow: 0 0 0 5px rgba(26,158,74,0.15); } }
+    .nav__hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav__hamburger span { width: 24px; height: 2px; background: var(--cream); border-radius: 2px; transition: var(--t); }
+    .nav__mobile {
+      display: none; position: fixed; top: 68px; left: 0; right: 0;
+      background: var(--navy-mid); border-bottom: 1px solid rgba(201,168,76,0.2);
+      z-index: 99; padding: 1.5rem 2rem;
+    }
+    .nav__mobile ul { list-style: none; display: flex; flex-direction: column; gap: 1.2rem; }
+    .nav__mobile a { color: rgba(248,246,242,0.85); font-size: 1rem; font-weight: 500; }
+    .nav__mobile.open { display: block; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(145deg, var(--navy) 0%, #0D2B4E 60%, #0A1E38 100%);
+      padding: 9rem 2rem 6rem; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C9A84C' fill-opacity='0.04'%3E%3Cpath d='M40 10 L70 40 L40 70 L10 40Z'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero__inner { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; }
+    .hero__badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.35);
+      color: var(--gold); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 0.4rem 1.1rem; border-radius: 2rem; margin-bottom: 1.75rem;
+    }
+    .hero h1 { color: var(--cream); margin-bottom: 0.6rem; }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero__sub {
+      font-family: var(--font-d); font-style: italic;
+      color: rgba(248,246,242,0.65); font-size: clamp(1rem, 1.6vw, 1.3rem);
+      margin-bottom: 0.5rem; font-weight: 400;
+    }
+    .hero__location {
+      font-size: 0.88rem; color: rgba(248,246,242,0.5);
+      margin-bottom: 2rem; letter-spacing: 0.05em;
+    }
+    .hero p.lead {
+      font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(248,246,242,0.8);
+      max-width: 600px; margin-bottom: 2.5rem; line-height: 1.75;
+    }
+    .hero__ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+    .hero__credentials {
+      display: flex; flex-wrap: wrap; gap: 2rem;
+      border-top: 1px solid rgba(201,168,76,0.2); padding-top: 2.5rem;
+    }
+    .hero__cred-item { }
+    .hero__cred-item .label {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem;
+    }
+    .hero__cred-item .value {
+      font-family: var(--font-d); font-size: 1.1rem; color: var(--cream); font-weight: 600;
+    }
+
+    /* ── TRUST BAR ── */
+    .trust {
+      background: var(--navy-mid);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      padding: 1.5rem 2rem;
+    }
+    .trust__inner {
+      max-width: var(--max); margin: 0 auto;
+      display: flex; flex-wrap: wrap; gap: 1.5rem 3rem; align-items: center;
+    }
+    .trust__item {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.82rem; color: rgba(248,246,242,0.65); font-weight: 500;
+    }
+    .trust__item::before {
+      content: '✦'; color: var(--gold); font-size: 0.6rem;
+    }
+
+    /* ── SECTION TITLES ── */
+    .section-title { text-align: center; margin-bottom: 3.5rem; }
+    .section-title h2 { margin-bottom: 1rem; }
+    .section-title p { color: var(--gray); max-width: 600px; margin: 0 auto; font-size: 1.05rem; }
+
+    /* ── ABOUT SNAPSHOT ── */
+    .about-snap { padding: 5rem 2rem; background: var(--cream); }
+    .about-snap__inner {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+    }
+    .about-snap__photo-replaced {
+      aspect-ratio: 3/4; background: var(--off-white);
+      border-radius: var(--r); border: 1px solid rgba(0,0,0,0.08);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: var(--gray); font-size: 0.85rem; text-align: center; gap: 0.75rem;
+    }
+    .about-snap__photo-icon {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: rgba(74,127,165,0.12); display: flex; align-items: center; justify-content: center;
+    }
+    .about-snap__photo-icon svg { width: 28px; height: 28px; stroke: var(--steel); fill: none; }
+    .about-snap__text h2 { margin-bottom: 1.25rem; }
+    .about-snap__text p { color: #4a4a5a; line-height: 1.8; }
+    .about-snap__awards { margin-top: 1.75rem; display: flex; flex-direction: column; gap: 0.85rem; }
+    .award-item {
+      display: flex; gap: 0.75rem; align-items: flex-start;
+      padding: 0.85rem 1rem; background: var(--off-white); border-radius: var(--r);
+      border-left: 3px solid var(--gold);
+    }
+    .award-item__icon { color: var(--gold); font-size: 1.1rem; margin-top: 0.05rem; flex-shrink: 0; }
+    .award-item__text { font-size: 0.9rem; color: #3a3a4a; font-weight: 500; }
+    .award-item__sub { font-size: 0.78rem; color: var(--gray); margin-top: 0.15rem; font-weight: 400; }
+
+    /* ── STATS ── */
+    .stats { background: var(--navy); padding: 4rem 2rem; }
+    .stats__inner { max-width: var(--max); margin: 0 auto; }
+    .stats__grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+    }
+    .stat {
+      background: var(--navy-light); padding: 2.5rem 2rem; text-align: center;
+      border-right: 1px solid rgba(201,168,76,0.1);
+    }
+    .stat:last-child { border-right: none; }
+    .stat__number {
+      font-family: var(--font-d); font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+      font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 0.5rem;
+    }
+    .stat__label { font-size: 0.8rem; color: rgba(248,246,242,0.55); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* ── SPECIALTIES ── */
+    .specialties { padding: 5rem 2rem; background: var(--off-white); }
+    .specialties__grid {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;
+    }
+    .spec-card {
+      background: var(--cream); border-radius: var(--r);
+      border: 1px solid rgba(0,0,0,0.07); padding: 2rem;
+      transition: transform var(--t), box-shadow var(--t);
+    }
+    .spec-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(10,22,40,0.1); }
+    .spec-card__icon {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: rgba(74,127,165,0.1); display: flex; align-items: center;
+      justify-content: center; margin-bottom: 1.25rem;
+    }
+    .spec-card__icon svg { width: 24px; height: 24px; stroke: var(--steel); fill: none; }
+    .spec-card h3 { font-size: 1.15rem; margin-bottom: 0.75rem; }
+    .spec-card p { font-size: 0.9rem; color: #5a5a6a; line-height: 1.7; margin-bottom: 0; }
+    .spec-card--featured {
+      background: var(--navy); color: var(--cream); border-color: rgba(201,168,76,0.3);
+    }
+    .spec-card--featured h3 { color: var(--gold); }
+    .spec-card--featured p { color: rgba(248,246,242,0.7); }
+    .spec-card--featured .spec-card__icon { background: rgba(201,168,76,0.15); }
+    .spec-card--featured .spec-card__icon svg { stroke: var(--gold); }
+    .spec-card--featured .spec-tag { color: rgba(248,246,242,0.45); }
+
+    /* ── FELLOWSHIPS ── */
+    .fellowships { padding: 5rem 2rem; background: var(--cream); }
+    .fellowships__inner { max-width: var(--max); margin: 0 auto; }
+    .fellowship-timeline {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0;
+      border: 1px solid rgba(0,0,0,0.08); border-radius: var(--r); overflow: hidden; margin-top: 3rem;
+    }
+    .fellowship-item {
+      padding: 2rem; border-right: 1px solid rgba(0,0,0,0.08); position: relative;
+    }
+    .fellowship-item:last-child { border-right: none; }
+    .fellowship-item::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: var(--gold); opacity: 0.3;
+    }
+    .fellowship-item:hover::before { opacity: 1; }
+    .fellowship-item__country {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--steel); margin-bottom: 0.5rem;
+    }
+    .fellowship-item__year {
+      font-size: 0.78rem; color: var(--gray); margin-bottom: 0.4rem;
+    }
+    .fellowship-item h4 { font-size: 0.95rem; margin-bottom: 0.35rem; }
+    .fellowship-item p { font-size: 0.82rem; color: var(--gray); line-height: 1.5; margin-bottom: 0; }
+
+    /* ── PATIENT EDUCATION ── */
+    .education { padding: 5rem 2rem; background: var(--off-white); }
+    .education__inner { max-width: var(--max); margin: 0 auto; }
+    .edu-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .edu-card {
+      background: var(--cream); border: 1px solid rgba(0,0,0,0.07);
+      border-radius: var(--r); padding: 1.75rem; transition: transform var(--t);
+    }
+    .edu-card:hover { transform: translateY(-3px); }
+    .edu-card__tag {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--steel);
+      background: rgba(74,127,165,0.08); padding: 0.3rem 0.75rem;
+      border-radius: 2rem; display: inline-block; margin-bottom: 1rem;
+    }
+    .edu-card h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+    .edu-card p { font-size: 0.88rem; color: #5a5a6a; margin-bottom: 0; line-height: 1.65; }
+
+    /* ── APPOINTMENT CTA ── */
+    .appt-cta { padding: 5rem 2rem; background: var(--navy); }
+    .appt-cta__inner {
+      max-width: 800px; margin: 0 auto; text-align: center;
+    }
+    .appt-cta h2 { color: var(--cream); margin-bottom: 1rem; }
+    .appt-cta p { color: rgba(248,246,242,0.65); margin-bottom: 2rem; font-size: 1.05rem; }
+    .appt-cta__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .appt-cta__contact {
+      margin-top: 2.5rem; display: flex; gap: 2rem;
+      justify-content: center; flex-wrap: wrap;
+    }
+    .appt-cta__contact-item {
+      font-size: 0.88rem; color: rgba(248,246,242,0.55);
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .appt-cta__contact-item a { color: rgba(248,246,242,0.75); transition: color var(--t); }
+    .appt-cta__contact-item a:hover { color: var(--gold); }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--navy-mid); border-top: 1px solid rgba(201,168,76,0.15); padding: 3rem 2rem; }
+    .footer__inner {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem;
+    }
+    .footer__brand { font-family: var(--font-d); font-size: 1.3rem; color: var(--cream); font-weight: 700; margin-bottom: 0.75rem; }
+    .footer__brand span { color: var(--gold); }
+    .footer__tagline { font-size: 0.85rem; color: rgba(248,246,242,0.45); line-height: 1.6; }
+    .footer h5 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer ul li a { font-size: 0.88rem; color: rgba(248,246,242,0.55); transition: color var(--t); }
+    .footer ul li a:hover { color: var(--cream); }
+    .footer__contact-items { display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer__contact-item { font-size: 0.85rem; color: rgba(248,246,242,0.55); line-height: 1.5; }
+    .footer__contact-item a { color: rgba(248,246,242,0.7); transition: color var(--t); }
+    .footer__contact-item a:hover { color: var(--gold); }
+    .footer__bottom {
+      max-width: var(--max); margin: 2rem auto 0;
+      border-top: 1px solid rgba(248,246,242,0.06); padding-top: 1.5rem;
+      font-size: 0.78rem; color: rgba(248,246,242,0.3); text-align: center;
+    }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.35); transition: transform var(--t);
+    }
+    .wa-float:hover { transform: scale(1.08); }
+    .wa-float svg { width: 28px; height: 28px; fill: white; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .about-snap__inner { grid-template-columns: 1fr; gap: 3rem; }
+      .about-snap__photo-replaced { max-height: 360px; }
+      .stats__grid { grid-template-columns: repeat(2, 1fr); }
+      .stat { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.1); }
+      .stat:last-child, .stat:nth-last-child(-n+2) { border-bottom: none; }
+      .footer__inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 640px) {
+      .nav__links { display: none; }
+      .nav__hamburger { display: flex; }
+      .hero { padding: 7rem 1.5rem 4rem; }
+      .hero__credentials { gap: 1.25rem; }
+      .stats__grid { grid-template-columns: 1fr 1fr; }
+      .fellowship-timeline { grid-template-columns: 1fr; }
+      .fellowship-item { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.08); }
+      .fellowship-item:last-child { border-bottom: none; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+  </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQJV3LV6SV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WQJV3LV6SV');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xd5ee60zrw");
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__brand">Dr. <span>Satish</span> Reddy. G</a>
+    <ul class="nav__links">
+      <li><a href="/about">About</a></li>
+      <li><a href="/specialties">Specialties</a></li>
+      <li><a href="/for-doctors">For Doctors</a></li>
+      <li><a href="/blog">Patient Education</a></li>
+      <li><a href="/second-opinion" class="nav__second-opinion">✦ Free Second Opinion</a></li>
+      <li><a href="/contact" class="nav__cta">Book Appointment</a></li>
+    </ul>
+    <div class="nav__hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobileMenu">
+  <ul>
+    <li><a href="/about" onclick="toggleMenu()">About</a></li>
+    <li><a href="/specialties" onclick="toggleMenu()">Specialties</a></li>
+    <li><a href="/for-doctors" onclick="toggleMenu()">For Doctors</a></li>
+    <li><a href="/blog" onclick="toggleMenu()">Patient Education</a></li>
+    <li><a href="/second-opinion" onclick="toggleMenu()" style="color:#4ade80;font-weight:600">✦ Free Second Opinion</a></li>
+    <li><a href="/contact" onclick="toggleMenu()">Book Appointment</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__badge">★ AO Trauma Accredited Faculty &nbsp;·&nbsp; Pioneer Subspecialist, AP &amp; Telangana</div>
+    <h1>Dr. <em>Satish Reddy. G</em></h1>
+    <p class="hero__sub">MS Orth (Gold Medallist) · Fellowship trained in Italy, the UK and Australia</p>
+    <p class="hero__location">Consultant Orthopaedic Surgeon &nbsp;·&nbsp; KIMS Hospital, Ministers Road, Secunderabad</p>
+
+    <p class="lead">
+      Two decades of subspecialty practice, joint replacement, complex trauma, sports surgery, and orthopaedic oncology. Pioneer of limb salvage surgery in Andhra Pradesh &amp; Telangana.
+    </p>
+    <div class="hero__ctas">
+      <a href="/contact" class="btn btn-gold">Book a Consultation</a>
+      <a href="/about" class="btn btn-outline">Read My Story</a>
+    </div>
+    <div class="hero__credentials">
+      <div class="hero__cred-item">
+        <div class="label">Training</div>
+        <div class="value">Italy, UK and Australia</div>
+      </div>
+      <div class="hero__cred-item">
+        <div class="label">Recognition</div>
+        <div class="value">Rising Star in Orthopaedics</div>
+      </div>
+      <div class="hero__cred-item">
+        <div class="label">Currently at</div>
+        <div class="value">KIMS Hospital, Ministers Road, Secunderabad</div>
+      </div>
+      <div class="hero__cred-item">
+        <div class="label">Contact</div>
+        <div class="value"><a href="tel:+917075523360" style="color:var(--gold-light);">+91 70755 23360</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="trust__inner">
+    <div class="trust__item">Nicholas Andre Gold Medal, MS Orthopaedics</div>
+    <div class="trust__item">Valedictorian, AMP Healthcare, ISB Hyderabad</div>
+    <div class="trust__item">AO Trauma Accredited Faculty</div>
+    <div class="trust__item">First Fellowship-Trained Ortho Oncologist in AP and Telangana</div>
+    <div class="trust__item">4 World Marathon Majors</div>
+  </div>
+</div>
+
+<!-- ABOUT SNAPSHOT -->
+<section class="about-snap">
+  <div class="about-snap__inner">
+    <div class="about-snap__photo" style="aspect-ratio:3/4;border-radius:4px;border:1px solid rgba(0,0,0,0.08);overflow:hidden;">
+      <img src="/assets/dr-satish-photo.png" alt="Dr. Satish Reddy Gandavarapu" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" />
+    </div>
+    <div class="about-snap__text">
+      <span class="eyebrow">About Dr. Satish</span>
+      <h2>A surgeon shaped by three continents</h2>
+      <p>
+        Dr. Satish Reddy Gandavarapu trained at some of the world's most respected orthopaedic institutions, the Rizzoli Orthopaedic Institute in Bologna, the Royal Orthopaedic Hospital in Birmingham, and Flinders Medical Centre in Adelaide, before returning to build a subspecialty practice in Hyderabad that has changed outcomes for hundreds of patients.
+      </p>
+      <p>
+        He founded Prime Hospitals, which later became Aster Prime Hospital, attracted private equity, and exited by selling his stake to the Aster Group in 2022. Today he brings that same ambition to his clinical practice at KIMS Hospital, Ministers Road, Secunderabad.
+      </p>
+      <div class="about-snap__awards">
+        <div class="award-item">
+          <div class="award-item__icon">★</div>
+          <div>
+            <div class="award-item__text">Nicholas Andre Gold Medal</div>
+            <div class="award-item__sub">MS Orthopaedics, highest academic distinction</div>
+          </div>
+        </div>
+        <div class="award-item">
+          <div class="award-item__icon">★</div>
+          <div>
+            <div class="award-item__text">"Rising Star in Orthopaedics"</div>
+            <div class="award-item__sub">Combined States of AP &amp; Telangana</div>
+          </div>
+        </div>
+        <div class="award-item">
+          <div class="award-item__icon">★</div>
+          <div>
+            <div class="award-item__text">Valedictorian, ISB Advanced Management Programme</div>
+            <div class="award-item__sub">Healthcare leadership, Indian School of Business, Hyderabad</div>
+          </div>
+        </div>
+      </div>
+      <a href="/about" style="display:inline-block;margin-top:2rem;color:var(--steel);font-weight:600;font-size:0.9rem;border-bottom:1px solid currentColor;padding-bottom:2px;">Full biography →</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats__inner">
+    <div class="stats__grid">
+      <div class="stat">
+        <div class="stat__number">25+</div>
+        <div class="stat__label">Years in practice</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">7,500+</div>
+        <div class="stat__label">Surgeries performed</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">4</div>
+        <div class="stat__label">International fellowships</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">4</div>
+        <div class="stat__label">World Marathon Majors</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALTIES -->
+<section class="specialties">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Areas of Expertise</span>
+      <h2>Specialties</h2>
+      <p>Subspecialty-trained surgical care across joint replacement, oncological reconstruction, sports surgery, trauma, and upper limb conditions.</p>
+    </div>
+  </div>
+  <div class="specialties__grid">
+
+    <div class="spec-card spec-card--featured">
+      <div class="spec-card__icon">
+        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <h3>Orthopaedic Oncology</h3>
+      <p>Pioneer of bone and soft tissue tumour surgery and limb salvage procedures in AP &amp; Telangana. Fellowship-trained at Rizzoli Institute (Bologna) and Royal Orthopaedic Hospital (Birmingham).</p>
+    </div>
+
+    <div class="spec-card">
+      <div class="spec-card__icon">
+        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/>
+        </svg>
+      </div>
+      <h3>Joint Replacement</h3>
+      <p>Total knee, total hip, and complex revision arthroplasty. Using latest implant technology and fast-track recovery protocols to return patients to full function.</p>
+    </div>
+
+    <div class="spec-card">
+      <div class="spec-card__icon">
+        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+        </svg>
+      </div>
+      <h3>Sports Injuries &amp; Arthroscopy</h3>
+      <p>Keyhole surgery for ACL/PCL reconstruction, meniscal repair, rotator cuff repair, and shoulder instability. Athlete-centred rehabilitation from day one.</p>
+    </div>
+
+    <div class="spec-card">
+      <div class="spec-card__icon">
+        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/>
+        </svg>
+      </div>
+      <h3>Complex Trauma</h3>
+      <p>Intra-articular fractures, peri-prosthetic fractures, non-unions, and mal-unions. Trained in AO trauma principles with hands-on surgical experience across three continents.</p>
+    </div>
+
+    <div class="spec-card">
+      <div class="spec-card__icon">
+        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      <h3>Upper Limb Surgery</h3>
+      <p>Shoulder arthroplasty, elbow surgery, and upper extremity reconstruction, including post-traumatic and post-oncological cases requiring complex soft tissue management.</p>
+    </div>
+
+    <div class="spec-card" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--navy);color:var(--cream);border-color:rgba(201,168,76,0.2);">
+      <span class="eyebrow" style="margin-bottom:0.75rem;">Referring a patient?</span>
+      <h3 style="color:var(--cream);margin-bottom:1rem;font-size:1.1rem;">For Doctors</h3>
+      <p style="color:rgba(248,246,242,0.65);font-size:0.88rem;margin-bottom:1.5rem;">Oncologists, general surgeons, and orthopaedic colleagues are welcome to refer complex cases.</p>
+      <a href="/for-doctors" class="btn btn-gold" style="font-size:0.85rem;padding:0.65rem 1.5rem;">Referral information →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FELLOWSHIPS -->
+<section class="fellowships">
+  <div class="fellowships__inner">
+    <div class="section-title">
+      <span class="eyebrow">International Training</span>
+      <h2>Trained where it mattered most</h2>
+      <p>Four fellowships across three continents, each chosen for a specific subspecialty focus unavailable in India at the time.</p>
+    </div>
+    <div class="fellowship-timeline">
+      <div class="fellowship-item">
+        <div class="fellowship-item__country">Italy</div>
+        <div class="fellowship-item__year">Rizzoli Institute</div>
+        <h4>Orthopaedic Oncology</h4>
+        <p>Bone &amp; soft tissue tumour surgery. World's leading centre for limb salvage, trained under Europe's foremost ortho-oncologists in Bologna.</p>
+      </div>
+      <div class="fellowship-item">
+        <div class="fellowship-item__country">United Kingdom</div>
+        <div class="fellowship-item__year">Royal Orthopaedic Hospital, Birmingham</div>
+        <h4>Oncology &amp; Reconstruction</h4>
+        <p>Advanced oncological reconstruction and complex revision surgery at one of the UK's premier specialist centres.</p>
+      </div>
+      <div class="fellowship-item">
+        <div class="fellowship-item__country">Australia</div>
+        <div class="fellowship-item__year">Flinders Medical Centre, Adelaide</div>
+        <h4>Smith &amp; Nephew Foundation Fellowship</h4>
+        <p>Villis R Marshall Fellowship. Arthroplasty and trauma surgery, broad surgical exposure in a high-volume academic centre.</p>
+      </div>
+      <div class="fellowship-item">
+        <div class="fellowship-item__country">India</div>
+        <div class="fellowship-item__year">ISB Hyderabad</div>
+        <h4>Advanced Management Programme</h4>
+        <p>Healthcare leadership and hospital management. Graduated as Valedictorian, the only surgeon-turned-strategist in his cohort.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATIENT EDUCATION -->
+<section class="education">
+  <div class="education__inner">
+    <div class="section-title">
+      <span class="eyebrow">Patient Education</span>
+      <h2>Understanding your condition</h2>
+      <p>Closing the gap between what doctors know and what patients need to understand.</p>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-card__tag">Joint Replacement</div>
+        <h4>When is it time for a knee replacement?</h4>
+        <p>Understanding the signs, what to expect from surgery, and what recovery really looks like, without the jargon.</p>
+      </div>
+      <div class="edu-card">
+        <div class="edu-card__tag">Ortho Oncology</div>
+        <h4>Bone tumours: what the diagnosis means</h4>
+        <p>A plain-language guide to understanding bone and soft tissue tumours, staging, and the role of limb salvage surgery.</p>
+      </div>
+      <div class="edu-card">
+        <div class="edu-card__tag">Sports Injuries</div>
+        <h4>ACL tears: surgery vs. physiotherapy</h4>
+        <p>Not every ACL tear requires surgery. How to understand your options based on your age, sport, and activity goals.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="/blog" class="btn btn-gold">Browse all articles →</a>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT CTA -->
+<section class="appt-cta">
+  <div class="appt-cta__inner">
+    <span class="eyebrow">Consultations</span>
+    <h2>Ready to take the next step?</h2>
+    <p>If you are seeking a second opinion, a specialist consultation, or a referral from another physician, contact us and we will take it from there.</p>
+    <div class="appt-cta__actions">
+      <a href="/contact" class="btn btn-gold">Book a Consultation</a>
+      <a href="https://wa.me/917075523360" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp Dr. Satish</a>
+    </div>
+    <div class="appt-cta__contact">
+      <div class="appt-cta__contact-item">
+        📍 KIMS Hospital, Ministers Road, Secunderabad
+      </div>
+      <div class="appt-cta__contact-item">
+        📞 <a href="tel:+917075523360">+91 70755 23360</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <div class="footer__brand">Dr. <span>Satish</span> Reddy. G</div>
+      <p class="footer__tagline">
+        Consultant Orthopaedic Surgeon<br/>
+        KIMS Hospital, Ministers Road, Secunderabad<br/><br/>
+        MS Orth (Gold Medallist) · Fellowship trained in Italy, the UK and Australia<br/>
+        Pioneer of Orthopaedic Oncology, AP &amp; Telangana
+      </p>
+    </div>
+    <div>
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/specialties">Specialties</a></li>
+        <li><a href="/for-doctors">For Doctors</a></li>
+        <li><a href="/blog">Patient Education</a></li>
+        <li><a href="/contact">Contact &amp; Appointments</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <div class="footer__contact-items">
+        <div class="footer__contact-item">
+          KIMS Hospital<br/>Ministers Road<br/>Secunderabad, Telangana
+        </div>
+        <div class="footer__contact-item">
+          <a href="tel:+917075523360">+91 70755 23360</a>
+        </div>
+        <div class="footer__contact-item">
+          <a href="https://wa.me/917075523360" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    © 2025 Dr. Satish Reddy Gandavarapu. All rights reserved.
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/917075523360" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp Dr. Satish">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  window.addEventListener('scroll', function() {
+    document.querySelector('.nav').style.background =
+      window.scrollY > 40 ? 'rgba(10,22,40,0.98)' : 'rgba(10,22,40,0.96)';
+  });
+</script>
+</body>
+</html>
