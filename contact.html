@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &amp; Appointments | Dr. Satish Reddy. G</title>
+  <meta name="description" content="Book a consultation with Dr. Satish Reddy Gandavarapu at KIMS Hospital, Ministers Road, Secunderabad. Call, WhatsApp, or send an enquiry online." />
+  <link rel="canonical" href="https://drgsreddy.com/contact" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    :root {
+      --navy:#0A1628; --navy-mid:#162040; --navy-light:#1E2D4E; --steel:#4A7FA5;
+      --gold:#C9A84C; --gold-light:#E2C97E; --cream:#F8F6F2; --off-white:#EDE9E0;
+      --gray:#8A8A8A; --text:#1A1A2E; --font-d:'Playfair Display',Georgia,serif;
+      --font-b:'Inter',system-ui,sans-serif; --max:1200px; --r:4px; --t:0.3s ease;
+    }
+    body { font-family:var(--font-b); background:var(--cream); color:var(--text); line-height:1.7; font-size:16px; }
+    a { color:inherit; text-decoration:none; }
+    h1,h2,h3,h4 { font-family:var(--font-d); line-height:1.2; }
+    h1 { font-size:clamp(2rem,4vw,3.4rem); font-weight:700; }
+    h2 { font-size:clamp(1.5rem,2.5vw,2.2rem); font-weight:600; }
+    h3 { font-size:1.15rem; font-weight:600; }
+    p { margin-bottom:1rem; }
+    .eyebrow { font-size:0.72rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:0.75rem; }
+
+    .btn { display:inline-block; padding:0.85rem 2rem; border-radius:var(--r); font-family:var(--font-b); font-size:0.9rem; font-weight:600; cursor:pointer; transition:all var(--t); }
+    .btn-gold { background:var(--gold); color:var(--navy); border:none; }
+    .btn-gold:hover { background:var(--gold-light); }
+    .btn-wa { background:#25D366; color:#fff; border:none; }
+    .btn-wa:hover { background:#1ebe5a; }
+    .btn-outline { border:1.5px solid rgba(248,246,242,0.5); color:var(--cream); background:none; }
+    .btn-outline:hover { border-color:var(--cream); background:rgba(248,246,242,0.08); }
+
+    /* NAV */
+    .nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(10,22,40,0.96); backdrop-filter:blur(8px); border-bottom:1px solid rgba(201,168,76,0.15); }
+    .nav__inner { max-width:var(--max); margin:0 auto; padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:68px; }
+    .nav__brand { font-family:var(--font-d); font-size:1.2rem; font-weight:700; color:var(--cream); }
+    .nav__brand span { color:var(--gold); }
+    .nav__links { display:flex; align-items:center; gap:2rem; list-style:none; }
+    .nav__links a { color:rgba(248,246,242,0.8); font-size:0.88rem; font-weight:500; transition:color var(--t); }
+    .nav__links a:hover,.nav__links a.active { color:var(--gold); }
+    .nav__cta { background:var(--gold)!important; color:var(--navy)!important; padding:0.5rem 1.25rem; border-radius:var(--r); font-weight:600!important; }
+    .nav__hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
+    .nav__hamburger span { width:24px; height:2px; background:var(--cream); border-radius:2px; }
+    .nav__mobile { display:none; position:fixed; top:68px; left:0; right:0; background:var(--navy-mid); border-bottom:1px solid rgba(201,168,76,0.2); z-index:99; padding:1.5rem 2rem; }
+    .nav__mobile ul { list-style:none; display:flex; flex-direction:column; gap:1.2rem; }
+    .nav__mobile a { color:rgba(248,246,242,0.85); font-size:1rem; font-weight:500; }
+    .nav__mobile.open { display:block; }
+
+    /* HERO */
+    .page-hero { background:linear-gradient(145deg,var(--navy) 0%,#0D2B4E 100%); padding:8rem 2rem 4rem; text-align:center; }
+    .page-hero h1 { color:var(--cream); margin-bottom:0.75rem; }
+    .page-hero p { color:rgba(248,246,242,0.65); max-width:580px; margin:0 auto; font-size:1.05rem; line-height:1.75; }
+
+    /* QUICK ACTIONS */
+    .quick-actions { background:var(--navy-mid); border-bottom:1px solid rgba(201,168,76,0.15); padding:2rem; }
+    .quick-actions__inner { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:1px; border:1px solid rgba(201,168,76,0.15); border-radius:var(--r); overflow:hidden; }
+    .quick-action { background:var(--navy-light); padding:2rem; text-align:center; border-right:1px solid rgba(201,168,76,0.12); transition:background var(--t); }
+    .quick-action:last-child { border-right:none; }
+    .quick-action:hover { background:rgba(255,255,255,0.04); }
+    .quick-action__icon { font-size:1.75rem; margin-bottom:0.75rem; }
+    .quick-action h3 { color:var(--cream); font-size:1rem; margin-bottom:0.4rem; }
+    .quick-action p { color:rgba(248,246,242,0.55); font-size:0.82rem; margin-bottom:1rem; line-height:1.5; }
+    .quick-action a { font-size:0.88rem; font-weight:600; color:var(--gold-light); border-bottom:1px solid rgba(201,168,76,0.4); padding-bottom:1px; transition:color var(--t); }
+    .quick-action a:hover { color:var(--gold); }
+
+    /* MAIN LAYOUT */
+    .main { padding:5rem 2rem; background:var(--off-white); }
+    .main__inner { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:1fr 420px; gap:4rem; align-items:start; }
+
+    /* FORM SIDE */
+    .form-card { background:white; border-radius:var(--r); border:1px solid rgba(0,0,0,0.07); overflow:hidden; }
+    .form-card__header { background:var(--navy); padding:2rem; }
+    .form-card__header h2 { color:var(--cream); font-size:1.5rem; margin-bottom:0.4rem; }
+    .form-card__header p { color:rgba(248,246,242,0.6); font-size:0.88rem; margin-bottom:0; }
+    .form-body { padding:2rem; }
+
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; }
+    .form-group { margin-bottom:1.25rem; }
+    .form-group label { display:block; font-size:0.8rem; font-weight:600; color:#4a4a5a; margin-bottom:0.45rem; letter-spacing:0.03em; }
+    .form-group label .req { color:var(--gold); margin-left:2px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width:100%; padding:0.75rem 1rem; border:1px solid rgba(0,0,0,0.14); border-radius:var(--r);
+      font-family:var(--font-b); font-size:0.9rem; color:var(--text);
+      background:var(--cream); outline:none; transition:border-color var(--t);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color:var(--gold); background:white; }
+    .form-group textarea { resize:vertical; min-height:110px; }
+    .form-group select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238A8A8A' d='M6 8L0 0h12z'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 1rem center; padding-right:2.5rem; }
+
+    .radio-group { display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:0.25rem; }
+    .radio-pill input[type=radio] { display:none; }
+    .radio-pill label { display:block; padding:0.45rem 1rem; border:1px solid rgba(0,0,0,0.14); border-radius:2rem; font-size:0.8rem; font-weight:500; color:#5a5a6a; cursor:pointer; transition:all var(--t); }
+    .radio-pill input[type=radio]:checked + label { background:var(--navy); color:var(--cream); border-color:var(--navy); }
+    .radio-pill label:hover { border-color:var(--gold); color:var(--navy); }
+
+    .form-submit { width:100%; padding:1rem; background:var(--navy); color:var(--cream); border:none; border-radius:var(--r); font-family:var(--font-d); font-size:1.05rem; font-weight:600; cursor:pointer; transition:background var(--t); margin-top:0.5rem; letter-spacing:0.03em; }
+    .form-submit:hover { background:var(--navy-light); }
+    .form-note { font-size:0.75rem; color:var(--gray); text-align:center; margin-top:0.85rem; line-height:1.55; }
+
+    /* SUCCESS STATE */
+    .form-success { display:none; padding:3rem 2rem; text-align:center; }
+    .form-success__icon { font-size:3rem; margin-bottom:1rem; }
+    .form-success h3 { margin-bottom:0.75rem; }
+    .form-success p { color:var(--gray); font-size:0.9rem; }
+
+    /* RIGHT SIDEBAR */
+    .contact-sidebar { display:flex; flex-direction:column; gap:1.5rem; }
+
+    .info-card { background:white; border-radius:var(--r); border:1px solid rgba(0,0,0,0.07); overflow:hidden; }
+    .info-card__header { background:var(--navy-light); padding:1.25rem 1.5rem; border-bottom:1px solid rgba(201,168,76,0.12); }
+    .info-card__header h3 { color:var(--cream); font-size:0.95rem; }
+    .info-card__body { padding:1.5rem; }
+
+    .info-row { display:flex; gap:0.85rem; align-items:flex-start; margin-bottom:1.1rem; }
+    .info-row:last-child { margin-bottom:0; }
+    .info-row__icon { font-size:1.1rem; flex-shrink:0; margin-top:0.1rem; }
+    .info-row__label { font-size:0.7rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-bottom:0.2rem; }
+    .info-row__value { font-size:0.88rem; color:#3a3a4a; line-height:1.55; }
+    .info-row__value a { color:var(--steel); font-weight:600; }
+    .info-row__value a:hover { color:var(--navy); }
+
+    .wa-card { background:var(--navy); border-radius:var(--r); padding:1.75rem; border:1px solid rgba(201,168,76,0.2); text-align:center; }
+    .wa-card__icon { font-size:2rem; margin-bottom:0.75rem; }
+    .wa-card h3 { color:var(--cream); font-size:1.05rem; margin-bottom:0.5rem; }
+    .wa-card p { color:rgba(248,246,242,0.6); font-size:0.84rem; margin-bottom:1.25rem; line-height:1.55; }
+    .wa-card .btn-wa { width:100%; text-align:center; display:block; }
+
+    .hours-row { display:flex; justify-content:space-between; padding:0.6rem 0; border-bottom:1px solid rgba(0,0,0,0.06); font-size:0.85rem; }
+    .hours-row:last-child { border-bottom:none; }
+    .hours-row__day { color:#4a4a5a; font-weight:500; }
+    .hours-row__time { color:var(--text); font-weight:600; }
+    .hours-row__time.closed { color:var(--gray); font-weight:400; }
+
+    /* MAP */
+    .map-section { padding:0 2rem 5rem; background:var(--off-white); }
+    .map-section__inner { max-width:var(--max); margin:0 auto; }
+    .map-section h2 { margin-bottom:0.5rem; }
+    .map-section p { color:var(--gray); font-size:0.95rem; margin-bottom:1.5rem; }
+    .map-embed { width:100%; height:380px; border:none; border-radius:var(--r); border:1px solid rgba(0,0,0,0.08); filter:grayscale(15%); }
+    .map-directions { display:flex; flex-wrap:wrap; gap:1rem; margin-top:1.25rem; }
+    .direction-chip { display:flex; align-items:center; gap:0.5rem; padding:0.6rem 1.1rem; background:white; border:1px solid rgba(0,0,0,0.08); border-radius:2rem; font-size:0.82rem; font-weight:500; color:#4a4a5a; transition:all var(--t); }
+    .direction-chip:hover { border-color:var(--gold); color:var(--navy); }
+
+    /* FAQ */
+    .faq { padding:5rem 2rem; background:var(--cream); }
+    .faq__inner { max-width:800px; margin:0 auto; }
+    .faq__list { margin-top:2.5rem; display:flex; flex-direction:column; gap:0; border:1px solid rgba(0,0,0,0.08); border-radius:var(--r); overflow:hidden; }
+    .faq-item { border-bottom:1px solid rgba(0,0,0,0.08); }
+    .faq-item:last-child { border-bottom:none; }
+    .faq-q { width:100%; text-align:left; padding:1.25rem 1.5rem; background:none; border:none; font-family:var(--font-d); font-size:1rem; font-weight:600; color:var(--text); cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:1rem; transition:background var(--t); }
+    .faq-q:hover { background:var(--off-white); }
+    .faq-q.open { background:var(--off-white); color:var(--navy); }
+    .faq-q__arrow { font-size:0.7rem; color:var(--gold); transition:transform var(--t); flex-shrink:0; }
+    .faq-q.open .faq-q__arrow { transform:rotate(180deg); }
+    .faq-a { display:none; padding:0 1.5rem 1.25rem; font-size:0.9rem; color:#4a4a5a; line-height:1.75; }
+    .faq-a.open { display:block; }
+
+    /* FOOTER */
+    .footer { background:var(--navy-mid); border-top:1px solid rgba(201,168,76,0.15); padding:3rem 2rem; }
+    .footer__inner { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr; gap:3rem; }
+    .footer__brand { font-family:var(--font-d); font-size:1.3rem; color:var(--cream); font-weight:700; margin-bottom:0.75rem; }
+    .footer__brand span { color:var(--gold); }
+    .footer__tagline { font-size:0.85rem; color:rgba(248,246,242,0.45); line-height:1.6; }
+    .footer h5 { font-size:0.72rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; }
+    .footer ul { list-style:none; display:flex; flex-direction:column; gap:0.6rem; }
+    .footer ul li a { font-size:0.88rem; color:rgba(248,246,242,0.55); transition:color var(--t); }
+    .footer ul li a:hover { color:var(--cream); }
+    .footer__contact-item { font-size:0.85rem; color:rgba(248,246,242,0.55); line-height:1.5; margin-bottom:0.5rem; }
+    .footer__contact-item a { color:rgba(248,246,242,0.7); }
+    .footer__bottom { max-width:var(--max); margin:2rem auto 0; border-top:1px solid rgba(248,246,242,0.06); padding-top:1.5rem; font-size:0.78rem; color:rgba(248,246,242,0.3); text-align:center; }
+
+    .wa-float { position:fixed; bottom:2rem; right:2rem; z-index:200; width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(37,211,102,0.35); transition:transform var(--t); }
+    .wa-float:hover { transform:scale(1.08); }
+    .wa-float svg { width:28px; height:28px; fill:white; }
+
+    @media (max-width:900px) {
+      .main__inner { grid-template-columns:1fr; }
+      .quick-actions__inner { grid-template-columns:1fr; }
+      .quick-action { border-right:none; border-bottom:1px solid rgba(201,168,76,0.12); }
+      .quick-action:last-child { border-bottom:none; }
+      .footer__inner { grid-template-columns:1fr; gap:2rem; }
+    }
+    @media (max-width:640px) {
+      .nav__links { display:none; } .nav__hamburger { display:flex; }
+      .form-row { grid-template-columns:1fr; }
+    }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none!important; } }
+  </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQJV3LV6SV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WQJV3LV6SV');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xd5ee60zrw");
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__brand">Dr. <span>Satish</span> Reddy. G</a>
+    <ul class="nav__links">
+      <li><a href="/about">About</a></li>
+      <li><a href="/specialties">Specialties</a></li>
+      <li><a href="/for-doctors">For Doctors</a></li>
+      <li><a href="/blog">Patient Education</a></li>
+      <li><a href="/contact" class="active nav__cta">Book Appointment</a></li>
+    </ul>
+    <div class="nav__hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobileMenu">
+  <ul>
+    <li><a href="/about" onclick="toggleMenu()">About</a></li>
+    <li><a href="/specialties" onclick="toggleMenu()">Specialties</a></li>
+    <li><a href="/for-doctors" onclick="toggleMenu()">For Doctors</a></li>
+    <li><a href="/blog" onclick="toggleMenu()">Patient Education</a></li>
+    <li><a href="/second-opinion" onclick="toggleMenu()" style="color:#4ade80;font-weight:600">✦ Free Second Opinion</a></li>
+    <li><a href="/contact" onclick="toggleMenu()">Book Appointment</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <span class="eyebrow">Get in Touch</span>
+  <h1>Contact &amp; Appointments</h1>
+  <p>Consultations at KIMS Hospital, Ministers Road, Secunderabad. Call, WhatsApp, or use the form below. We respond within one working day.</p>
+</section>
+
+<!-- QUICK ACTIONS -->
+<div class="quick-actions">
+  <div class="quick-actions__inner">
+    <div class="quick-action">
+      <div class="quick-action__icon">📞</div>
+      <h3>Call directly</h3>
+      <p>Speak to us for immediate assistance or to book an appointment over the phone.</p>
+      <a href="tel:+917075523360">+91 70755 23360</a>
+    </div>
+    <div class="quick-action">
+      <div class="quick-action__icon">💬</div>
+      <h3>WhatsApp</h3>
+      <p>The fastest route for most enquiries. Send a message and receive a reply the same day.</p>
+      <a href="https://wa.me/917075523360" target="_blank" rel="noopener">+91 70755 23360</a>
+    </div>
+    <div class="quick-action">
+      <div class="quick-action__icon">📍</div>
+      <h3>Visit us</h3>
+      <p>KIMS Hospital, Ministers Road, Secunderabad, Telangana.</p>
+      <a href="https://maps.google.com/?q=KIMS+Hospital+Ministers+Road+Secunderabad" target="_blank" rel="noopener">Get directions →</a>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<section class="main">
+  <div class="main__inner">
+
+    <!-- FORM -->
+    <div class="form-card">
+      <div class="form-card__header">
+        <span class="eyebrow" style="color:var(--gold-light)">Appointment enquiry</span>
+        <h2>Send us a message</h2>
+        <p>Complete the form below and we will contact you to confirm your appointment. All fields marked * are required.</p>
+      </div>
+      <div class="form-body">
+        <!-- Replace YOUR_FORM_ID below with your Formspree form ID once set up -->
+        <!-- e.g. action="https://formspree.io/f/abcdefgh" -->
+        <form id="contactForm" action="https://formspree.io/f/mqevqegq" method="POST" onsubmit="handleSubmit(event)">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First name <span class="req">*</span></label>
+              <input type="text" id="firstName" name="firstName" placeholder="e.g. Rajesh" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last name <span class="req">*</span></label>
+              <input type="text" id="lastName" name="lastName" placeholder="e.g. Kumar" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Mobile number <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="patientType">I am a <span class="req">*</span></label>
+            <select id="patientType" name="patientType" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="patient">Patient</option>
+              <option value="family">Family member of a patient</option>
+              <option value="gp">General Practitioner / Family Physician</option>
+              <option value="specialist">Specialist / Referring Doctor</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Reason for enquiry <span class="req">*</span></label>
+            <div class="radio-group">
+              <div class="radio-pill"><input type="radio" id="r1" name="reason" value="New consultation" required /><label for="r1">New consultation</label></div>
+              <div class="radio-pill"><input type="radio" id="r2" name="reason" value="Second opinion" /><label for="r2">Second opinion</label></div>
+              <div class="radio-pill"><input type="radio" id="r3" name="reason" value="Doctor referral" /><label for="r3">Doctor referral</label></div>
+              <div class="radio-pill"><input type="radio" id="r4" name="reason" value="Follow-up" /><label for="r4">Follow-up</label></div>
+              <div class="radio-pill"><input type="radio" id="r5" name="reason" value="General enquiry" /><label for="r5">General enquiry</label></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="specialty">Area of concern</label>
+            <select id="specialty" name="specialty">
+              <option value="" disabled selected>Select if known</option>
+              <option value="Knee">Knee</option>
+              <option value="Hip">Hip</option>
+              <option value="Shoulder">Shoulder</option>
+              <option value="Elbow">Elbow</option>
+              <option value="Bone tumour / oncology">Bone tumour / oncology</option>
+              <option value="Fracture / trauma">Fracture / trauma</option>
+              <option value="Sports injury">Sports injury</option>
+              <option value="Not sure">Not sure</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Brief description of your concern <span class="req">*</span></label>
+            <textarea id="message" name="message" placeholder="Please describe your symptoms, how long you have had them, and any prior treatment or imaging you have had." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="preferred">Preferred time to be contacted</label>
+            <select id="preferred" name="preferred">
+              <option value="" disabled selected>Select preference</option>
+              <option value="Morning (9am–12pm)">Morning (9am–12pm)</option>
+              <option value="Afternoon (12pm–4pm)">Afternoon (12pm–4pm)</option>
+              <option value="Evening (4pm–7pm)">Evening (4pm–7pm)</option>
+              <option value="Any time">Any time</option>
+            </select>
+          </div>
+
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="_gotcha" style="display:none" />
+          <input type="hidden" name="_subject" value="New appointment enquiry | Dr. Satish website" />
+
+          <button type="submit" class="form-submit">Send enquiry →</button>
+          <p class="form-note">Your information is used only to respond to your enquiry. We do not share your details with any third party.</p>
+        </form>
+
+        <!-- Success state -->
+        <div class="form-success" id="formSuccess">
+          <div class="form-success__icon">✅</div>
+          <h3>Enquiry received</h3>
+          <p>Thank you, we will contact you within one working day to confirm your appointment.<br/><br/>For urgent matters, please call or WhatsApp directly on <a href="tel:+917075523360" style="color:var(--steel);font-weight:600">+91 70755 23360</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <div class="contact-sidebar">
+
+      <!-- WHATSAPP -->
+      <div class="wa-card">
+        <div class="wa-card__icon">💬</div>
+        <h3>WhatsApp is fastest</h3>
+        <p>For most enquiries, including referrals, second opinions, and urgent oncology questions, WhatsApp gets the fastest response.</p>
+        <a href="https://wa.me/917075523360" target="_blank" rel="noopener" class="btn btn-wa">Open WhatsApp chat</a>
+      </div>
+
+      <!-- LOCATION -->
+      <div class="info-card">
+        <div class="info-card__header"><h3>Clinic location</h3></div>
+        <div class="info-card__body">
+          <div class="info-row">
+            <div class="info-row__icon">🏥</div>
+            <div>
+              <div class="info-row__label">Hospital</div>
+              <div class="info-row__value">KIMS Hospital<br/>Ministers Road<br/>Secunderabad, Telangana, 500 003</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-row__icon">📞</div>
+            <div>
+              <div class="info-row__label">Direct line</div>
+              <div class="info-row__value"><a href="tel:+917075523360">+91 70755 23360</a></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-row__icon">🗺️</div>
+            <div>
+              <div class="info-row__label">Directions</div>
+              <div class="info-row__value"><a href="https://maps.google.com/?q=KIMS+Hospital+Ministers+Road+Secunderabad" target="_blank" rel="noopener">Open in Google Maps →</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOURS -->
+      <div class="info-card">
+        <div class="info-card__header"><h3>Consultation hours</h3></div>
+        <div class="info-card__body">
+          <div class="hours-row"><span class="hours-row__day">Monday – Friday</span><span class="hours-row__time">9:00 am – 5:00 pm</span></div>
+          <div class="hours-row"><span class="hours-row__day">Saturday</span><span class="hours-row__time">9:00 am – 1:00 pm</span></div>
+          <div class="hours-row"><span class="hours-row__day">Sunday</span><span class="hours-row__time closed">By appointment</span></div>
+          <p style="font-size:0.78rem;color:var(--gray);margin-top:1rem;margin-bottom:0;line-height:1.55">These hours are for outpatient consultations. Surgical lists run on separate theatre schedules. Please call ahead to confirm specific timings.</p>
+        </div>
+      </div>
+
+      <!-- RESPONSE TIMES -->
+      <div class="info-card">
+        <div class="info-card__header"><h3>What to expect</h3></div>
+        <div class="info-card__body">
+          <div class="info-row">
+            <div class="info-row__icon">⚡</div>
+            <div>
+              <div class="info-row__label">WhatsApp reply</div>
+              <div class="info-row__value">Same day (during working hours)</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-row__icon">📋</div>
+            <div>
+              <div class="info-row__label">Enquiry form</div>
+              <div class="info-row__value">Within one working day</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-row__icon">🔬</div>
+            <div>
+              <div class="info-row__label">Urgent oncology / trauma</div>
+              <div class="info-row__value">Seen within 24–48 hours where clinically needed</div>
+            </div>
+          </div>
+          <div class="info-row" style="margin-bottom:0">
+            <div class="info-row__icon">📅</div>
+            <div>
+              <div class="info-row__label">Elective consultations</div>
+              <div class="info-row__value">Appointment confirmed within the week</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map-section">
+  <div class="map-section__inner">
+    <span class="eyebrow">Find us</span>
+    <h2>KIMS Hospital, Secunderabad</h2>
+    <p>Ministers Road, Secunderabad, Telangana, 500 003</p>
+    <iframe
+      class="map-embed"
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://maps.google.com/maps?q=KIMS+Hospital+Ministers+Road+Secunderabad+Telangana&t=&z=15&ie=UTF8&iwloc=&output=embed">
+    </iframe>
+    <div class="map-directions">
+      <a class="direction-chip" href="https://maps.google.com/?q=KIMS+Hospital+Ministers+Road+Secunderabad" target="_blank" rel="noopener">🗺️ Google Maps</a>
+      <a class="direction-chip" href="https://maps.apple.com/?q=KIMS+Hospital+Secunderabad" target="_blank" rel="noopener">🍎 Apple Maps</a>
+      <a class="direction-chip" href="https://www.google.com/maps/dir/?api=1&destination=KIMS+Hospital+Ministers+Road+Secunderabad" target="_blank" rel="noopener">🚗 Get directions</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="faq__inner">
+    <div style="text-align:center;margin-bottom:0">
+      <span class="eyebrow">Common questions</span>
+      <h2>Before your appointment</h2>
+      <p style="color:var(--gray);max-width:520px;margin:0.75rem auto 0;font-size:0.95rem">Questions that come up most often before a first appointment.</p>
+    </div>
+    <div class="faq__list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What should I bring to my first consultation?
+          <span class="faq-q__arrow">▼</span>
+        </button>
+        <div class="faq-a">
+          Bring all previous X-rays, MRI scans, CT scans, and reports, on a CD, USB, or printed if you have them. Also bring any discharge summaries, operation notes from previous surgeries, and a list of current medications. If you have imaging on a CD, bring the disc rather than just printed films, digital images are more useful for planning. If you do not have any reports yet, come anyway, we can arrange appropriate investigations from the clinic.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do I need a referral letter to see Dr. Satish?
+          <span class="faq-q__arrow">▼</span>
+        </button>
+        <div class="faq-a">
+          No referral is required for a direct patient consultation. You are welcome to book an appointment directly by calling, WhatsApp, or via this form. If you are a doctor referring a patient, a brief clinical note via WhatsApp is sufficient, there is no formal referral form.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is cashless treatment available at KIMS Hospital?
+          <span class="faq-q__arrow">▼</span>
+        </button>
+        <div class="faq-a">
+          KIMS Hospital is empanelled with most major insurance providers including Star Health, New India, United India, HDFC Ergo, Care Health, Niva Bupa, and Ayushman Bharat (PMJAY). Please bring your insurance card and policy documents when you come. For cashless admission, pre-authorisation from your insurer is usually required, this process can be initiated once a surgery date is confirmed.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How long does a first consultation typically take?
+          <span class="faq-q__arrow">▼</span>
+        </button>
+        <div class="faq-a">
+          Allow 30–45 minutes for a first consultation. This includes reviewing your history, examining you, reviewing any imaging you have brought, discussing the diagnosis, and explaining all available treatment options, surgical and non-surgical. Complex oncology or trauma cases may take longer.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          I have already had surgery elsewhere and it has not gone well. Can I be seen?
+          <span class="faq-q__arrow">▼</span>
+        </button>
+        <div class="faq-a">
+          Yes. Second opinions and revision cases are actively welcomed. Please bring all previous operation notes, implant stickers (if available), and any post-operative imaging. Failed joint replacement, non-union of fractures, and complications after prior oncology surgery are all within Dr. Satish's expertise.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is it possible to get a remote second opinion before travelling to Secunderabad?
+          <span class="faq-q__arrow">▼</span>
+        </button>
+        <div class="faq-a">
+          Yes. For patients travelling from outside Hyderabad, it is possible to share imaging and reports via WhatsApp for an initial informal review before committing to the journey. Send your details to +91 70755 23360 along with a brief description of your problem, and we will advise whether a visit is likely to be productive and what to bring.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <div class="footer__brand">Dr. <span>Satish</span> Reddy. G</div>
+      <p class="footer__tagline">Consultant Orthopaedic Surgeon<br/>KIMS Hospital, Ministers Road, Secunderabad<br/><br/>MS Orth (Gold Medallist) &nbsp;·&nbsp; Fellowship-trained in Italy, UK &amp; Australia<br/>Pioneer of Orthopaedic Oncology, AP &amp; Telangana</p>
+    </div>
+    <div>
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/specialties">Specialties</a></li>
+        <li><a href="/for-doctors">For Doctors</a></li>
+        <li><a href="/blog">Patient Education</a></li>
+        <li><a href="/contact">Contact &amp; Appointments</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <div class="footer__contact-item">KIMS Hospital<br/>Ministers Road<br/>Secunderabad, Telangana</div>
+      <div class="footer__contact-item"><a href="tel:+917075523360">+91 70755 23360</a></div>
+      <div class="footer__contact-item"><a href="https://wa.me/917075523360" target="_blank" rel="noopener">WhatsApp</a></div>
+    </div>
+  </div>
+  <div class="footer__bottom">© 2025 Dr. Satish Reddy Gandavarapu. All rights reserved.</div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/917075523360" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp Dr. Satish">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+
+  window.addEventListener('scroll', () => {
+    document.querySelector('.nav').style.background = window.scrollY > 40 ? 'rgba(10,22,40,0.98)' : 'rgba(10,22,40,0.96)';
+  });
+
+  // Form submit handler, shows success state; Formspree handles actual email delivery
+  function handleSubmit(e) {
+    const form = document.getElementById('contactForm');
+    const action = form.getAttribute('action');
+
+    // If Formspree ID not yet set, show success state locally and skip submission
+    if (action.includes('YOUR_FORM_ID')) {
+      e.preventDefault();
+      showSuccess();
+      return;
+    }
+
+    // Otherwise let Formspree handle it, then show success
+    e.preventDefault();
+    const data = new FormData(form);
+    fetch(action, { method:'POST', body:data, headers:{'Accept':'application/json'} })
+      .then(r => { if (r.ok) { showSuccess(); } else { alert('Something went wrong, please call or WhatsApp us directly.'); } })
+      .catch(() => { alert('Something went wrong, please call or WhatsApp us directly.'); });
+  }
+
+  function showSuccess() {
+    document.getElementById('contactForm').style.display = 'none';
+    const success = document.getElementById('formSuccess');
+    success.style.display = 'block';
+  }
+
+  // FAQ accordion
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('open'));
+    document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+    // Open clicked if it was closed
+    if (!isOpen) { btn.classList.add('open'); answer.classList.add('open'); }
+  }
+</script>
+</body>
+</html>

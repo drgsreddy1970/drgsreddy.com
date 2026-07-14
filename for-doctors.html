@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Doctors | Dr. Satish Reddy. G</title>
+  <meta name="description" content="Referring doctors can contact Dr. Satish Reddy Gandavarapu at KIMS Hospital, Ministers Road, Secunderabad for orthopaedic oncology, joint replacement, complex trauma, sports injuries and upper limb cases." />
+  <link rel="canonical" href="https://drgsreddy.com/for-doctors" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --navy:       #0A1628;
+      --navy-mid:   #162040;
+      --navy-light: #1E2D4E;
+      --steel:      #4A7FA5;
+      --gold:       #C9A84C;
+      --gold-light: #E2C97E;
+      --cream:      #F8F6F2;
+      --off-white:  #EDE9E0;
+      --gray:       #8A8A8A;
+      --text:       #1A1A2E;
+      --font-d:     'Playfair Display', Georgia, serif;
+      --font-b:     'Inter', system-ui, sans-serif;
+      --max:        1200px;
+      --r:          4px;
+      --t:          0.3s ease;
+    }
+
+    body { font-family: var(--font-b); background: var(--cream); color: var(--text); line-height: 1.7; font-size: 16px; }
+    a    { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4 { font-family: var(--font-d); line-height: 1.2; }
+    h1 { font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 700; }
+    h2 { font-size: clamp(1.6rem, 2.8vw, 2.4rem); font-weight: 600; }
+    h3 { font-size: clamp(1.1rem, 1.6vw, 1.4rem); font-weight: 600; }
+    p  { margin-bottom: 1rem; }
+
+    .eyebrow {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.75rem;
+    }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+    .btn {
+      display: inline-block; padding: 0.85rem 2rem; border-radius: var(--r);
+      font-family: var(--font-b); font-size: 0.9rem; font-weight: 600;
+      letter-spacing: 0.05em; cursor: pointer; transition: all var(--t);
+    }
+    .btn-gold     { background: var(--gold); color: var(--navy); }
+    .btn-gold:hover { background: var(--gold-light); }
+    .btn-outline  { border: 1.5px solid rgba(248,246,242,0.5); color: var(--cream); }
+    .btn-outline:hover { border-color: var(--cream); background: rgba(248,246,242,0.08); }
+    .btn-wa       { background: #25D366; color: #fff; }
+    .btn-wa:hover { background: #1ebe5a; }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,22,40,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .nav__inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between; height: 68px;
+    }
+    .nav__brand { font-family: var(--font-d); font-size: 1.2rem; font-weight: 700; color: var(--cream); }
+    .nav__brand span { color: var(--gold); }
+    .nav__links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav__links a { color: rgba(248,246,242,0.8); font-size: 0.88rem; font-weight: 500; transition: color var(--t); }
+    .nav__links a:hover, .nav__links a.active { color: var(--gold); }
+    .nav__cta {
+      background: var(--gold) !important; color: var(--navy) !important;
+      padding: 0.5rem 1.25rem; border-radius: var(--r); font-weight: 600 !important;
+    }
+    .nav__cta:hover { background: var(--gold-light) !important; }
+    .nav__hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav__hamburger span { width: 24px; height: 2px; background: var(--cream); border-radius: 2px; }
+    .nav__mobile {
+      display: none; position: fixed; top: 68px; left: 0; right: 0;
+      background: var(--navy-mid); border-bottom: 1px solid rgba(201,168,76,0.2);
+      z-index: 99; padding: 1.5rem 2rem;
+    }
+    .nav__mobile ul { list-style: none; display: flex; flex-direction: column; gap: 1.2rem; }
+    .nav__mobile a { color: rgba(248,246,242,0.85); font-size: 1rem; font-weight: 500; }
+    .nav__mobile.open { display: block; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background: linear-gradient(145deg, var(--navy) 0%, #0D2B4E 100%);
+      padding: 8rem 2rem 4rem; text-align: center;
+    }
+    .page-hero h1 { color: var(--cream); margin-bottom: 0.75rem; }
+    .page-hero p { color: rgba(248,246,242,0.65); max-width: 620px; margin: 0 auto; font-size: 1.05rem; line-height: 1.75; }
+
+    /* ── QUICK CONTACT STRIP ── */
+    .quick-contact {
+      background: var(--navy-mid); border-bottom: 1px solid rgba(201,168,76,0.15);
+      padding: 1.25rem 2rem;
+    }
+    .quick-contact__inner {
+      max-width: var(--max); margin: 0 auto;
+      display: flex; flex-wrap: wrap; gap: 1rem 3rem; align-items: center; justify-content: center;
+    }
+    .quick-contact__item {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.85rem; color: rgba(248,246,242,0.7); font-weight: 500;
+    }
+    .quick-contact__item a { color: var(--gold-light); transition: color var(--t); }
+    .quick-contact__item a:hover { color: var(--gold); }
+    .quick-contact__dot { color: var(--gold); font-size: 0.55rem; }
+
+    /* ── WHO TO REFER ── */
+    .who-refer { padding: 5rem 2rem; background: var(--cream); }
+    .who-refer__inner { max-width: var(--max); margin: 0 auto; }
+    .who-refer__grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem;
+    }
+    .refer-card {
+      background: var(--off-white); border-radius: var(--r);
+      border: 1px solid rgba(0,0,0,0.07); padding: 2rem;
+      border-top: 3px solid var(--gold); transition: transform var(--t), box-shadow var(--t);
+    }
+    .refer-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(10,22,40,0.08); }
+    .refer-card__specialty {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--steel); margin-bottom: 0.85rem;
+    }
+    .refer-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; }
+    .refer-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .refer-card ul li {
+      display: flex; gap: 0.6rem; align-items: flex-start;
+      font-size: 0.88rem; color: #4a4a5a;
+    }
+    .refer-card ul li::before { content: '→'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+
+    /* ── HOW TO REFER ── */
+    .how-refer { padding: 5rem 2rem; background: var(--navy); }
+    .how-refer__inner {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+    }
+    .how-refer__content h2 { color: var(--cream); margin-bottom: 1.25rem; }
+    .how-refer__content p { color: rgba(248,246,242,0.7); line-height: 1.8; }
+    .steps { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+    .step {
+      display: flex; gap: 1.25rem; align-items: flex-start;
+    }
+    .step__num {
+      width: 36px; height: 36px; border-radius: 50%; background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.4); color: var(--gold);
+      font-family: var(--font-d); font-size: 1rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.1rem;
+    }
+    .step__text h4 { color: var(--cream); font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .step__text p { color: rgba(248,246,242,0.6); font-size: 0.88rem; line-height: 1.65; margin-bottom: 0; }
+
+    .how-refer__contact {
+      display: flex; flex-direction: column; gap: 1.25rem;
+    }
+    .contact-card {
+      background: var(--navy-light); border: 1px solid rgba(201,168,76,0.2);
+      border-radius: var(--r); padding: 1.75rem;
+    }
+    .contact-card h4 { color: var(--gold); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1rem; }
+    .contact-card__row {
+      display: flex; gap: 0.75rem; align-items: center;
+      font-size: 0.9rem; color: rgba(248,246,242,0.8); margin-bottom: 0.75rem;
+    }
+    .contact-card__row:last-child { margin-bottom: 0; }
+    .contact-card__row a { color: var(--gold-light); transition: color var(--t); }
+    .contact-card__row a:hover { color: var(--gold); }
+    .contact-card__icon { color: var(--gold); flex-shrink: 0; font-size: 1rem; }
+    .contact-card__actions { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.25rem; }
+
+    /* ── WHAT TO SEND ── */
+    .what-send { padding: 5rem 2rem; background: var(--off-white); }
+    .what-send__inner {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+    }
+    .what-send h2 { margin-bottom: 1rem; }
+    .what-send p { color: #4a4a5a; line-height: 1.8; }
+    .checklist { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    .checklist-item {
+      display: flex; gap: 0.75rem; align-items: flex-start;
+      padding: 0.75rem 1rem; background: var(--cream); border-radius: var(--r);
+      border-left: 3px solid var(--gold);
+    }
+    .checklist-item__icon { color: var(--gold); flex-shrink: 0; font-size: 1.1rem; margin-top: 0.05rem; }
+    .checklist-item__text { font-size: 0.9rem; color: #3a3a4a; font-weight: 500; }
+    .checklist-item__sub { font-size: 0.78rem; color: var(--gray); margin-top: 0.1rem; }
+
+    .turnaround-card {
+      background: var(--navy); border-radius: var(--r); border: 1px solid rgba(201,168,76,0.2); overflow: hidden;
+    }
+    .turnaround-card__header {
+      background: var(--navy-light); padding: 1.5rem 2rem; border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .turnaround-card__header h3 { color: var(--cream); font-size: 1.1rem; }
+    .turnaround-card__body { padding: 1.75rem 2rem; }
+    .turnaround-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.85rem 0; border-bottom: 1px solid rgba(248,246,242,0.06);
+    }
+    .turnaround-row:last-child { border-bottom: none; }
+    .turnaround-row__label { font-size: 0.88rem; color: rgba(248,246,242,0.65); }
+    .turnaround-row__value { font-family: var(--font-d); font-size: 1rem; color: var(--gold); font-weight: 600; }
+    .turnaround-note {
+      margin-top: 1.25rem; font-size: 0.8rem; color: rgba(248,246,242,0.4);
+      line-height: 1.6; border-top: 1px solid rgba(248,246,242,0.06); padding-top: 1rem;
+    }
+
+    /* ── WHO ACCEPTS ── */
+    .who-accepts { padding: 5rem 2rem; background: var(--cream); }
+    .who-accepts__inner { max-width: var(--max); margin: 0 auto; text-align: center; }
+    .who-accepts__grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px;
+      border: 1px solid rgba(0,0,0,0.08); border-radius: var(--r); overflow: hidden;
+      margin: 3rem 0 2rem;
+    }
+    .accept-item {
+      background: var(--off-white); padding: 2rem 1.5rem; text-align: center;
+      border-right: 1px solid rgba(0,0,0,0.08);
+    }
+    .accept-item:last-child { border-right: none; }
+    .accept-item__icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
+    .accept-item h4 { font-size: 0.95rem; margin-bottom: 0.4rem; }
+    .accept-item p { font-size: 0.82rem; color: var(--gray); margin-bottom: 0; line-height: 1.55; }
+
+    /* ── APPT CTA ── */
+    .appt-cta { padding: 5rem 2rem; background: var(--navy); }
+    .appt-cta__inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .appt-cta h2 { color: var(--cream); margin-bottom: 1rem; }
+    .appt-cta p { color: rgba(248,246,242,0.65); margin-bottom: 2rem; font-size: 1.05rem; }
+    .appt-cta__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .appt-cta__contact { margin-top: 2rem; display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+    .appt-cta__contact-item { font-size: 0.88rem; color: rgba(248,246,242,0.5); }
+    .appt-cta__contact-item a { color: rgba(248,246,242,0.7); transition: color var(--t); }
+    .appt-cta__contact-item a:hover { color: var(--gold); }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--navy-mid); border-top: 1px solid rgba(201,168,76,0.15); padding: 3rem 2rem; }
+    .footer__inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
+    .footer__brand { font-family: var(--font-d); font-size: 1.3rem; color: var(--cream); font-weight: 700; margin-bottom: 0.75rem; }
+    .footer__brand span { color: var(--gold); }
+    .footer__tagline { font-size: 0.85rem; color: rgba(248,246,242,0.45); line-height: 1.6; }
+    .footer h5 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer ul li a { font-size: 0.88rem; color: rgba(248,246,242,0.55); transition: color var(--t); }
+    .footer ul li a:hover { color: var(--cream); }
+    .footer__contact-item { font-size: 0.85rem; color: rgba(248,246,242,0.55); line-height: 1.5; margin-bottom: 0.5rem; }
+    .footer__contact-item a { color: rgba(248,246,242,0.7); transition: color var(--t); }
+    .footer__contact-item a:hover { color: var(--gold); }
+    .footer__bottom { max-width: var(--max); margin: 2rem auto 0; border-top: 1px solid rgba(248,246,242,0.06); padding-top: 1.5rem; font-size: 0.78rem; color: rgba(248,246,242,0.3); text-align: center; }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.35); transition: transform var(--t);
+    }
+    .wa-float:hover { transform: scale(1.08); }
+    .wa-float svg { width: 28px; height: 28px; fill: white; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .how-refer__inner { grid-template-columns: 1fr; gap: 3rem; }
+      .what-send__inner { grid-template-columns: 1fr; gap: 3rem; }
+      .footer__inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 640px) {
+      .nav__links { display: none; }
+      .nav__hamburger { display: flex; }
+      .who-accepts__grid { grid-template-columns: 1fr 1fr; }
+      .accept-item { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+  </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQJV3LV6SV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WQJV3LV6SV');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xd5ee60zrw");
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__brand">Dr. <span>Satish</span> Reddy. G</a>
+    <ul class="nav__links">
+      <li><a href="/about">About</a></li>
+      <li><a href="/specialties">Specialties</a></li>
+      <li><a href="/for-doctors" class="active">For Doctors</a></li>
+      <li><a href="/blog">Patient Education</a></li>
+      <li><a href="/second-opinion" class="nav__second-opinion">✦ Free Second Opinion</a></li>
+      <li><a href="/contact" class="nav__cta">Book Appointment</a></li>
+    </ul>
+    <div class="nav__hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobileMenu">
+  <ul>
+    <li><a href="/about" onclick="toggleMenu()">About</a></li>
+    <li><a href="/specialties" onclick="toggleMenu()">Specialties</a></li>
+    <li><a href="/for-doctors" onclick="toggleMenu()">For Doctors</a></li>
+    <li><a href="/blog" onclick="toggleMenu()">Patient Education</a></li>
+    <li><a href="/second-opinion" onclick="toggleMenu()" style="color:#4ade80;font-weight:600">✦ Free Second Opinion</a></li>
+    <li><a href="/contact" onclick="toggleMenu()">Book Appointment</a></li>
+  </ul>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <span class="eyebrow">For Referring Doctors</span>
+  <h1>For Referring Doctors</h1>
+  <p>Dr. Satish Reddy. G welcomes referrals from medical oncologists, radiation oncologists, orthopaedic surgeons, general surgeons, and other specialists across AP and Telangana. Complex cases are a particular interest.</p>
+</section>
+
+<!-- QUICK CONTACT STRIP -->
+<div class="quick-contact">
+  <div class="quick-contact__inner">
+    <div class="quick-contact__item">
+      <span class="quick-contact__dot">✦</span>
+      <span>Direct line:</span>
+      <a href="tel:+917075523360">+91 70755 23360</a>
+    </div>
+    <div class="quick-contact__item">
+      <span class="quick-contact__dot">✦</span>
+      <span>WhatsApp:</span>
+      <a href="https://wa.me/917075523360" target="_blank" rel="noopener">+91 70755 23360</a>
+    </div>
+    <div class="quick-contact__item">
+      <span class="quick-contact__dot">✦</span>
+      <span>Location: KIMS Hospital, Ministers Road, Secunderabad</span>
+    </div>
+  </div>
+</div>
+
+<!-- WHO TO REFER -->
+<section class="who-refer">
+  <div class="who-refer__inner">
+    <div style="text-align:center;margin-bottom:0;">
+      <span class="eyebrow">Referral Indications</span>
+      <h2>Which cases to refer</h2>
+      <p style="color:var(--gray);max-width:600px;margin:0.75rem auto 0;font-size:1.05rem;">Dr. Satish accepts referrals across all five of his subspecialty areas. The cases below are particularly suited to his expertise.</p>
+    </div>
+    <div class="who-refer__grid">
+
+      <div class="refer-card">
+        <div class="refer-card__specialty">Orthopaedic Oncology</div>
+        <h3>Bone &amp; Soft Tissue Tumours</h3>
+        <ul>
+          <li>Suspected or confirmed primary bone tumour</li>
+          <li>Soft tissue sarcoma, diagnosis or surgical planning</li>
+          <li>Pathological fracture or impending fracture in an oncology patient</li>
+          <li>Metastatic bone disease requiring stabilisation</li>
+          <li>Second opinion on biopsy or surgical approach</li>
+          <li>Limb salvage feasibility assessment</li>
+        </ul>
+      </div>
+
+      <div class="refer-card">
+        <div class="refer-card__specialty">Joint Replacement</div>
+        <h3>Arthroplasty &amp; Revision</h3>
+        <ul>
+          <li>End-stage knee or hip arthritis, primary replacement</li>
+          <li>Failed or painful joint replacement, revision assessment</li>
+          <li>Periprosthetic joint infection</li>
+          <li>Instability or dislocation after arthroplasty</li>
+          <li>Tumour megaprosthesis following oncological resection</li>
+        </ul>
+      </div>
+
+      <div class="refer-card">
+        <div class="refer-card__specialty">Sports &amp; Arthroscopy</div>
+        <h3>Ligament &amp; Joint Surgery</h3>
+        <ul>
+          <li>ACL / PCL rupture, surgical reconstruction</li>
+          <li>Meniscal tear, repair or reconstruction</li>
+          <li>Rotator cuff tear, partial or full thickness</li>
+          <li>Shoulder instability, recurrent dislocation</li>
+          <li>Cartilage defects, resurfacing options</li>
+        </ul>
+      </div>
+
+      <div class="refer-card">
+        <div class="refer-card__specialty">Complex Trauma</div>
+        <h3>Fractures &amp; Non-unions</h3>
+        <ul>
+          <li>Intra-articular fractures, distal femur, tibial plateau, pilon</li>
+          <li>Periprosthetic fractures around existing implants</li>
+          <li>Non-union or malunion of long bones</li>
+          <li>Post-traumatic arthritis requiring reconstruction</li>
+          <li>Pathological fractures in metabolic bone disease</li>
+        </ul>
+      </div>
+
+      <div class="refer-card">
+        <div class="refer-card__specialty">Upper Limb</div>
+        <h3>Shoulder &amp; Elbow</h3>
+        <ul>
+          <li>Shoulder arthritis, anatomic or reverse arthroplasty</li>
+          <li>Elbow replacement, primary or revision</li>
+          <li>Upper limb reconstruction post-oncological resection</li>
+          <li>Post-traumatic stiffness or malunion around shoulder/elbow</li>
+        </ul>
+      </div>
+
+      <div class="refer-card" style="background:var(--navy);border-top-color:var(--gold);">
+        <div class="refer-card__specialty" style="color:var(--gold-light);">Not sure?</div>
+        <h3 style="color:var(--cream);">Call or WhatsApp directly</h3>
+        <p style="font-size:0.9rem;color:rgba(248,246,242,0.65);margin-top:0.5rem;margin-bottom:1.25rem;">If you are unsure whether a case is appropriate for referral, the quickest answer is a direct call or WhatsApp message. Dr. Satish is happy to give an informal opinion before a formal referral is made.</p>
+        <a href="https://wa.me/917075523360" target="_blank" rel="noopener" class="btn btn-gold" style="font-size:0.85rem;padding:0.65rem 1.5rem;">WhatsApp now →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO REFER -->
+<section class="how-refer">
+  <div class="how-refer__inner">
+    <div class="how-refer__content">
+      <span class="eyebrow">The Referral Process</span>
+      <h2 style="color:var(--cream);">How to refer a patient</h2>
+      <p>The process is kept deliberately simple. There is no formal referral form, a call, WhatsApp message, or brief letter is sufficient to initiate a consultation.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step__num">1</div>
+          <div class="step__text">
+            <h4>Contact Dr. Satish directly</h4>
+            <p>Call or WhatsApp +91 70755 23360. For urgent oncology cases, WhatsApp is usually the fastest route to a same-day response.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__num">2</div>
+          <div class="step__text">
+            <h4>Share relevant reports</h4>
+            <p>Send imaging (X-rays, MRI, CT), biopsy reports, and any prior surgical notes via WhatsApp or have the patient bring them to the appointment.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__num">3</div>
+          <div class="step__text">
+            <h4>Patient is booked promptly</h4>
+            <p>Urgent oncology and trauma cases are typically seen within 24–48 hours. Elective cases within the week. The patient will receive a confirmation of their appointment time.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__num">4</div>
+          <div class="step__text">
+            <h4>Feedback to referring doctor</h4>
+            <p>After the consultation, a clinical summary is shared with the referring doctor. For ongoing cases, updates are provided at key decision points.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="how-refer__contact">
+      <div class="contact-card">
+        <h4>Contact Details</h4>
+        <div class="contact-card__row">
+          <span class="contact-card__icon">📞</span>
+          <a href="tel:+917075523360">+91 70755 23360</a>
+        </div>
+        <div class="contact-card__row">
+          <span class="contact-card__icon">💬</span>
+          <a href="https://wa.me/917075523360" target="_blank" rel="noopener">WhatsApp +91 70755 23360</a>
+        </div>
+        <div class="contact-card__row">
+          <span class="contact-card__icon">📍</span>
+          <span>KIMS Hospital, Ministers Road, Secunderabad, Telangana</span>
+        </div>
+        <div class="contact-card__actions">
+          <a href="https://wa.me/917075523360" target="_blank" rel="noopener" class="btn btn-wa">WhatsApp Dr. Satish</a>
+          <a href="/contact" class="btn btn-outline">Book a consultation</a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <h4>Response Times</h4>
+        <div class="turnaround-row">
+          <span class="turnaround-row__label">Urgent oncology / trauma</span>
+          <span class="turnaround-row__value">24–48 hrs</span>
+        </div>
+        <div class="turnaround-row">
+          <span class="turnaround-row__label">Elective referrals</span>
+          <span class="turnaround-row__value">Within the week</span>
+        </div>
+        <div class="turnaround-row">
+          <span class="turnaround-row__label">Informal opinion (WhatsApp)</span>
+          <span class="turnaround-row__value">Same day</span>
+        </div>
+        <div class="turnaround-row">
+          <span class="turnaround-row__label">Post-consultation summary</span>
+          <span class="turnaround-row__value">Within 48 hrs</span>
+        </div>
+        <p class="turnaround-note">Response times are targets, not guarantees. For time-critical cases, a direct phone call is always the most reliable approach.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO SEND -->
+<section class="what-send">
+  <div class="what-send__inner">
+    <div>
+      <span class="eyebrow">Referral Documents</span>
+      <h2>What to send with the referral</h2>
+      <p>The more information provided upfront, the more useful the consultation will be. For oncology cases in particular, having imaging and histology before the appointment allows for a fully informed discussion with the patient on the first visit.</p>
+      <p>Where reports are not yet available, the patient can be seen and the appropriate investigations arranged from the clinic.</p>
+      <div class="checklist">
+        <div class="checklist-item">
+          <div class="checklist-item__icon">✦</div>
+          <div>
+            <div class="checklist-item__text">Imaging, plain X-rays</div>
+            <div class="checklist-item__sub">Weight-bearing views where relevant; both sides for comparison if useful</div>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-item__icon">✦</div>
+          <div>
+            <div class="checklist-item__text">Cross-sectional imaging, MRI or CT</div>
+            <div class="checklist-item__sub">Essential for oncology and complex trauma cases; CD or digital link preferred</div>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-item__icon">✦</div>
+          <div>
+            <div class="checklist-item__text">Histopathology reports</div>
+            <div class="checklist-item__sub">Biopsy results, including receptor status where available for metastatic cases</div>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-item__icon">✦</div>
+          <div>
+            <div class="checklist-item__text">Prior surgical records</div>
+            <div class="checklist-item__sub">Operative notes and implant details for revision and reconstruction cases</div>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-item__icon">✦</div>
+          <div>
+            <div class="checklist-item__text">Referral letter or clinical summary</div>
+            <div class="checklist-item__sub">A brief note on the presenting complaint, relevant history, and what you are seeking</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="turnaround-card">
+        <div class="turnaround-card__header">
+          <span class="eyebrow" style="margin-bottom:0.4rem;">Credentials at a glance</span>
+          <h3>Why refer to Dr. Satish</h3>
+        </div>
+        <div class="turnaround-card__body">
+          <div class="turnaround-row">
+            <span class="turnaround-row__label">Ortho Oncology training</span>
+            <span class="turnaround-row__value">Rizzoli + ROH</span>
+          </div>
+          <div class="turnaround-row">
+            <span class="turnaround-row__label">Pioneer in AP &amp; Telangana</span>
+            <span class="turnaround-row__value">Since 2003</span>
+          </div>
+          <div class="turnaround-row">
+            <span class="turnaround-row__label">Arthroplasty fellowship</span>
+            <span class="turnaround-row__value">Flinders, Adelaide</span>
+          </div>
+          <div class="turnaround-row">
+            <span class="turnaround-row__label">Trauma faculty</span>
+            <span class="turnaround-row__value">AO Accredited</span>
+          </div>
+          <div class="turnaround-row">
+            <span class="turnaround-row__label">Academic distinction</span>
+            <span class="turnaround-row__value">Gold Medallist, MS Orth</span>
+          </div>
+          <div class="turnaround-row">
+            <span class="turnaround-row__label">Practice location</span>
+            <span class="turnaround-row__value">KIMS, Secunderabad</span>
+          </div>
+          <p class="turnaround-note">All cases, whether for a second opinion or definitive surgery, are managed personally by Dr. Satish. Referring doctors receive a direct summary after every consultation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO ACCEPTS -->
+<section class="who-accepts">
+  <div class="who-accepts__inner">
+    <span class="eyebrow">Referrals Welcome From</span>
+    <h2>Who can refer</h2>
+    <p style="color:var(--gray);max-width:560px;margin:0.75rem auto 0;font-size:1.05rem;">Dr. Satish accepts referrals from any registered medical practitioner. Patients may also self-refer or arrive via a family physician's recommendation.</p>
+    <div class="who-accepts__grid">
+      <div class="accept-item">
+        <div class="accept-item__icon">🔬</div>
+        <h4>Medical Oncologists</h4>
+        <p>Bone metastases, pathological fractures, surgical staging</p>
+      </div>
+      <div class="accept-item">
+        <div class="accept-item__icon">☢️</div>
+        <h4>Radiation Oncologists</h4>
+        <p>Pre-op limb salvage planning, post-radiation reconstruction</p>
+      </div>
+      <div class="accept-item">
+        <div class="accept-item__icon">🏥</div>
+        <h4>General Surgeons</h4>
+        <p>Soft tissue sarcomas, incidental bone lesions found at surgery</p>
+      </div>
+      <div class="accept-item">
+        <div class="accept-item__icon">🦴</div>
+        <h4>Orthopaedic Surgeons</h4>
+        <p>Complex revision, oncology cases, second opinion on management</p>
+      </div>
+      <div class="accept-item">
+        <div class="accept-item__icon">👩‍⚕️</div>
+        <h4>General Practitioners</h4>
+        <p>Joint replacement, sports injuries, trauma, all elective referrals</p>
+      </div>
+    </div>
+    <p style="font-size:0.88rem;color:var(--gray);">Referrals are also accepted from radiologists, pathologists, paediatricians, and other specialists where orthopaedic input is needed.</p>
+  </div>
+</section>
+
+<!-- APPOINTMENT CTA -->
+<section class="appt-cta">
+  <div class="appt-cta__inner">
+    <span class="eyebrow">Get in Touch</span>
+    <h2>Ready to refer a patient?</h2>
+    <p>Call, WhatsApp, or send a referral letter. The simplest route for most cases is a quick WhatsApp message with the patient's name, diagnosis, and what you need.</p>
+    <div class="appt-cta__actions">
+      <a href="https://wa.me/917075523360" target="_blank" rel="noopener" class="btn btn-wa">WhatsApp Dr. Satish</a>
+      <a href="/contact" class="btn btn-outline">Send a referral letter</a>
+    </div>
+    <div class="appt-cta__contact">
+      <div class="appt-cta__contact-item">📍 KIMS Hospital, Ministers Road, Secunderabad</div>
+      <div class="appt-cta__contact-item">📞 <a href="tel:+917075523360">+91 70755 23360</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <div class="footer__brand">Dr. <span>Satish</span> Reddy. G</div>
+      <p class="footer__tagline">
+        Consultant Orthopaedic Surgeon<br/>
+        KIMS Hospital, Ministers Road, Secunderabad<br/><br/>
+        MS Orth (Gold Medallist) &nbsp;·&nbsp; Fellowship-trained in Italy, UK &amp; Australia<br/>
+        Pioneer of Orthopaedic Oncology, AP &amp; Telangana
+      </p>
+    </div>
+    <div>
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/specialties">Specialties</a></li>
+        <li><a href="/for-doctors">For Doctors</a></li>
+        <li><a href="/blog">Patient Education</a></li>
+        <li><a href="/contact">Contact &amp; Appointments</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <div class="footer__contact-item">KIMS Hospital<br/>Ministers Road<br/>Secunderabad, Telangana</div>
+      <div class="footer__contact-item"><a href="tel:+917075523360">+91 70755 23360</a></div>
+      <div class="footer__contact-item"><a href="https://wa.me/917075523360" target="_blank" rel="noopener">WhatsApp</a></div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    © 2025 Dr. Satish Reddy Gandavarapu. All rights reserved.
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/917075523360" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp Dr. Satish">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  window.addEventListener('scroll', function() {
+    document.querySelector('.nav').style.background =
+      window.scrollY > 40 ? 'rgba(10,22,40,0.98)' : 'rgba(10,22,40,0.96)';
+  });
+</script>
+</body>
+</html>

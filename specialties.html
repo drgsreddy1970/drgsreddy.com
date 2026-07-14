@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Specialties | Dr. Satish Reddy. G</title>
+  <meta name="description" content="Subspecialty orthopaedic care from Dr. Satish Reddy Gandavarapu, joint replacement, orthopaedic oncology, sports injuries, complex trauma, and upper limb surgery at KIMS Hospital, Ministers Road, Secunderabad." />
+  <link rel="canonical" href="https://drgsreddy.com/specialties" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --navy:       #0A1628;
+      --navy-mid:   #162040;
+      --navy-light: #1E2D4E;
+      --steel:      #4A7FA5;
+      --gold:       #C9A84C;
+      --gold-light: #E2C97E;
+      --cream:      #F8F6F2;
+      --off-white:  #EDE9E0;
+      --gray:       #8A8A8A;
+      --text:       #1A1A2E;
+      --font-d:     'Playfair Display', Georgia, serif;
+      --font-b:     'Inter', system-ui, sans-serif;
+      --max:        1200px;
+      --r:          4px;
+      --t:          0.3s ease;
+    }
+
+    body { font-family: var(--font-b); background: var(--cream); color: var(--text); line-height: 1.7; font-size: 16px; }
+    img  { max-width: 100%; display: block; }
+    a    { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4 { font-family: var(--font-d); line-height: 1.2; }
+    h1 { font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 700; }
+    h2 { font-size: clamp(1.6rem, 2.8vw, 2.4rem); font-weight: 600; }
+    h3 { font-size: clamp(1rem, 1.6vw, 1.3rem); font-weight: 600; }
+    p  { margin-bottom: 1rem; }
+
+    .eyebrow {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.75rem;
+    }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+    .btn {
+      display: inline-block; padding: 0.85rem 2rem; border-radius: var(--r);
+      font-family: var(--font-b); font-size: 0.9rem; font-weight: 600;
+      letter-spacing: 0.05em; cursor: pointer; transition: all var(--t);
+    }
+    .btn-gold  { background: var(--gold); color: var(--navy); }
+    .btn-gold:hover { background: var(--gold-light); }
+    .btn-outline-dark { border: 1.5px solid rgba(10,22,40,0.25); color: var(--navy); }
+    .btn-outline-dark:hover { border-color: var(--navy); background: rgba(10,22,40,0.04); }
+    .btn-outline { border: 1.5px solid rgba(248,246,242,0.5); color: var(--cream); }
+    .btn-outline:hover { border-color: var(--cream); background: rgba(248,246,242,0.08); }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,22,40,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .nav__inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between; height: 68px;
+    }
+    .nav__brand { font-family: var(--font-d); font-size: 1.2rem; font-weight: 700; color: var(--cream); }
+    .nav__brand span { color: var(--gold); }
+    .nav__links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav__links a { color: rgba(248,246,242,0.8); font-size: 0.88rem; font-weight: 500; transition: color var(--t); }
+    .nav__links a:hover, .nav__links a.active { color: var(--gold); }
+    .nav__cta {
+      background: var(--gold) !important; color: var(--navy) !important;
+      padding: 0.5rem 1.25rem; border-radius: var(--r); font-weight: 600 !important;
+    }
+    .nav__cta:hover { background: var(--gold-light) !important; }
+    .nav__hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav__hamburger span { width: 24px; height: 2px; background: var(--cream); border-radius: 2px; }
+    .nav__mobile {
+      display: none; position: fixed; top: 68px; left: 0; right: 0;
+      background: var(--navy-mid); border-bottom: 1px solid rgba(201,168,76,0.2);
+      z-index: 99; padding: 1.5rem 2rem;
+    }
+    .nav__mobile ul { list-style: none; display: flex; flex-direction: column; gap: 1.2rem; }
+    .nav__mobile a { color: rgba(248,246,242,0.85); font-size: 1rem; font-weight: 500; }
+    .nav__mobile.open { display: block; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background: linear-gradient(145deg, var(--navy) 0%, #0D2B4E 100%);
+      padding: 8rem 2rem 4rem; text-align: center;
+    }
+    .page-hero h1 { color: var(--cream); margin-bottom: 0.75rem; }
+    .page-hero p {
+      color: rgba(248,246,242,0.65); max-width: 600px; margin: 0 auto 2rem;
+      font-size: 1.05rem; line-height: 1.75;
+    }
+
+    /* ── JUMP NAV ── */
+    .jump-nav {
+      background: var(--navy-mid);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      padding: 0 2rem; position: sticky; top: 68px; z-index: 90;
+    }
+    .jump-nav__inner {
+      max-width: var(--max); margin: 0 auto;
+      display: flex; gap: 0; overflow-x: auto;
+    }
+    .jump-nav__link {
+      display: block; padding: 1rem 1.5rem; font-size: 0.82rem; font-weight: 600;
+      color: rgba(248,246,242,0.55); letter-spacing: 0.05em;
+      border-bottom: 2px solid transparent; white-space: nowrap;
+      transition: all var(--t);
+    }
+    .jump-nav__link:hover { color: var(--gold); border-bottom-color: rgba(201,168,76,0.4); }
+    .jump-nav__link.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+    /* ── SPECIALTY SECTIONS ── */
+    .spec-section { padding: 5rem 2rem; }
+    .spec-section:nth-child(even) { background: var(--off-white); }
+    .spec-section:nth-child(odd)  { background: var(--cream); }
+
+    .spec-section__inner {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+    }
+    .spec-section__inner.reverse { direction: rtl; }
+    .spec-section__inner.reverse > * { direction: ltr; }
+
+    .spec-section__content h2 { margin-bottom: 1.25rem; }
+    .spec-section__content p { color: #4a4a5a; line-height: 1.8; }
+
+    .spec-section__badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold); font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 0.35rem 0.9rem; border-radius: 2rem; margin-bottom: 1rem; display: inline-block;
+    }
+
+    .conditions-list {
+      margin: 1.5rem 0; display: flex; flex-direction: column; gap: 0.6rem;
+    }
+    .condition-item {
+      display: flex; gap: 0.75rem; align-items: flex-start;
+      padding: 0.7rem 1rem; background: var(--off-white); border-radius: var(--r);
+    }
+    .spec-section:nth-child(even) .condition-item { background: var(--cream); }
+    .condition-item__dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--gold);
+      margin-top: 0.55rem; flex-shrink: 0;
+    }
+    .condition-item__text { font-size: 0.9rem; color: #3a3a4a; }
+    .condition-item__sub { font-size: 0.78rem; color: var(--gray); margin-top: 0.1rem; }
+
+    .spec-section__visual {
+      position: relative;
+    }
+    .spec-visual-card {
+      background: var(--navy); border-radius: var(--r);
+      border: 1px solid rgba(201,168,76,0.2);
+      overflow: hidden;
+    }
+    .spec-visual-card__header {
+      padding: 2rem; border-bottom: 1px solid rgba(201,168,76,0.15);
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .spec-visual-card__icon {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: rgba(201,168,76,0.12); display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .spec-visual-card__icon svg { width: 24px; height: 24px; stroke: var(--gold); fill: none; }
+    .spec-visual-card__title { font-family: var(--font-d); font-size: 1.2rem; color: var(--cream); font-weight: 600; }
+    .spec-visual-card__sub { font-size: 0.8rem; color: rgba(248,246,242,0.5); margin-top: 0.2rem; }
+    .spec-visual-card__body { padding: 1.75rem 2rem; }
+    .spec-stat-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+      border: 1px solid rgba(201,168,76,0.1); border-radius: var(--r); overflow: hidden; margin-bottom: 1.25rem;
+    }
+    .spec-stat {
+      background: var(--navy-light); padding: 1.25rem; text-align: center;
+      border-right: 1px solid rgba(201,168,76,0.1);
+    }
+    .spec-stat:nth-child(even) { border-right: none; }
+    .spec-stat__num { font-family: var(--font-d); font-size: 1.6rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .spec-stat__label { font-size: 0.7rem; color: rgba(248,246,242,0.5); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.3rem; }
+    .spec-insight {
+      font-size: 0.85rem; color: rgba(248,246,242,0.65); line-height: 1.65;
+      border-left: 2px solid var(--gold); padding-left: 1rem; margin-bottom: 0;
+    }
+
+    /* ── ONCOLOGY SECTION (featured) ── */
+    .spec-section--oncology { background: var(--navy) !important; color: var(--cream); }
+    .spec-section--oncology .spec-section__content p { color: rgba(248,246,242,0.75); }
+    .spec-section--oncology .conditions-list .condition-item {
+      background: var(--navy-light); border: 1px solid rgba(201,168,76,0.12);
+    }
+    .spec-section--oncology .condition-item__text { color: var(--cream); }
+    .spec-section--oncology .condition-item__sub { color: rgba(248,246,242,0.45); }
+    .spec-section--oncology .spec-visual-card { background: var(--navy-light); border-color: rgba(201,168,76,0.3); }
+    .spec-section--oncology .spec-visual-card__header { border-bottom-color: rgba(201,168,76,0.2); }
+    .spec-section--oncology .spec-stat { background: var(--navy); }
+
+    /* ── APPOINTMENT CTA ── */
+    .appt-cta { padding: 5rem 2rem; background: var(--navy); }
+    .appt-cta__inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .appt-cta h2 { color: var(--cream); margin-bottom: 1rem; }
+    .appt-cta p { color: rgba(248,246,242,0.65); margin-bottom: 2rem; font-size: 1.05rem; }
+    .appt-cta__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .appt-cta__contact { margin-top: 2rem; display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+    .appt-cta__contact-item { font-size: 0.88rem; color: rgba(248,246,242,0.5); }
+    .appt-cta__contact-item a { color: rgba(248,246,242,0.7); transition: color var(--t); }
+    .appt-cta__contact-item a:hover { color: var(--gold); }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--navy-mid); border-top: 1px solid rgba(201,168,76,0.15); padding: 3rem 2rem; }
+    .footer__inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
+    .footer__brand { font-family: var(--font-d); font-size: 1.3rem; color: var(--cream); font-weight: 700; margin-bottom: 0.75rem; }
+    .footer__brand span { color: var(--gold); }
+    .footer__tagline { font-size: 0.85rem; color: rgba(248,246,242,0.45); line-height: 1.6; }
+    .footer h5 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer ul li a { font-size: 0.88rem; color: rgba(248,246,242,0.55); transition: color var(--t); }
+    .footer ul li a:hover { color: var(--cream); }
+    .footer__contact-item { font-size: 0.85rem; color: rgba(248,246,242,0.55); line-height: 1.5; margin-bottom: 0.5rem; }
+    .footer__contact-item a { color: rgba(248,246,242,0.7); transition: color var(--t); }
+    .footer__contact-item a:hover { color: var(--gold); }
+    .footer__bottom { max-width: var(--max); margin: 2rem auto 0; border-top: 1px solid rgba(248,246,242,0.06); padding-top: 1.5rem; font-size: 0.78rem; color: rgba(248,246,242,0.3); text-align: center; }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.35); transition: transform var(--t);
+    }
+    .wa-float:hover { transform: scale(1.08); }
+    .wa-float svg { width: 28px; height: 28px; fill: white; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .spec-section__inner { grid-template-columns: 1fr; gap: 3rem; }
+      .spec-section__inner.reverse { direction: ltr; }
+      .footer__inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 640px) {
+      .nav__links { display: none; }
+      .nav__hamburger { display: flex; }
+      .jump-nav__link { padding: 0.85rem 1rem; font-size: 0.78rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+  </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQJV3LV6SV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WQJV3LV6SV');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xd5ee60zrw");
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__brand">Dr. <span>Satish</span> Reddy. G</a>
+    <ul class="nav__links">
+      <li><a href="/about">About</a></li>
+      <li><a href="/specialties" class="active">Specialties</a></li>
+      <li><a href="/for-doctors">For Doctors</a></li>
+      <li><a href="/blog">Patient Education</a></li>
+      <li><a href="/second-opinion" class="nav__second-opinion">✦ Free Second Opinion</a></li>
+      <li><a href="/contact" class="nav__cta">Book Appointment</a></li>
+    </ul>
+    <div class="nav__hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobileMenu">
+  <ul>
+    <li><a href="/about" onclick="toggleMenu()">About</a></li>
+    <li><a href="/specialties" onclick="toggleMenu()">Specialties</a></li>
+    <li><a href="/for-doctors" onclick="toggleMenu()">For Doctors</a></li>
+    <li><a href="/blog" onclick="toggleMenu()">Patient Education</a></li>
+    <li><a href="/second-opinion" onclick="toggleMenu()" style="color:#4ade80;font-weight:600">✦ Free Second Opinion</a></li>
+    <li><a href="/contact" onclick="toggleMenu()">Book Appointment</a></li>
+  </ul>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <span class="eyebrow">Areas of Expertise</span>
+  <h1>Specialties</h1>
+  <p>Fellowship-trained subspecialty care across five domains, from primary joint replacement to pioneering oncological limb salvage. All consultations at KIMS Hospital, Ministers Road, Secunderabad.</p>
+</section>
+
+<!-- JUMP NAV -->
+<nav class="jump-nav" aria-label="Jump to specialty">
+  <div class="jump-nav__inner">
+    <a href="#oncology" class="jump-nav__link">Orthopaedic Oncology</a>
+    <a href="#joint" class="jump-nav__link">Joint Replacement</a>
+    <a href="#sports" class="jump-nav__link">Sports &amp; Arthroscopy</a>
+    <a href="#trauma" class="jump-nav__link">Complex Trauma</a>
+    <a href="#upper-limb" class="jump-nav__link">Upper Limb</a>
+  </div>
+</nav>
+
+<!-- ORTHOPAEDIC ONCOLOGY -->
+<section class="spec-section spec-section--oncology" id="oncology">
+  <div class="spec-section__inner">
+    <div class="spec-section__content">
+      <span class="spec-section__badge">★ Pioneer Subspecialist, AP &amp; Telangana</span>
+      <span class="eyebrow">Orthopaedic Oncology</span>
+      <h2 style="color:var(--cream);">Bone &amp; Soft Tissue Tumour Surgery</h2>
+      <p>Dr. Satish Reddy. G was the first fellowship-trained orthopaedic oncologist in AP and Telangana, having trained at two of the world's foremost centres, the Rizzoli Orthopaedic Institute in Bologna, Italy, and the Royal Orthopaedic Hospital in Birmingham, UK. He introduced limb salvage procedures to the region in 2003, transforming outcomes for patients who would previously have required amputation.</p>
+      <p>Today he manages the full spectrum of primary bone and soft tissue tumours, from diagnosis and staging through definitive surgery and reconstruction, in close collaboration with medical and radiation oncologists.</p>
+      <div class="conditions-list">
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Primary bone tumours</div>
+            <div class="condition-item__sub">Osteosarcoma, Ewing's sarcoma, chondrosarcoma, giant cell tumour</div>
+          </div>
+        </div>
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Soft tissue sarcomas</div>
+            <div class="condition-item__sub">Liposarcoma, synovial sarcoma, leiomyosarcoma, MFH</div>
+          </div>
+        </div>
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Metastatic bone disease</div>
+            <div class="condition-item__sub">Surgical stabilisation and reconstruction of pathological fractures</div>
+          </div>
+        </div>
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Limb salvage surgery</div>
+            <div class="condition-item__sub">Endoprosthetic reconstruction, allografts, biological reconstruction</div>
+          </div>
+        </div>
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Benign aggressive tumours</div>
+            <div class="condition-item__sub">Curettage, grafting, internal fixation</div>
+          </div>
+        </div>
+      </div>
+      <a href="/contact" class="btn btn-gold">Refer a patient →</a>
+    </div>
+    <div class="spec-section__visual">
+      <div class="spec-visual-card">
+        <div class="spec-visual-card__header">
+          <div class="spec-visual-card__icon">
+            <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <div>
+            <div class="spec-visual-card__title">Orthopaedic Oncology</div>
+            <div class="spec-visual-card__sub">Rizzoli Institute · Royal Orthopaedic Hospital</div>
+          </div>
+        </div>
+        <div class="spec-visual-card__body">
+          <div class="spec-stat-row">
+            <div class="spec-stat">
+              <div class="spec-stat__num">2003</div>
+              <div class="spec-stat__label">Limb salvage introduced to AP</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-stat__num">1st</div>
+              <div class="spec-stat__label">Fellowship-trained oncologist in region</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-stat__num">Italy</div>
+              <div class="spec-stat__label">Rizzoli Institute, Bologna</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-stat__num">UK</div>
+              <div class="spec-stat__label">Royal Orthopaedic Hospital</div>
+            </div>
+          </div>
+          <p class="spec-insight">Limb salvage surgery, preserving the limb while achieving oncological clearance, is now the standard of care for most bone tumours. Dr. Satish pioneered this approach in AP &amp; Telangana at a time when amputation was the default.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOINT REPLACEMENT -->
+<section class="spec-section" id="joint">
+  <div class="spec-section__inner">
+    <div class="spec-section__content">
+      <span class="eyebrow">Arthroplasty</span>
+      <h2>Joint Replacement</h2>
+      <p>Total joint replacement is one of the most reliably successful procedures in medicine, but outcomes depend heavily on surgical precision, implant selection, and rehabilitation. Dr. Satish has performed thousands of primary and revision arthroplasty procedures, using the latest techniques including robotic-assisted surgery and fast-track recovery protocols.</p>
+      <p>His arthroplasty training at Flinders Medical Centre in Adelaide (Villis R Marshall Fellowship) exposed him to high-volume practice in total hip, total knee, and complex revision surgery under internationally recognised faculty.</p>
+      <p>Robotic-assisted joint replacement allows the surgical plan to be built around the patient's own anatomy before the first incision is made. During the procedure, the robotic system guides bone cuts and implant positioning to within a fraction of a millimetre, far beyond what is achievable by hand alone. The result is a more accurately placed implant, better preservation of surrounding soft tissue, reduced blood loss, and in most cases a faster, more comfortable recovery.</p>
+      <div class="conditions-list">
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Total knee replacement</div>
+            <div class="condition-item__sub">Primary and revision; cemented, cementless, and unicompartmental</div>
+          </div>
+        </div>
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Total hip replacement</div>
+            <div class="condition-item__sub">All approaches; primary, revision, and complex reconstruction</div>
+          </div>
+        </div>
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Revision arthroplasty</div>
+            <div class="condition-item__sub">Aseptic loosening, periprosthetic fracture, infection, instability</div>
+          </div>
+        </div>
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Tumour endoprosthetics</div>
+            <div class="condition-item__sub">Megaprosthesis following oncological resection</div>
+          </div>
+        </div>
+      </div>
+      <a href="/contact" class="btn btn-gold" style="margin-right:0.75rem;">Book consultation →</a>
+      <a href="/blog" class="btn btn-outline-dark">Patient guide</a>
+    </div>
+    <div class="spec-section__visual">
+      <div class="spec-visual-card">
+        <div class="spec-visual-card__header">
+          <div class="spec-visual-card__icon">
+            <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/>
+            </svg>
+          </div>
+          <div>
+            <div class="spec-visual-card__title">Joint Replacement</div>
+            <div class="spec-visual-card__sub">Flinders Medical Centre, Adelaide</div>
+          </div>
+        </div>
+        <div class="spec-visual-card__body">
+          <div class="spec-stat-row">
+            <div class="spec-stat">
+              <div class="spec-stat__num">25+</div>
+              <div class="spec-stat__label">Years of arthroplasty practice</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-stat__num">AUS</div>
+              <div class="spec-stat__label">Villis R Marshall Fellowship</div>
+            </div>
+          </div>
+          <p class="spec-insight">Fast-track recovery protocols allow most knee and hip replacement patients to be walking the same day as surgery and home within 2–3 days, a significant improvement over traditional approaches.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPORTS INJURIES -->
+<section class="spec-section" id="sports">
+  <div class="spec-section__inner reverse">
+    <div class="spec-section__content">
+      <span class="eyebrow">Arthroscopy &amp; Sports Medicine</span>
+      <h2>Sports Injuries</h2>
+      <p>Sports injuries range from simple soft tissue strains to complex ligament reconstructions requiring precise surgical technique and structured rehabilitation. Dr. Satish treats athletes and active individuals of all ages, from recreational joggers to competitive sportspersons, with a focus on returning to full function as quickly and safely as possible.</p>
+      <p>Keyhole (arthroscopic) techniques allow most procedures to be performed with small incisions, shorter hospital stays, and faster recovery times compared to open surgery.</p>
+      <div class="conditions-list">
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">ACL &amp; PCL reconstruction</div>
+            <div class="condition-item__sub">Autograft and allograft options, with return-to-sport planning</div>
+          </div>
+        </div>
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Meniscal repair &amp; reconstruction</div>
+            <div class="condition-item__sub">Repair where possible, partial meniscectomy when necessary</div>
+          </div>
+        </div>
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Rotator cuff repair</div>
+            <div class="condition-item__sub">Arthroscopic repair of partial and full thickness tears</div>
+          </div>
+        </div>
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Shoulder instability &amp; SLAP tears</div>
+            <div class="condition-item__sub">Bankart repair, capsular shift and labral reconstruction</div>
+          </div>
+        </div>
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Chondral resurfacing</div>
+            <div class="condition-item__sub">Microfracture, OATS, cartilage restoration procedures</div>
+          </div>
+        </div>
+      </div>
+      <a href="/contact" class="btn btn-gold">Book consultation →</a>
+    </div>
+    <div class="spec-section__visual">
+      <div class="spec-visual-card">
+        <div class="spec-visual-card__header">
+          <div class="spec-visual-card__icon">
+            <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="spec-visual-card__title">Sports &amp; Arthroscopy</div>
+            <div class="spec-visual-card__sub">Keyhole surgery · Athlete rehabilitation</div>
+          </div>
+        </div>
+        <div class="spec-visual-card__body">
+          <div class="spec-stat-row">
+            <div class="spec-stat">
+              <div class="spec-stat__num">4</div>
+              <div class="spec-stat__label">World Marathon Majors completed</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-stat__num">Day 1</div>
+              <div class="spec-stat__label">Rehab begins post-op</div>
+            </div>
+          </div>
+          <p class="spec-insight">Dr. Satish is himself a marathon runner, Tokyo, Boston, Chicago, and New York, which gives him a unique perspective on athletic recovery and return-to-sport timelines.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLEX TRAUMA -->
+<section class="spec-section" id="trauma">
+  <div class="spec-section__inner">
+    <div class="spec-section__content">
+      <span class="eyebrow">Fracture Surgery</span>
+      <h2>Complex Trauma</h2>
+      <p>Complex fractures, particularly those involving joint surfaces, those that have failed to heal, or those occurring around existing implants, require a different level of surgical planning and technical expertise than routine fracture care. Dr. Satish is an AO Trauma Accredited Faculty member, trained in the principles and practice of operative fracture management across three countries.</p>
+      <p>He manages both acute trauma and its consequences, non-unions, malunions, and post-traumatic arthritis, with an emphasis on restoring anatomy and long-term function.</p>
+      <div class="conditions-list">
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Intra-articular fractures</div>
+            <div class="condition-item__sub">Distal femur, tibial plateau, pilon, acetabulum, distal radius</div>
+          </div>
+        </div>
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Periprosthetic fractures</div>
+            <div class="condition-item__sub">Fractures around hip and knee replacements</div>
+          </div>
+        </div>
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Non-unions &amp; malunions</div>
+            <div class="condition-item__sub">Failed fracture healing; corrective osteotomy where required</div>
+          </div>
+        </div>
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Pathological fractures</div>
+            <div class="condition-item__sub">Fractures through bone weakened by tumour or metabolic disease</div>
+          </div>
+        </div>
+      </div>
+      <a href="/contact" class="btn btn-gold" style="margin-right:0.75rem;">Book consultation →</a>
+      <a href="/for-doctors" class="btn btn-outline-dark">Refer a case</a>
+    </div>
+    <div class="spec-section__visual">
+      <div class="spec-visual-card">
+        <div class="spec-visual-card__header">
+          <div class="spec-visual-card__icon">
+            <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="spec-visual-card__title">Complex Trauma</div>
+            <div class="spec-visual-card__sub">AO Trauma Accredited Faculty</div>
+          </div>
+        </div>
+        <div class="spec-visual-card__body">
+          <div class="spec-stat-row">
+            <div class="spec-stat">
+              <div class="spec-stat__num">AO</div>
+              <div class="spec-stat__label">Trauma Accredited Faculty</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-stat__num">3</div>
+              <div class="spec-stat__label">Countries trained in trauma</div>
+            </div>
+          </div>
+          <p class="spec-insight">AO Trauma Faculty accreditation is awarded to surgeons who have demonstrated teaching excellence in operative fracture management, the internationally recognised gold standard for trauma surgery education.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UPPER LIMB -->
+<section class="spec-section" id="upper-limb">
+  <div class="spec-section__inner reverse">
+    <div class="spec-section__content">
+      <span class="eyebrow">Shoulder &amp; Elbow</span>
+      <h2>Upper Limb Surgery</h2>
+      <p>Upper limb orthopaedic surgery demands a particularly high degree of anatomical precision, the shoulder and elbow must balance mobility with stability, and even small errors in implant positioning or soft tissue handling can significantly affect outcome. Dr. Satish manages the full range of shoulder and elbow conditions, including complex cases arising after oncological resection or failed prior surgery.</p>
+      <div class="conditions-list">
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Total shoulder arthroplasty</div>
+            <div class="condition-item__sub">Anatomic and reverse shoulder replacement; primary and revision</div>
+          </div>
+        </div>
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Elbow surgery</div>
+            <div class="condition-item__sub">Total elbow replacement, radial head replacement, ligament reconstruction</div>
+          </div>
+        </div>
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Post-oncological reconstruction</div>
+            <div class="condition-item__sub">Upper limb reconstruction after bone or soft tissue tumour resection</div>
+          </div>
+        </div>
+        <div class="condition-item">
+          <div class="condition-item__dot"></div>
+          <div>
+            <div class="condition-item__text">Post-traumatic reconstruction</div>
+            <div class="condition-item__sub">Management of stiffness, malunion, and post-traumatic arthritis</div>
+          </div>
+        </div>
+      </div>
+      <a href="/contact" class="btn btn-gold">Book consultation →</a>
+    </div>
+    <div class="spec-section__visual">
+      <div class="spec-visual-card">
+        <div class="spec-visual-card__header">
+          <div class="spec-visual-card__icon">
+            <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="spec-visual-card__title">Upper Limb Surgery</div>
+            <div class="spec-visual-card__sub">Shoulder · Elbow · Reconstruction</div>
+          </div>
+        </div>
+        <div class="spec-visual-card__body">
+          <div class="spec-stat-row">
+            <div class="spec-stat">
+              <div class="spec-stat__num">Both</div>
+              <div class="spec-stat__label">Anatomic &amp; reverse shoulder</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-stat__num">Full</div>
+              <div class="spec-stat__label">Oncological &amp; trauma spectrum</div>
+            </div>
+          </div>
+          <p class="spec-insight">Reverse shoulder arthroplasty, where the ball and socket are switched, has transformed outcomes for patients with massive rotator cuff tears and arthritis who were previously considered unsurgeable.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT CTA -->
+<section class="appt-cta">
+  <div class="appt-cta__inner">
+    <span class="eyebrow">Consultations</span>
+    <h2>Ready to take the next step?</h2>
+    <p>If you are a patient seeking a specialist opinion or a doctor referring a complex case, reach out and we'll respond promptly.</p>
+    <div class="appt-cta__actions">
+      <a href="/contact" class="btn btn-gold">Book a Consultation</a>
+      <a href="https://wa.me/917075523360" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp Dr. Satish</a>
+    </div>
+    <div class="appt-cta__contact">
+      <div class="appt-cta__contact-item">📍 KIMS Hospital, Ministers Road, Secunderabad</div>
+      <div class="appt-cta__contact-item">📞 <a href="tel:+917075523360">+91 70755 23360</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <div class="footer__brand">Dr. <span>Satish</span> Reddy. G</div>
+      <p class="footer__tagline">
+        Consultant Orthopaedic Surgeon<br/>
+        KIMS Hospital, Ministers Road, Secunderabad<br/><br/>
+        MS Orth (Gold Medallist) &nbsp;·&nbsp; Fellowship-trained in Italy, UK &amp; Australia<br/>
+        Pioneer of Orthopaedic Oncology, AP &amp; Telangana
+      </p>
+    </div>
+    <div>
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/specialties">Specialties</a></li>
+        <li><a href="/for-doctors">For Doctors</a></li>
+        <li><a href="/blog">Patient Education</a></li>
+        <li><a href="/contact">Contact &amp; Appointments</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <div class="footer__contact-item">KIMS Hospital<br/>Ministers Road<br/>Secunderabad, Telangana</div>
+      <div class="footer__contact-item"><a href="tel:+917075523360">+91 70755 23360</a></div>
+      <div class="footer__contact-item"><a href="https://wa.me/917075523360" target="_blank" rel="noopener">WhatsApp</a></div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    © 2025 Dr. Satish Reddy Gandavarapu. All rights reserved.
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/917075523360" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp Dr. Satish">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // Highlight active jump nav link on scroll
+  const sections = document.querySelectorAll('.spec-section[id]');
+  const jumpLinks = document.querySelectorAll('.jump-nav__link');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 160) current = s.id;
+    });
+    jumpLinks.forEach(l => {
+      l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+    });
+    document.querySelector('.nav').style.background =
+      window.scrollY > 40 ? 'rgba(10,22,40,0.98)' : 'rgba(10,22,40,0.96)';
+  });
+</script>
+</body>
+</html>

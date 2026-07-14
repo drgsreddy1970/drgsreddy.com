@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Orthopaedic Second Opinion | Dr. Satish Reddy. G</title>
+  <meta name="description" content="Get a free specialist orthopaedic second opinion from Dr. Satish Reddy's team. Remote consultation for elective surgery, post-surgical complications, and urgent trauma opinions. KIMS Hospital, Secunderabad." />
+  <link rel="canonical" href="https://drgsreddy.com/second-opinion" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    :root {
+      --navy:#0A1628; --navy-mid:#162040; --navy-light:#1E2D4E; --steel:#4A7FA5;
+      --gold:#C9A84C; --gold-light:#E2C97E; --cream:#F8F6F2; --off-white:#EDE9E0;
+      --gray:#8A8A8A; --text:#1A1A2E; --green:#1a9e4a; --amber:#C06820; --red:#B5451B;
+      --font-d:'Playfair Display',Georgia,serif; --font-b:'Inter',system-ui,sans-serif;
+      --max:1200px; --r:4px; --t:0.3s ease;
+    }
+    body { font-family:var(--font-b); background:var(--cream); color:var(--text); line-height:1.7; font-size:16px; }
+    a { color:inherit; text-decoration:none; }
+    h1,h2,h3,h4 { font-family:var(--font-d); line-height:1.2; }
+    h1 { font-size:clamp(2rem,4vw,3.4rem); font-weight:700; }
+    h2 { font-size:clamp(1.5rem,2.5vw,2.2rem); font-weight:600; }
+    h3 { font-size:1.15rem; font-weight:600; }
+    p { margin-bottom:1rem; }
+    .eyebrow { font-size:0.72rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:0.75rem; }
+    .btn { display:inline-block; padding:0.85rem 2rem; border-radius:var(--r); font-family:var(--font-b); font-size:0.9rem; font-weight:600; cursor:pointer; transition:all var(--t); border:none; }
+    .btn-gold { background:var(--gold); color:var(--navy); }
+    .btn-gold:hover { background:var(--gold-light); }
+    .btn-wa { background:#25D366; color:#fff; }
+    .btn-wa:hover { background:#1ebe5a; }
+    .btn-outline { border:1.5px solid rgba(248,246,242,0.5); color:var(--cream); background:none; }
+    .btn-outline:hover { border-color:var(--cream); background:rgba(248,246,242,0.08); }
+
+    /* NAV */
+    .nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(10,22,40,0.96); backdrop-filter:blur(8px); border-bottom:1px solid rgba(201,168,76,0.15); }
+    .nav__inner { max-width:var(--max); margin:0 auto; padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:68px; }
+    .nav__brand { font-family:var(--font-d); font-size:1.2rem; font-weight:700; color:var(--cream); }
+    .nav__brand span { color:var(--gold); }
+    .nav__links { display:flex; align-items:center; gap:2rem; list-style:none; }
+    .nav__links a { color:rgba(248,246,242,0.8); font-size:0.88rem; font-weight:500; transition:color var(--t); }
+    .nav__links a:hover { color:var(--gold); }
+    .nav__cta { background:var(--gold)!important; color:var(--navy)!important; padding:0.5rem 1.25rem; border-radius:var(--r); font-weight:600!important; }
+    .nav__second-opinion { background: rgba(26,158,74,0.15) !important; color: #4ade80 !important; border: 1px solid rgba(26,158,74,0.4) !important; padding: 0.4rem 1rem; border-radius: var(--r); font-weight: 700 !important; font-size: 0.8rem !important; animation: pulse-green 2.5s ease-in-out infinite; }
+    .nav__second-opinion:hover { background: rgba(26,158,74,0.28) !important; color: #6aefb0 !important; }
+    @keyframes pulse-green { 0%, 100% { box-shadow: 0 0 0 0 rgba(26,158,74,0); } 50% { box-shadow: 0 0 0 5px rgba(26,158,74,0.15); } }
+    .nav__hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
+    .nav__hamburger span { width:24px; height:2px; background:var(--cream); border-radius:2px; }
+    .nav__mobile { display:none; position:fixed; top:68px; left:0; right:0; background:var(--navy-mid); border-bottom:1px solid rgba(201,168,76,0.2); z-index:99; padding:1.5rem 2rem; }
+    .nav__mobile ul { list-style:none; display:flex; flex-direction:column; gap:1.2rem; }
+    .nav__mobile a { color:rgba(248,246,242,0.85); font-size:1rem; }
+    .nav__mobile.open { display:block; }
+
+    /* HERO */
+    .hero { background:linear-gradient(145deg,var(--navy) 0%,#0D2B4E 100%); padding:8rem 2rem 5rem; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C9A84C' fill-opacity='0.03'%3E%3Cpath d='M40 10 L70 40 L40 70 L10 40Z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+    .hero__inner { max-width:var(--max); margin:0 auto; position:relative; z-index:1; display:grid; grid-template-columns:1fr 420px; gap:4rem; align-items:center; }
+    .hero__badge { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(26,158,74,0.15); border:1px solid rgba(26,158,74,0.4); color:#4ade80; font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; padding:0.4rem 1.1rem; border-radius:2rem; margin-bottom:1.5rem; }
+    .hero h1 { color:var(--cream); margin-bottom:0.75rem; }
+    .hero h1 em { color:var(--gold); font-style:normal; }
+    .hero p.lead { color:rgba(248,246,242,0.75); font-size:1.05rem; line-height:1.8; max-width:560px; margin-bottom:2rem; }
+    .hero__trust { display:flex; flex-wrap:wrap; gap:1rem; }
+    .hero__trust-item { display:flex; align-items:center; gap:0.5rem; font-size:0.82rem; color:rgba(248,246,242,0.6); }
+    .hero__trust-item::before { content:'✦'; color:var(--gold); font-size:0.55rem; }
+
+    /* HERO CARD */
+    .hero__card { background:var(--navy-light); border:1px solid rgba(201,168,76,0.25); border-radius:var(--r); padding:2rem; }
+    .hero__card h3 { color:var(--cream); font-size:1rem; margin-bottom:1.25rem; }
+    .track-mini { display:flex; gap:0.85rem; align-items:flex-start; margin-bottom:1rem; padding:0.85rem; border-radius:var(--r); }
+    .track-mini:last-of-type { margin-bottom:1.5rem; }
+    .track-mini--green { background:rgba(26,158,74,0.1); }
+    .track-mini--amber { background:rgba(192,104,32,0.1); }
+    .track-mini--red { background:rgba(181,69,27,0.1); }
+    .track-mini__dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; margin-top:0.35rem; }
+    .track-mini--green .track-mini__dot { background:var(--green); }
+    .track-mini--amber .track-mini__dot { background:var(--amber); }
+    .track-mini--red .track-mini__dot { background:var(--red); }
+    .track-mini__title { font-size:0.85rem; font-weight:600; color:var(--cream); margin-bottom:0.15rem; }
+    .track-mini__sub { font-size:0.75rem; color:rgba(248,246,242,0.5); }
+    .hero__card .btn-gold { width:100%; text-align:center; display:block; }
+
+    /* FREE BANNER */
+    .free-banner { background:linear-gradient(90deg, rgba(26,158,74,0.12) 0%, rgba(201,168,76,0.08) 100%); border-top:1px solid rgba(26,158,74,0.2); border-bottom:1px solid rgba(26,158,74,0.2); padding:1.25rem 2rem; }
+    .free-banner__inner { max-width:var(--max); margin:0 auto; display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap; }
+    .free-banner__badge { background:var(--green); color:white; font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:0.3rem 0.85rem; border-radius:2rem; flex-shrink:0; }
+    .free-banner__text { font-size:0.9rem; color:#2a4a2e; }
+    .free-banner__text strong { color:#1a3a1e; }
+
+    /* TRACKS */
+    .tracks { padding:5rem 2rem; background:var(--cream); }
+    .tracks__inner { max-width:var(--max); margin:0 auto; }
+    .tracks__grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem; }
+    .track-card { border-radius:var(--r); overflow:hidden; border:1px solid rgba(0,0,0,0.08); }
+    .track-card__top { padding:2rem; }
+    .track-card__top--green { background:linear-gradient(135deg,rgba(26,158,74,0.08),rgba(26,158,74,0.03)); border-bottom:3px solid var(--green); }
+    .track-card__top--amber { background:linear-gradient(135deg,rgba(192,104,32,0.08),rgba(192,104,32,0.03)); border-bottom:3px solid var(--amber); }
+    .track-card__top--red { background:linear-gradient(135deg,rgba(181,69,27,0.08),rgba(181,69,27,0.03)); border-bottom:3px solid var(--red); }
+    .track-label { font-size:0.65rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:0.5rem; }
+    .track-label--green { color:var(--green); }
+    .track-label--amber { color:var(--amber); }
+    .track-label--red { color:var(--red); }
+    .track-card__icon { font-size:2rem; margin-bottom:0.85rem; }
+    .track-card h3 { font-size:1.1rem; margin-bottom:0.6rem; }
+    .track-card__top p { font-size:0.88rem; color:#4a4a5a; margin-bottom:0; line-height:1.7; }
+    .track-card__body { background:var(--off-white); padding:1.5rem; }
+    .track-detail { display:flex; gap:0.6rem; align-items:flex-start; margin-bottom:0.65rem; font-size:0.83rem; color:#4a4a5a; }
+    .track-detail:last-child { margin-bottom:0; }
+    .track-detail__label { font-weight:600; flex-shrink:0; min-width:80px; }
+    .track-card__action { padding:1.25rem 1.5rem; background:white; border-top:1px solid rgba(0,0,0,0.06); }
+    .track-card__action .btn { width:100%; text-align:center; display:block; font-size:0.85rem; padding:0.7rem 1rem; }
+    .btn-green { background:var(--green); color:white; }
+    .btn-green:hover { background:#178040; }
+    .btn-amber { background:var(--amber); color:white; }
+    .btn-amber:hover { background:#a05518; }
+    .btn-red-soft { background:rgba(181,69,27,0.1); color:var(--red); border:1px solid rgba(181,69,27,0.3); }
+    .btn-red-soft:hover { background:var(--red); color:white; }
+
+    /* HOW IT WORKS */
+    .how { padding:5rem 2rem; background:var(--navy); }
+    .how__inner { max-width:var(--max); margin:0 auto; }
+    .how__steps { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:3rem; position:relative; }
+    .how__steps::before { content:''; position:absolute; top:28px; left:12.5%; right:12.5%; height:1px; background:rgba(201,168,76,0.2); z-index:0; }
+    .how-step { text-align:center; padding:0 1.5rem; position:relative; z-index:1; }
+    .how-step__num { width:56px; height:56px; border-radius:50%; background:var(--navy-light); border:2px solid rgba(201,168,76,0.4); display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem; font-family:var(--font-d); font-size:1.2rem; font-weight:700; color:var(--gold); }
+    .how-step h4 { color:var(--cream); font-size:0.95rem; margin-bottom:0.5rem; }
+    .how-step p { color:rgba(248,246,242,0.55); font-size:0.82rem; line-height:1.6; margin-bottom:0; }
+
+    /* FORM SECTION */
+    .form-section { padding:5rem 2rem; background:var(--off-white); }
+    .form-section__inner { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:1fr 360px; gap:4rem; align-items:start; }
+
+    /* FORM */
+    .form-card { background:white; border-radius:var(--r); border:1px solid rgba(0,0,0,0.07); overflow:hidden; }
+    .form-card__header { background:var(--navy); padding:2rem; }
+    .form-card__header h2 { color:var(--cream); font-size:1.4rem; margin-bottom:0.4rem; }
+    .form-card__header p { color:rgba(248,246,242,0.6); font-size:0.88rem; margin-bottom:0; }
+    .form-body { padding:2rem; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; }
+    .form-group { margin-bottom:1.25rem; }
+    .form-group label { display:block; font-size:0.8rem; font-weight:600; color:#4a4a5a; margin-bottom:0.45rem; letter-spacing:0.03em; }
+    .form-group label .req { color:var(--gold); }
+    .form-group input, .form-group select, .form-group textarea {
+      width:100%; padding:0.75rem 1rem; border:1px solid rgba(0,0,0,0.14); border-radius:var(--r);
+      font-family:var(--font-b); font-size:0.9rem; color:var(--text); background:var(--cream); outline:none; transition:border-color var(--t);
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:var(--gold); background:white; }
+    .form-group textarea { resize:vertical; min-height:110px; }
+    .form-group select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238A8A8A' d='M6 8L0 0h12z'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 1rem center; padding-right:2.5rem; }
+
+    /* TRACK SELECTOR */
+    .track-selector { display:grid; grid-template-columns:repeat(3,1fr); gap:0.6rem; margin-top:0.3rem; }
+    .track-opt input[type=radio] { display:none; }
+    .track-opt label { display:block; padding:0.75rem 0.5rem; border:2px solid rgba(0,0,0,0.1); border-radius:var(--r); text-align:center; cursor:pointer; transition:all var(--t); }
+    .track-opt label .t-icon { font-size:1.25rem; display:block; margin-bottom:0.3rem; }
+    .track-opt label .t-name { font-size:0.75rem; font-weight:600; display:block; }
+    .track-opt label .t-time { font-size:0.65rem; color:var(--gray); display:block; margin-top:0.1rem; }
+    .track-opt.green input:checked + label { border-color:var(--green); background:rgba(26,158,74,0.06); }
+    .track-opt.amber input:checked + label { border-color:var(--amber); background:rgba(192,104,32,0.06); }
+    .track-opt.red   input:checked + label { border-color:var(--red);   background:rgba(181,69,27,0.06); }
+    .track-opt label:hover { border-color:var(--gold); }
+
+    /* FILE UPLOAD */
+    .file-upload { border:2px dashed rgba(0,0,0,0.14); border-radius:var(--r); padding:1.5rem; text-align:center; background:var(--cream); cursor:pointer; transition:border-color var(--t); position:relative; }
+    .file-upload:hover { border-color:var(--gold); }
+    .file-upload input[type=file] { position:absolute; inset:0; opacity:0; cursor:pointer; width:100%; }
+    .file-upload__icon { font-size:1.5rem; margin-bottom:0.5rem; }
+    .file-upload__text { font-size:0.85rem; color:#4a4a5a; font-weight:500; }
+    .file-upload__sub { font-size:0.75rem; color:var(--gray); margin-top:0.25rem; }
+    .file-list { margin-top:0.75rem; display:flex; flex-direction:column; gap:0.4rem; }
+    .file-item { display:flex; align-items:center; gap:0.5rem; font-size:0.78rem; color:#3a3a4a; background:var(--off-white); padding:0.4rem 0.75rem; border-radius:var(--r); }
+
+    .radio-group { display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:0.25rem; }
+    .radio-pill input[type=radio] { display:none; }
+    .radio-pill label { display:block; padding:0.45rem 1rem; border:1px solid rgba(0,0,0,0.14); border-radius:2rem; font-size:0.8rem; font-weight:500; color:#5a5a6a; cursor:pointer; transition:all var(--t); }
+    .radio-pill input[type=radio]:checked + label { background:var(--navy); color:var(--cream); border-color:var(--navy); }
+
+    .consent-box { display:flex; gap:0.75rem; align-items:flex-start; background:rgba(201,168,76,0.06); border:1px solid rgba(201,168,76,0.2); border-radius:var(--r); padding:1rem; margin-bottom:1.25rem; }
+    .consent-box input[type=checkbox] { margin-top:0.2rem; flex-shrink:0; accent-color:var(--navy); width:16px; height:16px; cursor:pointer; }
+    .consent-box label { font-size:0.8rem; color:#4a4a5a; line-height:1.55; cursor:pointer; }
+
+    .form-submit { width:100%; padding:1rem; background:var(--navy); color:var(--cream); border:none; border-radius:var(--r); font-family:var(--font-d); font-size:1.05rem; font-weight:600; cursor:pointer; transition:background var(--t); letter-spacing:0.03em; }
+    .form-submit:hover { background:var(--navy-light); }
+    .form-submit:disabled { opacity:0.5; cursor:not-allowed; }
+    .form-note { font-size:0.75rem; color:var(--gray); text-align:center; margin-top:0.85rem; line-height:1.55; }
+
+    /* SUCCESS */
+    .form-success { display:none; padding:3rem 2rem; text-align:center; }
+    .form-success__icon { font-size:3rem; margin-bottom:1rem; }
+    .form-success h3 { margin-bottom:0.75rem; }
+    .form-success p { color:var(--gray); font-size:0.9rem; line-height:1.65; }
+    .form-success .wa-prompt { margin-top:1.5rem; background:var(--navy); border-radius:var(--r); padding:1.25rem; }
+    .form-success .wa-prompt p { color:rgba(248,246,242,0.7); font-size:0.85rem; margin-bottom:0.85rem; }
+
+    /* SIDEBAR */
+    .form-sidebar { display:flex; flex-direction:column; gap:1.5rem; }
+    .side-card { background:white; border-radius:var(--r); border:1px solid rgba(0,0,0,0.07); overflow:hidden; }
+    .side-card__header { padding:1.1rem 1.5rem; border-bottom:1px solid rgba(0,0,0,0.06); }
+    .side-card__header h4 { font-size:0.88rem; }
+    .side-card__body { padding:1.35rem 1.5rem; }
+    .side-row { display:flex; gap:0.7rem; align-items:flex-start; margin-bottom:0.85rem; font-size:0.84rem; color:#4a4a5a; }
+    .side-row:last-child { margin-bottom:0; }
+    .side-row__icon { flex-shrink:0; font-size:0.95rem; margin-top:0.1rem; }
+    .side-row__label { font-size:0.68rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-bottom:0.15rem; }
+
+    .disclaimer-card { background:rgba(181,69,27,0.05); border:1px solid rgba(181,69,27,0.2); border-radius:var(--r); padding:1.25rem; }
+    .disclaimer-card h4 { color:var(--red); font-size:0.88rem; margin-bottom:0.5rem; }
+    .disclaimer-card p { font-size:0.8rem; color:#4a3020; line-height:1.6; margin-bottom:0; }
+
+    /* TEAM */
+    .team { padding:5rem 2rem; background:var(--cream); }
+    .team__inner { max-width:var(--max); margin:0 auto; }
+    .team__grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem; margin-top:2.5rem; }
+    .team-card { background:var(--off-white); border-radius:var(--r); border:1px solid rgba(0,0,0,0.07); padding:1.75rem; text-align:center; }
+    .team-card__avatar { width:72px; height:72px; border-radius:50%; background:var(--navy-light); display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; color:var(--gold); font-family:var(--font-d); font-size:1.4rem; font-weight:700; border:2px solid rgba(201,168,76,0.3); }
+    .team-card h4 { font-size:1rem; margin-bottom:0.2rem; }
+    .team-card__role { font-size:0.75rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--steel); margin-bottom:0.5rem; }
+    .team-card__specialty { font-size:0.82rem; color:var(--gray); line-height:1.5; }
+
+    /* FAQ */
+    .faq { padding:5rem 2rem; background:var(--off-white); }
+    .faq__inner { max-width:800px; margin:0 auto; }
+    .faq__list { margin-top:2.5rem; border:1px solid rgba(0,0,0,0.08); border-radius:var(--r); overflow:hidden; }
+    .faq-item { border-bottom:1px solid rgba(0,0,0,0.08); }
+    .faq-item:last-child { border-bottom:none; }
+    .faq-q { width:100%; text-align:left; padding:1.25rem 1.5rem; background:none; border:none; font-family:var(--font-d); font-size:1rem; font-weight:600; color:var(--text); cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:1rem; transition:background var(--t); }
+    .faq-q:hover,.faq-q.open { background:var(--cream); }
+    .faq-q__arrow { font-size:0.7rem; color:var(--gold); transition:transform var(--t); flex-shrink:0; }
+    .faq-q.open .faq-q__arrow { transform:rotate(180deg); }
+    .faq-a { display:none; padding:0 1.5rem 1.25rem; font-size:0.9rem; color:#4a4a5a; line-height:1.75; }
+    .faq-a.open { display:block; }
+
+    /* FOOTER */
+    .footer { background:var(--navy-mid); border-top:1px solid rgba(201,168,76,0.15); padding:3rem 2rem; }
+    .footer__inner { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr; gap:3rem; }
+    .footer__brand { font-family:var(--font-d); font-size:1.3rem; color:var(--cream); font-weight:700; margin-bottom:0.75rem; }
+    .footer__brand span { color:var(--gold); }
+    .footer__tagline { font-size:0.85rem; color:rgba(248,246,242,0.45); line-height:1.6; }
+    .footer h5 { font-size:0.72rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; }
+    .footer ul { list-style:none; display:flex; flex-direction:column; gap:0.6rem; }
+    .footer ul li a { font-size:0.88rem; color:rgba(248,246,242,0.55); transition:color var(--t); }
+    .footer ul li a:hover { color:var(--cream); }
+    .footer__contact-item { font-size:0.85rem; color:rgba(248,246,242,0.55); line-height:1.5; margin-bottom:0.5rem; }
+    .footer__contact-item a { color:rgba(248,246,242,0.7); }
+    .footer__bottom { max-width:var(--max); margin:2rem auto 0; border-top:1px solid rgba(248,246,242,0.06); padding-top:1.5rem; font-size:0.78rem; color:rgba(248,246,242,0.3); text-align:center; }
+
+    .wa-float { position:fixed; bottom:2rem; right:2rem; z-index:200; width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(37,211,102,0.35); transition:transform var(--t); }
+    .wa-float:hover { transform:scale(1.08); }
+    .wa-float svg { width:28px; height:28px; fill:white; }
+
+    @media (max-width:900px) {
+      .hero__inner { grid-template-columns:1fr; }
+      .tracks__grid { grid-template-columns:1fr; }
+      .how__steps { grid-template-columns:1fr 1fr; }
+      .how__steps::before { display:none; }
+      .form-section__inner { grid-template-columns:1fr; }
+      .footer__inner { grid-template-columns:1fr; gap:2rem; }
+    }
+    @media (max-width:640px) {
+      .nav__links { display:none; } .nav__hamburger { display:flex; }
+      .form-row { grid-template-columns:1fr; }
+      .track-selector { grid-template-columns:1fr; }
+      .how__steps { grid-template-columns:1fr; }
+    }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none!important; } }
+  </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQJV3LV6SV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WQJV3LV6SV');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xd5ee60zrw");
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__brand">Dr. <span>Satish</span> Reddy. G</a>
+    <ul class="nav__links">
+      <li><a href="/about">About</a></li>
+      <li><a href="/specialties">Specialties</a></li>
+      <li><a href="/for-doctors">For Doctors</a></li>
+      <li><a href="/blog">Patient Education</a></li>
+      <li><a href="/second-opinion" class="nav__second-opinion">✦ Free Second Opinion</a></li>
+      <li><a href="/contact" class="nav__cta">Book Appointment</a></li>
+    </ul>
+    <div class="nav__hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobileMenu">
+  <ul>
+    <li><a href="/about" onclick="toggleMenu()">About</a></li>
+    <li><a href="/specialties" onclick="toggleMenu()">Specialties</a></li>
+    <li><a href="/for-doctors" onclick="toggleMenu()">For Doctors</a></li>
+    <li><a href="/blog" onclick="toggleMenu()">Patient Education</a></li>
+    <li><a href="/contact" onclick="toggleMenu()">Book Appointment</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__inner">
+    <div>
+      <div class="hero__badge">✓ Currently free &nbsp;·&nbsp; Specialist-reviewed &nbsp;·&nbsp; Remote-first</div>
+      <h1>Free Orthopaedic<br/><em>Second Opinion</em></h1>
+      <p class="lead">Uncertain about a diagnosis? Questioning a surgical recommendation? Recovering from an operation and something does not feel right? Get a specialist orthopaedic opinion remotely, quickly, and at no charge for now.</p>
+      <div class="hero__trust">
+        <div class="hero__trust-item">Reviewed by fellowship-trained specialists</div>
+        <div class="hero__trust-item">Response within 24–72 hours</div>
+        <div class="hero__trust-item">Physical consultation always available</div>
+        <div class="hero__trust-item">Formal written report, coming soon</div>
+      </div>
+    </div>
+    <div class="hero__card">
+      <h3>Choose your situation</h3>
+      <div class="track-mini track-mini--green">
+        <div class="track-mini__dot"></div>
+        <div>
+          <div class="track-mini__title">Elective / planned surgery</div>
+          <div class="track-mini__sub">Response within 48–72 hours</div>
+        </div>
+      </div>
+      <div class="track-mini track-mini--amber">
+        <div class="track-mini__dot"></div>
+        <div>
+          <div class="track-mini__title">Post-surgical concern</div>
+          <div class="track-mini__sub">Same-day triage, reply within 24 hours</div>
+        </div>
+      </div>
+      <div class="track-mini track-mini--red">
+        <div class="track-mini__dot"></div>
+        <div>
+          <div class="track-mini__title">Urgent / trauma opinion</div>
+          <div class="track-mini__sub">WhatsApp, few hours response</div>
+        </div>
+      </div>
+      <a href="#submit" class="btn btn-gold">Submit your case →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FREE BANNER -->
+<div class="free-banner">
+  <div class="free-banner__inner">
+    <span class="free-banner__badge">Currently free</span>
+    <p class="free-banner__text"><strong>This service is free during our launch phase.</strong> In future, a formal written report will be available as a paid option. The specialist opinion itself will always remain accessible.</p>
+  </div>
+</div>
+
+<!-- THREE TRACKS -->
+<section class="tracks">
+  <div class="tracks__inner">
+    <div style="text-align:center">
+      <span class="eyebrow">Choose your track</span>
+      <h2>Three routes, based on urgency</h2>
+      <p style="color:var(--gray);max-width:580px;margin:0.75rem auto 0;font-size:0.95rem">Select the track that best describes your situation. Each has a different process and response time.</p>
+    </div>
+    <div class="tracks__grid">
+
+      <!-- ELECTIVE -->
+      <div class="track-card">
+        <div class="track-card__top track-card__top--green">
+          <div class="track-label track-label--green">Track 1, Elective</div>
+          <div class="track-card__icon">🟢</div>
+          <h3>Planned surgery &amp; second opinions</h3>
+          <p>You have been advised an operation and want an independent specialist view before deciding. Or you have a diagnosis and want to understand your options more fully.</p>
+        </div>
+        <div class="track-card__body">
+          <div class="track-detail"><span class="track-detail__label">Suitable for</span><span>Joint replacement, ortho oncology, sports surgery, elective trauma correction, any planned procedure</span></div>
+          <div class="track-detail"><span class="track-detail__label">What to send</span><span>X-rays, MRI/CT (CD or digital), biopsy reports, prior surgical notes, current medication list</span></div>
+          <div class="track-detail"><span class="track-detail__label">Response</span><span>Written specialist opinion within 48–72 hours</span></div>
+          <div class="track-detail"><span class="track-detail__label">Follow-up</span><span>Video call available if needed; physical visit always welcome</span></div>
+        </div>
+        <div class="track-card__action">
+          <a href="#submit" class="btn btn-green" onclick="selectTrack('elective')">Submit elective case →</a>
+        </div>
+      </div>
+
+      <!-- POST-SURGICAL -->
+      <div class="track-card">
+        <div class="track-card__top track-card__top--amber">
+          <div class="track-label track-label--amber">Track 2, Post-surgical</div>
+          <div class="track-card__icon">🟡</div>
+          <h3>Post-surgical complications &amp; concerns</h3>
+          <p>You have had orthopaedic surgery and something does not feel right, unexpected pain, wound concerns, restricted movement, or a result that is not what you expected.</p>
+        </div>
+        <div class="track-card__body">
+          <div class="track-detail"><span class="track-detail__label">Suitable for</span><span>Pain after joint replacement, wound issues, suspected implant failure, stiffness, poor functional recovery</span></div>
+          <div class="track-detail"><span class="track-detail__label">What to send</span><span>Operative note / discharge summary, post-op X-rays, photograph of wound if relevant, description of concern</span></div>
+          <div class="track-detail"><span class="track-detail__label">Response</span><span>WhatsApp triage same day; written opinion within 24 hours</span></div>
+          <div class="track-detail"><span class="track-detail__label">Follow-up</span><span>If urgent, advised to attend nearest facility or come directly to KIMS</span></div>
+        </div>
+        <div class="track-card__action">
+          <a href="#submit" class="btn btn-amber" onclick="selectTrack('post-surgical')">Submit post-surgical concern →</a>
+        </div>
+      </div>
+
+      <!-- URGENT -->
+      <div class="track-card">
+        <div class="track-card__top track-card__top--red">
+          <div class="track-label track-label--red">Track 3, Urgent</div>
+          <div class="track-card__icon">🔴</div>
+          <h3>Urgent trauma &amp; quick opinions</h3>
+          <p>You or a family member has a fracture, dislocation, or acute injury and you need rapid specialist input on whether the current treatment plan is correct, or whether transfer is needed.</p>
+        </div>
+        <div class="track-card__body">
+          <div class="track-detail"><span class="track-detail__label">Suitable for</span><span>Complex fractures, dislocations, acute bone tumour presentation, trauma treatment planning query</span></div>
+          <div class="track-detail"><span class="track-detail__label">What to send</span><span>X-rays via WhatsApp (photograph is fine), brief description of injury and current management</span></div>
+          <div class="track-detail"><span class="track-detail__label">Response</span><span>WhatsApp only, response within a few hours during working hours</span></div>
+          <div class="track-detail"><span class="track-detail__label">Important</span><span>This is not emergency care. In a life or limb-threatening emergency, go to your nearest A&amp;E immediately</span></div>
+        </div>
+        <div class="track-card__action">
+          <a href="https://wa.me/917075523360?text=URGENT+OPINION+REQUEST%3A+I+need+a+quick+orthopaedic+opinion.+Briefly%3A+" target="_blank" rel="noopener" class="btn btn-wa">WhatsApp urgent case →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="how__inner">
+    <div style="text-align:center">
+      <span class="eyebrow">The process</span>
+      <h2 style="color:var(--cream)">How it works</h2>
+      <p style="color:rgba(248,246,242,0.6);max-width:520px;margin:0.75rem auto 0;font-size:0.95rem">From submission to specialist opinion in four steps.</p>
+    </div>
+    <div class="how__steps">
+      <div class="how-step">
+        <div class="how-step__num">1</div>
+        <h4>Submit your case</h4>
+        <p>Fill in the form below. Upload your imaging, reports, and a description of your concern. The more detail, the more useful the opinion.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step__num">2</div>
+        <h4>Specialist review</h4>
+        <p>Your case is reviewed by a fellowship-trained specialist from Dr. Satish's team, matched to your specific condition and area of concern.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step__num">3</div>
+        <h4>Written opinion</h4>
+        <p>You receive a written response covering diagnosis, treatment options, our recommendation, and any red flags that need urgent attention.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step__num">4</div>
+        <h4>Follow-up if needed</h4>
+        <p>A video consultation can be arranged if questions remain. You are always welcome to attend in person at KIMS Hospital, Secunderabad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-section" id="submit">
+  <div class="form-section__inner">
+
+    <div class="form-card">
+      <div class="form-card__header">
+        <span class="eyebrow" style="color:var(--gold-light)">Case submission</span>
+        <h2>Submit your case</h2>
+        <p>Complete all fields marked *. The more detail you provide, the more specific the opinion we can give.</p>
+      </div>
+      <div class="form-body">
+        <!-- Replace YOUR_FORM_ID with your Formspree second-opinion form ID -->
+        <form id="opinionForm" action="https://formspree.io/f/mzdlrdka" method="POST" onsubmit="handleSubmit(event)">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First name <span class="req">*</span></label>
+              <input type="text" id="firstName" name="firstName" placeholder="e.g. Priya" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last name <span class="req">*</span></label>
+              <input type="text" id="lastName" name="lastName" placeholder="e.g. Sharma" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Mobile number <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required />
+            </div>
+            <div class="form-group">
+              <label for="age">Patient age <span class="req">*</span></label>
+              <input type="number" id="age" name="age" placeholder="e.g. 54" min="1" max="120" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" />
+          </div>
+
+          <div class="form-group">
+            <label>Case type <span class="req">*</span></label>
+            <div class="track-selector">
+              <div class="track-opt green">
+                <input type="radio" id="t1" name="caseType" value="Elective / planned surgery" required />
+                <label for="t1"><span class="t-icon">🟢</span><span class="t-name">Elective</span><span class="t-time">48–72 hr response</span></label>
+              </div>
+              <div class="track-opt amber">
+                <input type="radio" id="t2" name="caseType" value="Post-surgical concern" />
+                <label for="t2"><span class="t-icon">🟡</span><span class="t-name">Post-surgical</span><span class="t-time">24 hr response</span></label>
+              </div>
+              <div class="track-opt red">
+                <input type="radio" id="t3" name="caseType" value="Urgent / trauma" />
+                <label for="t3"><span class="t-icon">🔴</span><span class="t-name">Urgent</span><span class="t-time">Use WhatsApp</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="specialty">Area of concern <span class="req">*</span></label>
+            <select id="specialty" name="specialty" required>
+              <option value="" disabled selected>Select body part / condition</option>
+              <option value="Knee">Knee</option>
+              <option value="Hip">Hip</option>
+              <option value="Shoulder">Shoulder</option>
+              <option value="Elbow">Elbow</option>
+              <option value="Bone tumour / oncology">Bone tumour / oncology</option>
+              <option value="Fracture / trauma">Fracture / trauma</option>
+              <option value="Sports injury">Sports injury</option>
+              <option value="Upper limb">Upper limb (other)</option>
+              <option value="Other">Other / not sure</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="diagnosis">Current diagnosis or suspected diagnosis <span class="req">*</span></label>
+            <input type="text" id="diagnosis" name="diagnosis" placeholder="e.g. Grade 3 knee OA, advised TKR / Suspected osteosarcoma distal femur" required />
+          </div>
+
+          <div class="form-group">
+            <label for="history">Clinical history &amp; your question <span class="req">*</span></label>
+            <textarea id="history" name="history" placeholder="Please describe: how long you have had the problem, what treatment you have had so far, what you were told, and specifically what you would like our opinion on." required style="min-height:140px"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="priorSurgery">Prior surgery in this area?</label>
+            <div class="radio-group">
+              <div class="radio-pill"><input type="radio" id="ps1" name="priorSurgery" value="No" /><label for="ps1">No</label></div>
+              <div class="radio-pill"><input type="radio" id="ps2" name="priorSurgery" value="Yes" /><label for="ps2">Yes</label></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Imaging &amp; reports available</label>
+            <div class="radio-group" style="margin-bottom:0.85rem">
+              <div class="radio-pill"><input type="radio" id="im1" name="imaging" value="X-rays only" /><label for="im1">X-rays only</label></div>
+              <div class="radio-pill"><input type="radio" id="im2" name="imaging" value="MRI available" /><label for="im2">MRI available</label></div>
+              <div class="radio-pill"><input type="radio" id="im3" name="imaging" value="CT available" /><label for="im3">CT available</label></div>
+              <div class="radio-pill"><input type="radio" id="im4" name="imaging" value="Multiple reports" /><label for="im4">Multiple reports</label></div>
+              <div class="radio-pill"><input type="radio" id="im5" name="imaging" value="No imaging yet" /><label for="im5">No imaging yet</label></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Upload reports / imaging (optional)</label>
+            <div class="file-upload" id="fileUploadArea">
+              <input type="file" id="fileInput" name="files" multiple accept=".pdf,.jpg,.jpeg,.png,.dcm" onchange="showFiles(this)" />
+              <div class="file-upload__icon">📎</div>
+              <div class="file-upload__text">Click to upload or drag files here</div>
+              <div class="file-upload__sub">PDF, JPG, PNG, up to 10MB per file. X-ray photos taken on your phone are fine.</div>
+            </div>
+            <div class="file-list" id="fileList"></div>
+            <p style="font-size:0.75rem;color:var(--gray);margin-top:0.5rem;margin-bottom:0">If your imaging is on a CD or too large to upload, you can share via WhatsApp (<a href="https://wa.me/917075523360" style="color:var(--steel)">+91 70755 23360</a>) after submitting this form.</p>
+          </div>
+
+          <div class="form-group">
+            <label for="location">Your city / location</label>
+            <input type="text" id="location" name="location" placeholder="e.g. Vijayawada, Andhra Pradesh" />
+          </div>
+
+          <div class="consent-box">
+            <input type="checkbox" id="consent" name="consent" required />
+            <label for="consent">I understand this is a specialist medical opinion service, not emergency care. In a life or limb-threatening emergency I will attend the nearest hospital immediately. I consent to my information being reviewed by Dr. Satish's specialist team for the purpose of providing this opinion. <span class="req">*</span></label>
+          </div>
+
+          <!-- Hidden fields for Formspree -->
+          <input type="hidden" name="_subject" value="🩺 New second opinion request | Dr. Satish website" />
+          <input type="text" name="_gotcha" style="display:none" />
+
+          <button type="submit" class="form-submit" id="submitBtn">Submit for specialist review →</button>
+          <p class="form-note">You will receive an acknowledgement within a few hours. The full opinion follows within 48–72 hours for elective cases, 24 hours for post-surgical concerns.</p>
+        </form>
+
+        <!-- SUCCESS STATE -->
+        <div class="form-success" id="formSuccess">
+          <div class="form-success__icon">✅</div>
+          <h3>Case received</h3>
+          <p>Thank you, your case has been submitted and will be reviewed by a specialist from Dr. Satish's team.<br/><br/>You will receive an acknowledgement shortly, followed by a full written opinion within the timeframe for your track.</p>
+          <div class="wa-prompt">
+            <p>To send your imaging directly and get the fastest possible response, tap below to open WhatsApp:</p>
+            <a id="waFollowUp" href="#" target="_blank" rel="noopener" class="btn btn-wa" style="display:block;text-align:center">Send imaging on WhatsApp →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="form-sidebar">
+
+      <div class="disclaimer-card">
+        <h4>⚠️ Important, please read</h4>
+        <p>This service provides a specialist medical <strong>opinion</strong>, it is not a substitute for emergency care, and it does not replace a physical examination.<br/><br/>If you are experiencing a <strong>life or limb-threatening emergency</strong>, including severe trauma, open fractures, vascular injury, or neurological compromise, please go immediately to the nearest Accident &amp; Emergency department or call 108.</p>
+      </div>
+
+      <div class="side-card">
+        <div class="side-card__header"><h4>What you will receive</h4></div>
+        <div class="side-card__body">
+          <div class="side-row"><div class="side-row__icon">📝</div><div><div class="side-row__label">Now, free</div>Written specialist opinion delivered to you</div></div>
+          <div class="side-row"><div class="side-row__icon">📄</div><div><div class="side-row__label">Coming soon</div>Formal written report in PDF format, suitable for insurance, second hospital, or legal purposes</div></div>
+          <div class="side-row"><div class="side-row__icon">📹</div><div><div class="side-row__label">If needed</div>Video consultation available to discuss findings in detail</div></div>
+          <div class="side-row" style="margin-bottom:0"><div class="side-row__icon">🏥</div><div><div class="side-row__label">Always available</div>Physical consultation always available at KIMS Hospital, Secunderabad</div></div>
+        </div>
+      </div>
+
+      <div class="side-card">
+        <div class="side-card__header"><h4>Response times</h4></div>
+        <div class="side-card__body">
+          <div class="side-row"><div class="side-row__icon">🟢</div><div><div class="side-row__label">Elective cases</div>48–72 hours from submission</div></div>
+          <div class="side-row"><div class="side-row__icon">🟡</div><div><div class="side-row__label">Post-surgical</div>Triage same day, opinion within 24 hours</div></div>
+          <div class="side-row" style="margin-bottom:0"><div class="side-row__icon">🔴</div><div><div class="side-row__label">Urgent / trauma</div>WhatsApp only, a few hours during working hours</div></div>
+        </div>
+      </div>
+
+      <div class="side-card">
+        <div class="side-card__header"><h4>Prefer to send on WhatsApp?</h4></div>
+        <div class="side-card__body">
+          <p style="font-size:0.85rem;color:#4a4a5a;margin-bottom:1rem">For urgent cases, or if your imaging is too large to upload, send directly to Dr. Satish's team on WhatsApp.</p>
+          <a href="https://wa.me/917075523360?text=SECOND+OPINION+REQUEST%3A+Hello%2C+I+would+like+a+specialist+orthopaedic+opinion.+My+name+is+____+and+my+concern+is%3A+" target="_blank" rel="noopener" class="btn btn-wa" style="display:block;text-align:center;font-size:0.85rem">Open WhatsApp →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALIST TEAM -->
+<section class="team">
+  <div class="team__inner">
+    <div style="text-align:center">
+      <span class="eyebrow">Reviewed by specialists</span>
+      <h2>The team behind your opinion</h2>
+      <p style="color:var(--gray);max-width:560px;margin:0.75rem auto 0;font-size:0.95rem">Every case is reviewed by a fellowship-trained orthopaedic specialist matched to your area of concern, not a general practitioner, not an algorithm.</p>
+    </div>
+    <div class="team__grid">
+      <div class="team-card">
+        <div class="team-card__avatar">SR</div>
+        <h4>Dr. Satish Reddy. G</h4>
+        <div class="team-card__role">Lead, Ortho Oncology &amp; Arthroplasty</div>
+        <div class="team-card__specialty">MS Orth (Gold Medallist) · Rizzoli Institute, Bologna · Royal Orthopaedic Hospital, Birmingham · Flinders Medical Centre, Adelaide</div>
+      </div>
+      <div class="team-card" style="opacity:0.6">
+        <div class="team-card__avatar" style="background:rgba(74,127,165,0.15);color:var(--steel)">+</div>
+        <h4>Specialist, Joint Replacement</h4>
+        <div class="team-card__role">Coming soon</div>
+        <div class="team-card__specialty">Fellowship-trained arthroplasty specialist joining the team shortly.</div>
+      </div>
+      <div class="team-card" style="opacity:0.6">
+        <div class="team-card__avatar" style="background:rgba(74,127,165,0.15);color:var(--steel)">+</div>
+        <h4>Specialist, Sports &amp; Trauma</h4>
+        <div class="team-card__role">Coming soon</div>
+        <div class="team-card__specialty">Sports injury and complex trauma specialist joining the panel shortly.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="faq__inner">
+    <div style="text-align:center">
+      <span class="eyebrow">Common questions</span>
+      <h2>About the service</h2>
+    </div>
+    <div class="faq__list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is this really free? What is the catch?<span class="faq-q__arrow">▼</span></button>
+        <div class="faq-a">Yes, genuinely free at the moment. There is no catch. Access to a good specialist opinion should not depend on where you live or whether you can make it to a major city. In future, a formal written PDF report, suitable for insurance claims, second hospitals, or medicolegal purposes, will be available as a paid option. The opinion itself will remain accessible.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Can a remote opinion replace a physical examination?<span class="faq-q__arrow">▼</span></button>
+        <div class="faq-a">No, and we will always be honest about this. A remote opinion based on imaging and history can be very valuable for assessing whether a diagnosis is correct, whether a surgical recommendation is appropriate, and whether there are treatment options you have not been offered. But it cannot replace the information gained from physically examining a patient. Where a physical examination is important, we will say so, and you are always welcome to attend in person at KIMS Hospital, Secunderabad.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Who actually reviews my case?<span class="faq-q__arrow">▼</span></button>
+        <div class="faq-a">Every case is reviewed by a fellowship-trained orthopaedic specialist from Dr. Satish's team, matched to your area of concern. For orthopaedic oncology cases, Dr. Satish reviews personally. For arthroplasty, sports, and trauma cases, the relevant subspecialty specialist on the panel reviews the case. You will be told who reviewed your case when you receive the opinion.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">My imaging is on a CD, how do I share it?<span class="faq-q__arrow">▼</span></button>
+        <div class="faq-a">The simplest options are: (1) photograph the films against a light source (a window or bright screen) and send the photos via WhatsApp to +91 70755 23360, this works well for X-rays; (2) if the CD contains DICOM files, upload the folder to Google Drive or WeTransfer and share the link with us via WhatsApp; (3) bring the CD in person to your appointment. We do not require high-resolution scans for a preliminary opinion, a clear photograph is usually sufficient to begin with.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">I am from outside Telangana / Andhra Pradesh. Can I still use this service?<span class="faq-q__arrow">▼</span></button>
+        <div class="faq-a">Yes, the service is available to anyone in India, regardless of location. If a physical consultation is subsequently recommended, we can advise on the best way to arrange a visit to KIMS Hospital, Secunderabad. For patients travelling a significant distance, we can also coordinate investigations and appointments to minimise the number of trips required.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">When will the formal written report be available, and what will it cost?<span class="faq-q__arrow">▼</span></button>
+        <div class="faq-a">The formal PDF report, structured for use with insurance providers, other hospitals, or legal purposes, is currently in development and will be introduced in a later phase. Pricing has not yet been set. Existing users who submitted cases during the free phase will be offered favourable terms when the paid tier launches. We will announce this on the website and via WhatsApp to those who have already used the service.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <div class="footer__brand">Dr. <span>Satish</span> Reddy. G</div>
+      <p class="footer__tagline">Consultant Orthopaedic Surgeon<br/>KIMS Hospital, Ministers Road, Secunderabad<br/><br/>MS Orth (Gold Medallist) &nbsp;·&nbsp; Fellowship-trained in Italy, UK &amp; Australia<br/>Pioneer of Orthopaedic Oncology, AP &amp; Telangana</p>
+    </div>
+    <div>
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/specialties">Specialties</a></li>
+        <li><a href="/for-doctors">For Doctors</a></li>
+        <li><a href="/blog">Patient Education</a></li>
+        <li><a href="/second-opinion">Second Opinion</a></li>
+        <li><a href="/contact">Contact &amp; Appointments</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <div class="footer__contact-item">KIMS Hospital<br/>Ministers Road<br/>Secunderabad, Telangana</div>
+      <div class="footer__contact-item"><a href="tel:+917075523360">+91 70755 23360</a></div>
+      <div class="footer__contact-item"><a href="https://wa.me/917075523360" target="_blank" rel="noopener">WhatsApp</a></div>
+    </div>
+  </div>
+  <div class="footer__bottom">© 2025 Dr. Satish Reddy Gandavarapu. All rights reserved.</div>
+</footer>
+
+<a href="https://wa.me/917075523360" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp Dr. Satish">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  window.addEventListener('scroll', () => { document.querySelector('.nav').style.background = window.scrollY > 40 ? 'rgba(10,22,40,0.98)' : 'rgba(10,22,40,0.96)'; });
+
+  // Pre-select track from hero buttons
+  function selectTrack(track) {
+    const map = { elective:'t1', 'post-surgical':'t2', urgent:'t3' };
+    const el = document.getElementById(map[track]);
+    if (el) { el.checked = true; }
+  }
+
+  // Show selected files
+  function showFiles(input) {
+    const list = document.getElementById('fileList');
+    list.innerHTML = '';
+    Array.from(input.files).forEach(f => {
+      const item = document.createElement('div');
+      item.className = 'file-item';
+      item.innerHTML = `📎 ${f.name} <span style="color:var(--gray);margin-left:auto">${(f.size/1024/1024).toFixed(1)} MB</span>`;
+      list.appendChild(item);
+    });
+  }
+
+  // Form submit, Formspree + WhatsApp follow-up
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('opinionForm');
+    const action = form.getAttribute('action');
+    const btn = document.getElementById('submitBtn');
+
+    // Collect key fields for WhatsApp message
+    const name  = (document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value).trim();
+    const phone = document.getElementById('phone').value;
+    const track = document.querySelector('input[name="caseType"]:checked')?.value || 'Not specified';
+    const area  = document.getElementById('specialty').value;
+    const diag  = document.getElementById('diagnosis').value;
+
+    // Build WhatsApp follow-up URL (pre-filled message to Dr. Satish)
+    const waMsg = encodeURIComponent(
+      `SECOND OPINION REQUEST\n\nName: ${name}\nMobile: ${phone}\nTrack: ${track}\nArea: ${area}\nDiagnosis: ${diag}\n\nI have submitted the form on your website. Please find my imaging/reports attached.`
+    );
+    document.getElementById('waFollowUp').href = `https://wa.me/917075523360?text=${waMsg}`;
+
+    // If Formspree ID not yet configured, just show success
+    if (action.includes('YOUR_FORM_ID')) {
+      showSuccess();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Submitting…';
+
+    fetch(action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} })
+      .then(r => {
+        if (r.ok) { showSuccess(); }
+        else { btn.disabled = false; btn.textContent = 'Submit for specialist review →'; alert('Something went wrong, please WhatsApp us directly on +91 70755 23360.'); }
+      })
+      .catch(() => { btn.disabled = false; btn.textContent = 'Submit for specialist review →'; alert('Something went wrong, please WhatsApp us directly on +91 70755 23360.'); });
+  }
+
+  function showSuccess() {
+    document.getElementById('opinionForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+
+  // FAQ accordion
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('open'));
+    document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+    if (!isOpen) { btn.classList.add('open'); answer.classList.add('open'); }
+  }
+</script>
+</body>
+</html>

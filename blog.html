@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patient Education | Dr. Satish Reddy. G</title>
+  <meta name="description" content="Plain-language guides to orthopaedic conditions, written for Indian patients by Dr. Satish Reddy Gandavarapu. Browse by body part, condition, or topic." />
+  <link rel="canonical" href="https://drgsreddy.com/blog" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    :root {
+      --navy:#0A1628; --navy-mid:#162040; --navy-light:#1E2D4E; --steel:#4A7FA5;
+      --gold:#C9A84C; --gold-light:#E2C97E; --cream:#F8F6F2; --off-white:#EDE9E0;
+      --gray:#8A8A8A; --text:#1A1A2E; --font-d:'Playfair Display',Georgia,serif;
+      --font-b:'Inter',system-ui,sans-serif; --max:1200px; --r:4px; --t:0.3s ease;
+    }
+    body { font-family:var(--font-b); background:var(--cream); color:var(--text); line-height:1.7; font-size:16px; }
+    a { color:inherit; text-decoration:none; }
+    h1,h2,h3,h4 { font-family:var(--font-d); line-height:1.2; }
+    h1 { font-size:clamp(2rem,4vw,3.4rem); font-weight:700; }
+    h2 { font-size:clamp(1.5rem,2.5vw,2.2rem); font-weight:600; }
+    h3 { font-size:1.1rem; font-weight:600; }
+    p { margin-bottom:1rem; }
+    .eyebrow { font-size:0.72rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:0.75rem; }
+    .btn { display:inline-block; padding:0.8rem 1.75rem; border-radius:var(--r); font-family:var(--font-b); font-size:0.88rem; font-weight:600; cursor:pointer; transition:all var(--t); }
+    .btn-gold { background:var(--gold); color:var(--navy); }
+    .btn-gold:hover { background:var(--gold-light); }
+    .btn-outline { border:1.5px solid rgba(248,246,242,0.5); color:var(--cream); }
+    .btn-outline:hover { border-color:var(--cream); background:rgba(248,246,242,0.08); }
+
+    /* NAV */
+    .nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(10,22,40,0.96); backdrop-filter:blur(8px); border-bottom:1px solid rgba(201,168,76,0.15); }
+    .nav__inner { max-width:var(--max); margin:0 auto; padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:68px; }
+    .nav__brand { font-family:var(--font-d); font-size:1.2rem; font-weight:700; color:var(--cream); }
+    .nav__brand span { color:var(--gold); }
+    .nav__links { display:flex; align-items:center; gap:2rem; list-style:none; }
+    .nav__links a { color:rgba(248,246,242,0.8); font-size:0.88rem; font-weight:500; transition:color var(--t); }
+    .nav__links a:hover,.nav__links a.active { color:var(--gold); }
+    .nav__cta { background:var(--gold)!important; color:var(--navy)!important; padding:0.5rem 1.25rem; border-radius:var(--r); font-weight:600!important; }
+    .nav__hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
+    .nav__hamburger span { width:24px; height:2px; background:var(--cream); border-radius:2px; }
+    .nav__mobile { display:none; position:fixed; top:68px; left:0; right:0; background:var(--navy-mid); border-bottom:1px solid rgba(201,168,76,0.2); z-index:99; padding:1.5rem 2rem; }
+    .nav__mobile ul { list-style:none; display:flex; flex-direction:column; gap:1.2rem; }
+    .nav__mobile a { color:rgba(248,246,242,0.85); font-size:1rem; font-weight:500; }
+    .nav__mobile.open { display:block; }
+
+    /* HERO */
+    .page-hero { background:linear-gradient(145deg,var(--navy) 0%,#0D2B4E 100%); padding:8rem 2rem 3.5rem; text-align:center; }
+    .page-hero h1 { color:var(--cream); margin-bottom:0.75rem; }
+    .page-hero p { color:rgba(248,246,242,0.65); max-width:640px; margin:0 auto 2rem; font-size:1.05rem; line-height:1.75; }
+
+    /* SEARCH */
+    .search-bar { background:var(--navy-mid); border-bottom:1px solid rgba(201,168,76,0.15); padding:1.25rem 2rem; }
+    .search-bar__inner { max-width:var(--max); margin:0 auto; display:flex; }
+    .search-bar input { flex:1; padding:0.85rem 1.25rem; background:rgba(255,255,255,0.07); border:1px solid rgba(201,168,76,0.25); border-right:none; border-radius:var(--r) 0 0 var(--r); color:var(--cream); font-family:var(--font-b); font-size:0.9rem; outline:none; }
+    .search-bar input::placeholder { color:rgba(248,246,242,0.35); }
+    .search-bar input:focus { border-color:rgba(201,168,76,0.6); }
+    .search-bar button { padding:0.85rem 1.5rem; background:var(--gold); border:none; border-radius:0 var(--r) var(--r) 0; color:var(--navy); font-weight:600; font-size:0.88rem; cursor:pointer; font-family:var(--font-b); }
+    .search-bar button:hover { background:var(--gold-light); }
+
+    /* BODY NAV */
+    .body-nav { padding:3rem 2rem; background:var(--cream); }
+    .body-nav__inner { max-width:var(--max); margin:0 auto; }
+    .body-nav__grid { display:grid; grid-template-columns:repeat(9,1fr); gap:0.5rem; margin-top:2rem; }
+    .body-btn { display:flex; flex-direction:column; align-items:center; gap:0.35rem; padding:0.85rem 0.4rem; background:var(--off-white); border:1px solid rgba(0,0,0,0.07); border-radius:var(--r); cursor:pointer; transition:all var(--t); text-align:center; border-bottom:3px solid transparent; }
+    .body-btn:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(10,22,40,0.08); border-bottom-color:var(--gold); }
+    .body-btn.active { background:var(--navy); border-bottom-color:var(--gold); }
+    .body-btn.active .body-btn__icon,.body-btn.active .body-btn__label { color:var(--cream); }
+    .body-btn.active .body-btn__label { color:var(--cream); }
+    .body-btn__icon { font-size:1.35rem; }
+    .body-btn__label { font-size:0.68rem; font-weight:600; color:var(--text); letter-spacing:0.03em; line-height:1.2; }
+    .body-btn__count { font-size:0.6rem; color:var(--gray); }
+    .body-btn.active .body-btn__count { color:rgba(248,246,242,0.5); }
+
+    /* MAIN LAYOUT */
+    .main-layout { max-width:var(--max); margin:0 auto; padding:0 2rem 5rem; display:grid; grid-template-columns:260px 1fr; gap:3rem; align-items:start; }
+
+    /* SIDEBAR */
+    .sidebar { position:sticky; top:100px; }
+    .sidebar__section { margin-bottom:2rem; }
+    .sidebar__title { font-size:0.68rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:0.85rem; }
+    .sidebar__links { list-style:none; display:flex; flex-direction:column; gap:0.15rem; }
+    .sidebar__links li a { display:block; padding:0.55rem 0.85rem; font-size:0.85rem; color:#4a4a5a; border-radius:var(--r); transition:all var(--t); border-left:2px solid transparent; }
+    .sidebar__links li a:hover,.sidebar__links li a.active { background:var(--off-white); color:var(--navy); border-left-color:var(--gold); font-weight:600; }
+    .sidebar__cta { background:var(--navy); border-radius:var(--r); padding:1.5rem; border:1px solid rgba(201,168,76,0.2); margin-top:2rem; }
+    .sidebar__cta h4 { color:var(--gold); font-size:0.88rem; margin-bottom:0.5rem; }
+    .sidebar__cta p { color:rgba(248,246,242,0.65); font-size:0.8rem; line-height:1.55; margin-bottom:1rem; }
+
+    /* CONTENT */
+    .content-area { padding-top:3rem; }
+    .content-section { display:none; }
+    .content-section.visible { display:block; }
+    .section-header { margin-bottom:2.5rem; padding-bottom:1.5rem; border-bottom:1px solid rgba(0,0,0,0.08); }
+    .section-header h2 { margin-bottom:0.5rem; }
+    .section-header p { color:var(--gray); font-size:0.95rem; margin-bottom:0; }
+
+    /* ARTICLE ROWS */
+    .articles-list { display:flex; flex-direction:column; gap:1.25rem; }
+    .article-row { background:white; border:1px solid rgba(0,0,0,0.07); border-radius:var(--r); padding:1.5rem; display:grid; grid-template-columns:1fr auto; gap:1.5rem; align-items:center; transition:transform var(--t),box-shadow var(--t); border-left:3px solid transparent; }
+    a.article-row { display:grid; text-decoration:none; color:inherit; cursor:pointer; }
+    .article-row:hover { transform:translateX(3px); box-shadow:0 4px 16px rgba(10,22,40,0.06); border-left-color:var(--gold); }
+    .article-row__tag { font-size:0.65rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:0.5rem; display:inline-block; }
+    .tag--joint { color:#2E7D6E; } .tag--oncology { color:#7B4F9E; } .tag--sports { color:#C06820; }
+    .tag--trauma { color:#1E5F8E; } .tag--general { color:var(--gray); } .tag--india { color:#B5451B; }
+    .article-row h3 { font-size:1rem; margin-bottom:0.4rem; line-height:1.35; }
+    .article-row p { font-size:0.85rem; color:#5a5a6a; line-height:1.6; margin-bottom:0; }
+    .article-row__meta { display:flex; flex-direction:column; align-items:flex-end; gap:0.75rem; flex-shrink:0; }
+    .status-badge { font-size:0.7rem; font-weight:600; padding:0.25rem 0.65rem; border-radius:2rem; white-space:nowrap; }
+    .status-badge--soon { background:rgba(201,168,76,0.12); color:var(--gold); }
+    .status-badge--live { background:rgba(37,211,102,0.1); color:#1a9e4a; }
+    .pdf-badge { font-size:0.68rem; font-weight:600; color:var(--steel); }
+
+    /* INDIA CALLOUT */
+    .india-callout { background:linear-gradient(135deg,rgba(181,69,27,0.06) 0%,rgba(201,168,76,0.06) 100%); border:1px solid rgba(181,69,27,0.2); border-radius:var(--r); padding:1.25rem 1.5rem; margin-bottom:1.5rem; display:flex; gap:1rem; align-items:flex-start; }
+    .india-callout__icon { font-size:1.3rem; flex-shrink:0; }
+    .india-callout__text { font-size:0.88rem; color:#4a3020; line-height:1.6; }
+    .india-callout__text strong { color:#B5451B; }
+
+    /* HANDOUT STRIP */
+    .handout-strip { background:var(--off-white); border:1px solid rgba(0,0,0,0.07); border-radius:var(--r); padding:1.5rem; margin-top:2.5rem; display:flex; gap:1.25rem; align-items:center; }
+    .handout-strip__icon { width:48px; height:48px; border-radius:50%; background:rgba(74,127,165,0.1); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:1.3rem; }
+    .handout-strip__text h4 { font-size:0.95rem; margin-bottom:0.25rem; }
+    .handout-strip__text p { font-size:0.82rem; color:var(--gray); margin-bottom:0; }
+
+    /* EXPECT GRID */
+    .expect-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-top:1.5rem; }
+    .expect-card { background:white; border:1px solid rgba(0,0,0,0.07); border-radius:var(--r); padding:1.5rem; }
+    .expect-card__num { font-family:var(--font-d); font-size:2rem; font-weight:700; color:rgba(201,168,76,0.3); line-height:1; margin-bottom:0.5rem; }
+    .expect-card h4 { font-size:0.95rem; margin-bottom:0.5rem; }
+    .expect-card p { font-size:0.84rem; color:#5a5a6a; margin-bottom:0; line-height:1.65; }
+
+    /* CTA / FOOTER */
+    .appt-cta { padding:5rem 2rem; background:var(--navy); }
+    .appt-cta__inner { max-width:800px; margin:0 auto; text-align:center; }
+    .appt-cta h2 { color:var(--cream); margin-bottom:1rem; }
+    .appt-cta p { color:rgba(248,246,242,0.65); margin-bottom:2rem; font-size:1.05rem; }
+    .appt-cta__actions { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+    .appt-cta__contact { margin-top:2rem; display:flex; gap:2rem; justify-content:center; flex-wrap:wrap; }
+    .appt-cta__contact-item { font-size:0.88rem; color:rgba(248,246,242,0.5); }
+    .appt-cta__contact-item a { color:rgba(248,246,242,0.7); }
+    .footer { background:var(--navy-mid); border-top:1px solid rgba(201,168,76,0.15); padding:3rem 2rem; }
+    .footer__inner { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr; gap:3rem; }
+    .footer__brand { font-family:var(--font-d); font-size:1.3rem; color:var(--cream); font-weight:700; margin-bottom:0.75rem; }
+    .footer__brand span { color:var(--gold); }
+    .footer__tagline { font-size:0.85rem; color:rgba(248,246,242,0.45); line-height:1.6; }
+    .footer h5 { font-size:0.72rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; }
+    .footer ul { list-style:none; display:flex; flex-direction:column; gap:0.6rem; }
+    .footer ul li a { font-size:0.88rem; color:rgba(248,246,242,0.55); }
+    .footer__contact-item { font-size:0.85rem; color:rgba(248,246,242,0.55); line-height:1.5; margin-bottom:0.5rem; }
+    .footer__contact-item a { color:rgba(248,246,242,0.7); }
+    .footer__bottom { max-width:var(--max); margin:2rem auto 0; border-top:1px solid rgba(248,246,242,0.06); padding-top:1.5rem; font-size:0.78rem; color:rgba(248,246,242,0.3); text-align:center; }
+    .disclaimer { background:var(--off-white); border-top:1px solid rgba(0,0,0,0.08); padding:1.25rem 2rem; }
+    .disclaimer__inner { max-width:var(--max); margin:0 auto; font-size:0.78rem; color:var(--gray); line-height:1.6; }
+    .wa-float { position:fixed; bottom:2rem; right:2rem; z-index:200; width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(37,211,102,0.35); transition:transform var(--t); }
+    .wa-float:hover { transform:scale(1.08); }
+    .wa-float svg { width:28px; height:28px; fill:white; }
+
+    @media (max-width:900px) {
+      .main-layout { grid-template-columns:1fr; }
+      .sidebar { position:static; }
+      .expect-grid { grid-template-columns:1fr; }
+      .footer__inner { grid-template-columns:1fr; gap:2rem; }
+    }
+    @media (max-width:640px) {
+      .nav__links { display:none; } .nav__hamburger { display:flex; }
+      .body-nav__grid { grid-template-columns:repeat(5,1fr); gap:0.4rem; }
+      .article-row { grid-template-columns:1fr; }
+      .article-row__meta { flex-direction:row; }
+    }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none!important; } }
+  </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQJV3LV6SV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WQJV3LV6SV');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xd5ee60zrw");
+  </script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__brand">Dr. <span>Satish</span> Reddy. G</a>
+    <ul class="nav__links">
+      <li><a href="/about">About</a></li>
+      <li><a href="/specialties">Specialties</a></li>
+      <li><a href="/for-doctors">For Doctors</a></li>
+      <li><a href="/blog" class="active">Patient Education</a></li>
+      <li><a href="/second-opinion" class="nav__second-opinion">✦ Free Second Opinion</a></li>
+      <li><a href="/contact" class="nav__cta">Book Appointment</a></li>
+    </ul>
+    <div class="nav__hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobileMenu">
+  <ul>
+    <li><a href="/about" onclick="toggleMenu()">About</a></li>
+    <li><a href="/specialties" onclick="toggleMenu()">Specialties</a></li>
+    <li><a href="/for-doctors" onclick="toggleMenu()">For Doctors</a></li>
+    <li><a href="/blog" onclick="toggleMenu()">Patient Education</a></li>
+    <li><a href="/second-opinion" onclick="toggleMenu()" style="color:#4ade80;font-weight:600">✦ Free Second Opinion</a></li>
+    <li><a href="/contact" onclick="toggleMenu()">Book Appointment</a></li>
+  </ul>
+</div>
+
+<section class="page-hero">
+  <span class="eyebrow">Patient Education</span>
+  <h1>Patient Education</h1>
+  <p>Plain-language guides to orthopaedic conditions, treatments, and recovery, written for Indian patients and addressing the conditions, lifestyles, and questions that matter most here.</p>
+</section>
+
+<div class="search-bar">
+  <div class="search-bar__inner">
+    <input type="text" id="searchInput" placeholder='Search, e.g. "knee pain", "ACL", "bone tumour", "avascular necrosis"' />
+    <button onclick="doSearch()">Search</button>
+  </div>
+</div>
+
+<section class="body-nav">
+  <div class="body-nav__inner">
+    <div style="text-align:center">
+      <span class="eyebrow">Browse by body part</span>
+      <h2>Where is your problem?</h2>
+      <p style="color:var(--gray);max-width:520px;margin:0.75rem auto 0;font-size:0.95rem">Select a body part below to see relevant conditions and articles.</p>
+    </div>
+    <div class="body-nav__grid">
+      <button class="body-btn active" onclick="showSection('knee',this)"><span class="body-btn__icon">🦵</span><span class="body-btn__label">Knee</span><span class="body-btn__count">13 articles</span></button>
+      <button class="body-btn" onclick="showSection('hip',this)"><span class="body-btn__icon">🦴</span><span class="body-btn__label">Hip</span><span class="body-btn__count">5 articles</span></button>
+      <button class="body-btn" onclick="showSection('shoulder',this)"><span class="body-btn__icon">💪</span><span class="body-btn__label">Shoulder</span><span class="body-btn__count">5 articles</span></button>
+      <button class="body-btn" onclick="showSection('bone-tumour',this)"><span class="body-btn__icon">🔬</span><span class="body-btn__label">Bone Tumours</span><span class="body-btn__count">6 articles</span></button>
+      <button class="body-btn" onclick="showSection('fracture',this)"><span class="body-btn__icon">🩻</span><span class="body-btn__label">Fractures</span><span class="body-btn__count">4 articles</span></button>
+      <button class="body-btn" onclick="showSection('spine',this)"><span class="body-btn__icon">🫀</span><span class="body-btn__label">Spine &amp; Back</span><span class="body-btn__count">3 articles</span></button>
+      <button class="body-btn" onclick="showSection('bone-health',this)"><span class="body-btn__icon">💊</span><span class="body-btn__label">Bone Health</span><span class="body-btn__count">4 articles</span></button>
+      <button class="body-btn" onclick="showSection('surgery-prep',this)"><span class="body-btn__icon">🏥</span><span class="body-btn__label">Before Surgery</span><span class="body-btn__count">4 articles</span></button>
+      <button class="body-btn" onclick="showSection('rehab',this)"><span class="body-btn__icon">🏃</span><span class="body-btn__label">Rehabilitation</span><span class="body-btn__count">7 articles</span></button>
+    </div>
+  </div>
+</section>
+
+<div style="background:var(--off-white);padding:0 0 4rem">
+<div class="main-layout">
+
+  <aside class="sidebar">
+    <div class="sidebar__section">
+      <div class="sidebar__title">In this section</div>
+      <ul class="sidebar__links" id="sidebarLinks"></ul>
+    </div>
+    <div class="sidebar__cta">
+      <h4>Have a question?</h4>
+      <p>Reading is a good start. A consultation gives you a specific answer to your specific problem.</p>
+      <a href="/contact" class="btn btn-gold" style="font-size:0.82rem;padding:0.65rem 1.25rem;display:block;text-align:center">Book a consultation</a>
+    </div>
+  </aside>
+
+  <main>
+
+    <!-- KNEE -->
+    <div class="content-section visible" id="section-knee">
+      <div class="section-header">
+        <span class="eyebrow">Knee</span>
+        <h2>Knee conditions &amp; treatments</h2>
+        <p>The knee is the most commonly affected joint in India, driven by lifestyle factors like floor-sitting and squatting, genetic predisposition, and an ageing population.</p>
+      </div>
+      <div class="india-callout">
+        <div class="india-callout__icon">🇮🇳</div>
+        <div class="india-callout__text"><strong>Why knee arthritis is so common in India:</strong> Habitual squatting, sitting cross-legged, and climbing stairs in multi-storey homes place significantly higher stress on the knee joint than flat-surface walking. Indian patients often present with more advanced arthritis at the same age compared to Western populations, partly due to lifestyle, partly due to delayed consultation.</div>
+      </div>
+      <div class="articles-list">
+        <a class="article-row" href="/knee-replacement-guide"><div><span class="article-row__tag tag--joint">Joint Replacement</span><h3>Knee Replacement Surgery: Everything You Need to Know</h3><p>The complete guide: who needs it, why patients delay, what surgery involves, robotic assistance, how long implants last, and recovery. Start here.</p></div><div class="article-row__meta"><span class="status-badge status-badge--live">Live</span></div></a>
+        <a class="article-row" href="/partial-vs-total-knee-replacement"><div><span class="article-row__tag tag--joint">Joint Replacement</span><h3>Partial vs Total Knee Replacement: Which Is Right for You?</h3><p>The knee has three compartments. Which operation suits which pattern of arthritis, who qualifies for partial replacement, and how the decision is made.</p></div><div class="article-row__meta"><span class="status-badge status-badge--live">Live</span></div></a>
+        <a class="article-row" href="/bilateral-knee-replacement"><div><span class="article-row__tag tag--joint">Joint Replacement</span><h3>Bilateral Knee Replacement: Both Knees at Once or One at a Time?</h3><p>Simultaneous vs staged replacement: the advantages, the risks, who is suitable for each, and how the decision is made with your surgeon and anaesthetist.</p></div><div class="article-row__meta"><span class="status-badge status-badge--live">Live</span></div></a>
+        <a class="article-row" href="/knee-replacement-recovery"><div><span class="article-row__tag tag--joint">Joint Replacement</span><h3>Knee Replacement Recovery: An Honest Week-by-Week Timeline</h3><p>From standing on day one to feeling natural at one year. What actually happens at each stage, what slows recovery down, and when to call your surgeon.</p></div><div class="article-row__meta"><span class="status-badge status-badge--live">Live</span></div></a>
+        <a class="article-row" href="/knee-replacement-lifespan"><div><span class="article-row__tag tag--joint">Joint Replacement</span><h3>How Long Does a Knee Replacement Last?</h3><p>Registry data shows modern implants last 20 to 25 years or more. What affects longevity, why implants fail, and whether younger patients should wait.</p></div><div class="article-row__meta"><span class="status-badge status-badge--live">Live</span></div></a>
+        <a class="article-row" href="/revision-knee-replacement"><div><span class="article-row__tag tag--joint">Joint Replacement</span><h3>Revision Knee Replacement: When and Why</h3><p>No implant is permanent. Why knee replacements fail, how a failing implant is diagnosed, what revision surgery involves, and how to avoid needing it.</p></div><div class="article-row__meta"><span class="status-badge status-badge--live">Live</span></div></a>
+        <div class="article-row"><div><span class="article-row__tag tag--joint">Joint Replacement</span><h3>Robotic Knee Replacement: What It Actually Means for Your Surgery</h3><p>The robot does not operate, your surgeon does. What robotic-assisted technology adds to precision, why it matters, and who benefits most from it.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <a class="article-row" href="/knee-replacement-indian-lifestyle"><div><span class="article-row__tag tag--india">Indian Context</span><h3>Indian Lifestyle After Knee Replacement: Floor Sitting, Stairs, Travel and Prayer</h3><p>Squatting toilets, floor sitting, namaz and prayer postures, stairs, driving, and travel. The questions Indian patients actually ask, answered directly.</p></div><div class="article-row__meta"><span class="status-badge status-badge--live">Live</span></div></a>
+        <div class="article-row"><div><span class="article-row__tag tag--sports">Sports / Activity</span><h3>ACL Tear: Surgery vs. Physiotherapy, What Is Right for You?</h3><p>Not every ACL tear needs an operation. How to make an informed decision based on your age, activity level, and what you want to get back to.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--sports">Sports / Activity</span><h3>Meniscal Tears: What They Are, What They Are Not, and When Surgery Helps</h3><p>Many meniscal tears visible on MRI cause no symptoms at all. Understanding which tears need treatment, and which do not.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--india">Indian Context</span><h3>Knee Pain in Young Adults: Is It Arthritis Already?</h3><p>Knee arthritis in your 30s and 40s is more common in India than people realise. What causes early-onset arthritis and what can slow it down.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--general">General</span><h3>Knee Replacement: 12 Questions to Ask Before You Agree to Surgery</h3><p>A checklist of questions every patient should ask their surgeon, and what a good answer sounds like.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span><span class="pdf-badge">📄 Handout planned</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--india">Indian Context</span><h3>Using Insurance for Knee Replacement at a Private Hospital: What to Know</h3><p>Cashless admission, pre-authorisation, what is typically covered, and how to avoid surprises at discharge.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+      </div>
+      <div class="handout-strip"><div class="handout-strip__icon">📋</div><div class="handout-strip__text"><h4>Printable patient handouts</h4><p>PDF handouts covering common knee conditions will be available to download and bring to your appointment. Coming soon.</p></div></div>
+    </div>
+
+    <!-- HIP -->
+    <div class="content-section" id="section-hip">
+      <div class="section-header"><span class="eyebrow">Hip</span><h2>Hip conditions &amp; treatments</h2><p>Hip pain in India is often misattributed to the spine or "sciatica", delaying diagnosis. Hip arthritis, avascular necrosis, and fractures in the elderly are all common and very treatable.</p></div>
+      <div class="india-callout"><div class="india-callout__icon">🇮🇳</div><div class="india-callout__text"><strong>Avascular necrosis (AVN) of the hip</strong> is significantly more common in India than in Western countries. Overuse of steroids, including for skin conditions, allergies, and COVID treatment, is one of the most common causes seen in younger Indian patients.</div></div>
+      <div class="articles-list">
+        <div class="article-row"><div><span class="article-row__tag tag--joint">Joint Replacement</span><h3>Hip Replacement: When Is It Time, and What Should I Expect?</h3><p>Hip arthritis is one of the most reliably treatable painful conditions in orthopaedics. A guide to recognising the right time and recovering well.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span><span class="pdf-badge">📄 Handout planned</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--india">Indian Context</span><h3>Avascular Necrosis of the Hip: Why It Is So Common in India and What Can Be Done</h3><p>Steroids, alcohol, sickle cell disease, and COVID-related AVN. Understanding the causes, stages, and when to seek specialist input.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--trauma">Trauma</span><h3>Hip Fractures in the Elderly: Why Early Surgery Saves Lives</h3><p>A hip fracture in an older person is a medical emergency, not just an orthopaedic problem. Why the timing of surgery matters as much as the surgery itself.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--india">Indian Context</span><h3>Groin Pain That Is Actually Your Hip: A Common Misdiagnosis</h3><p>Hip arthritis frequently presents as groin pain, inner thigh pain, or even knee pain, and is often missed. How to tell if the problem is in your hip.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--general">General</span><h3>After Hip Replacement: What You Can and Cannot Do</h3><p>Driving, climbing stairs, sitting, exercise, and returning to work, a practical recovery guide for Indian patients and their families.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span><span class="pdf-badge">📄 Handout planned</span></div></div>
+      </div>
+    </div>
+
+    <!-- SHOULDER -->
+    <div class="content-section" id="section-shoulder">
+      <div class="section-header"><span class="eyebrow">Shoulder</span><h2>Shoulder conditions &amp; treatments</h2><p>Shoulder problems are commonly under-treated in India, patients often live with significant pain for years before seeking specialist input. Most shoulder conditions are very effectively managed with the right treatment.</p></div>
+      <div class="articles-list">
+        <div class="article-row"><div><span class="article-row__tag tag--sports">Sports / Activity</span><h3>Rotator Cuff Tears: The Shoulder Injury Most People Misunderstand</h3><p>Not all rotator cuff tears cause pain. Not all painful shoulders have a rotator cuff tear. Clearing the confusion, and explaining when surgery actually helps.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--india">Indian Context</span><h3>Frozen Shoulder: Why It Is So Common in Indians with Diabetes</h3><p>Indians with diabetes are at significantly higher risk of frozen shoulder (adhesive capsulitis). Understanding the link, and what treatment actually works.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--sports">Sports / Activity</span><h3>Shoulder Dislocation: Why It Keeps Happening and How to Stop It</h3><p>After a first dislocation, the shoulder is vulnerable to repeated episodes, especially in young, active patients. When surgery is the right answer.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--joint">Joint Replacement</span><h3>Shoulder Replacement: Who Needs It and What to Expect</h3><p>Shoulder replacement is far less well-known than knee or hip replacement, but equally effective for the right patient. A plain-language introduction.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--india">Indian Context</span><h3>Shoulder Pain in Manual Workers and Farmers: Causes and Solutions</h3><p>Repetitive overhead activity in agricultural, construction, and domestic work is a major cause of shoulder injury in India. What helps and what to avoid.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+      </div>
+    </div>
+
+    <!-- BONE TUMOURS -->
+    <div class="content-section" id="section-bone-tumour">
+      <div class="section-header"><span class="eyebrow">Bone Tumours</span><h2>Bone &amp; soft tissue tumours</h2><p>A bone tumour diagnosis is frightening, but most are treatable, and amputation is rarely necessary today. These articles explain what to expect, your options, and why early specialist referral changes outcomes.</p></div>
+      <div class="india-callout"><div class="india-callout__icon">🇮🇳</div><div class="india-callout__text"><strong>Osteosarcoma tends to affect younger patients in India</strong>, teens and young adults, and often presents at a more advanced stage due to delayed diagnosis. Pain in a limb that does not improve with rest, particularly around the knee or shoulder in a young person, should always be assessed by a specialist.</div></div>
+      <div class="articles-list">
+        <div class="article-row"><div><span class="article-row__tag tag--oncology">Ortho Oncology</span><h3>Bone Tumour Diagnosed: What Happens Next?</h3><p>A step-by-step guide to the diagnosis and treatment pathway, staging, biopsy, the tumour board, and what decisions lie ahead.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span><span class="pdf-badge">📄 Handout planned</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--oncology">Ortho Oncology</span><h3>Limb Salvage Surgery: Saving the Limb Without Compromising the Cure</h3><p>For most patients with bone tumours today, amputation is not the answer. What limb salvage involves, who it suits, and what life looks like afterwards.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--oncology">Ortho Oncology</span><h3>Osteosarcoma in Young Patients: A Guide for Patients and Families</h3><p>Osteosarcoma most often affects teenagers and young adults. What it is, how it is treated, and what outcomes look like with modern treatment.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--oncology">Ortho Oncology</span><h3>Giant Cell Tumour of Bone: Benign but Aggressive</h3><p>Giant cell tumour is not a cancer, but it can destroy bone and recur after treatment. Understanding the condition, the surgery, and the follow-up needed.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--oncology">Ortho Oncology</span><h3>Bone Metastases: When Cancer Spreads to the Bone</h3><p>When breast, lung, prostate, kidney, or thyroid cancer spreads to bone, it can cause fractures and loss of function. What surgery can and cannot do.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--general">General</span><h3>Getting a Second Opinion for a Bone Tumour: Why It Matters More Than You Think</h3><p>For bone tumours, the first surgeon who operates has the best chance of cure, which is why seeing the right surgeon first is critical.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+      </div>
+    </div>
+
+    <!-- FRACTURES -->
+    <div class="content-section" id="section-fracture">
+      <div class="section-header"><span class="eyebrow">Fractures &amp; Trauma</span><h2>Fractures &amp; complex trauma</h2><p>India has one of the highest road traffic accident rates in the world. Complex fractures, particularly those involving joints or that have failed to heal, require specialist input for the best outcome.</p></div>
+      <div class="india-callout"><div class="india-callout__icon">🇮🇳</div><div class="india-callout__text"><strong>Two-wheeler accidents</strong> are the single most common cause of serious limb fractures in India. High-energy injuries frequently involve multiple fractures, joint involvement, and soft tissue damage, all requiring careful surgical planning.</div></div>
+      <div class="articles-list">
+        <div class="article-row"><div><span class="article-row__tag tag--trauma">Trauma</span><h3>My Fracture Has Not Healed: Understanding Non-Union and What Can Be Done</h3><p>Most fractures heal, but some do not. Why bones fail to heal, and what surgical options are available when they do.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--trauma">Trauma</span><h3>Fractures Around a Joint: Why These Are Different and Harder to Treat</h3><p>Intra-articular fractures need precise surgical reconstruction. What this involves and why the surgeon's experience matters.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--india">Indian Context</span><h3>Road Accident Injuries: What to Expect from the First Few Weeks of Treatment</h3><p>A guide for patients and families on what is happening, who is involved, and what decisions lie ahead after a serious accident.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--trauma">Trauma</span><h3>Fractures in Patients with Osteoporosis: Why Bone Quality Changes Everything</h3><p>Osteoporotic bone fractures at lower energy, heals slower, and implants can fail. What this means for treatment planning.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+      </div>
+    </div>
+
+    <!-- SPINE -->
+    <div class="content-section" id="section-spine">
+      <div class="section-header"><span class="eyebrow">Spine &amp; Back</span><h2>Spine &amp; back conditions</h2><p>Note: Dr. Satish does not perform spine surgery. These articles address when back or spine problems might be causing limb pain, and when a referral to a spine specialist may be needed.</p></div>
+      <div class="articles-list">
+        <div class="article-row"><div><span class="article-row__tag tag--india">Indian Context</span><h3>Is Your Hip or Knee Pain Actually Coming from Your Spine?</h3><p>Lumbar spine problems can mimic hip and knee pain, and vice versa. How orthopaedic surgeons distinguish between them, and why the source matters for treatment.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--india">Indian Context</span><h3>Tuberculosis of the Bone and Spine: A Condition That Still Matters in India</h3><p>TB can affect any bone. In India, spinal TB (Pott's disease) remains an important cause of back pain, disability, and neurological problems, and is curable if caught early.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--general">General</span><h3>When to See an Orthopaedic Surgeon vs. a Physiotherapist for Back Pain</h3><p>Most back pain does not need a surgeon. The red flags that warrant urgent assessment, and when physiotherapy is the right first step.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+      </div>
+    </div>
+
+    <!-- BONE HEALTH -->
+    <div class="content-section" id="section-bone-health">
+      <div class="section-header"><span class="eyebrow">Bone Health</span><h2>Bone health &amp; prevention</h2><p>Strong bones are the foundation of healthy joints and fracture-free ageing. Many Indian patients, particularly women and the elderly, have significantly lower bone density than they realise.</p></div>
+      <div class="india-callout"><div class="india-callout__icon">🇮🇳</div><div class="india-callout__text"><strong>Vitamin D deficiency is near-universal in urban India</strong>, paradoxically, despite abundant sunshine. Most urban Indians spend little time outdoors, and clothing coverage further limits sun exposure. Low Vitamin D directly impairs bone mineralisation, contributing to osteoporosis and fracture risk.</div></div>
+      <div class="articles-list">
+        <div class="article-row"><div><span class="article-row__tag tag--india">Indian Context</span><h3>Osteoporosis in India: Why So Many Women Are Undiagnosed</h3><p>Osteoporosis is a silent disease, there are no symptoms until a fracture occurs. Why Indian women are at particularly high risk, and what can be done about it.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span><span class="pdf-badge">📄 Handout planned</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--india">Indian Context</span><h3>Vitamin D and Bone Health: What Every Indian Should Know</h3><p>India is both one of the sunniest and one of the most Vitamin D deficient countries in the world. Why this happens, what the consequences are, and what to do.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--india">Indian Context</span><h3>Fluorosis and Bone Disease: A Condition Specific to Certain Indian Regions</h3><p>Excess fluoride in groundwater in parts of AP, Telangana, and Rajasthan causes skeletal fluorosis, a progressive bone disease that mimics arthritis.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--general">General</span><h3>Exercise for Bone Health: What Actually Works as You Age</h3><p>Not all exercise protects bones equally. What the evidence says about weight-bearing activity, resistance training, and fall prevention for older Indians.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+      </div>
+    </div>
+
+    <!-- BEFORE SURGERY -->
+    <div class="content-section" id="section-surgery-prep">
+      <div class="section-header"><span class="eyebrow">Before Surgery</span><h2>Preparing for orthopaedic surgery</h2><p>Patients who prepare well for surgery recover faster, experience fewer complications, and report higher satisfaction, no matter which procedure they are having.</p></div>
+      <div class="articles-list">
+        <div class="article-row"><div><span class="article-row__tag tag--general">General</span><h3>Getting a Second Opinion Before Orthopaedic Surgery: When and How</h3><p>A second opinion is not a sign of distrust, it is one of the most sensible things you can do before major surgery. How to approach it and what to bring.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--india">Indian Context</span><h3>Using Health Insurance for Orthopaedic Surgery: A Practical Guide</h3><p>Cashless admission, pre-authorisation letters, TPA processes, what is typically covered, and how to avoid unexpected bills at discharge.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span><span class="pdf-badge">📄 Handout planned</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--general">General</span><h3>Preparing Your Home for Recovery After Joint Replacement</h3><p>Small changes at home before your surgery can make recovery significantly easier, adapted for typical Indian homes.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span><span class="pdf-badge">📄 Handout planned</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--general">General</span><h3>Questions to Ask Your Surgeon Before Any Orthopaedic Operation</h3><p>Twelve questions every patient should ask, covering the procedure, risks, recovery, and alternatives. What a good answer looks like.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span><span class="pdf-badge">📄 Handout planned</span></div></div>
+      </div>
+
+      <div style="margin-top:2.5rem">
+        <span class="eyebrow">What to expect</span>
+        <h3 style="margin-bottom:1rem">The surgery journey at KIMS Hospital</h3>
+        <div class="expect-grid">
+          <div class="expect-card"><div class="expect-card__num">01</div><h4>Consultation &amp; decision</h4><p>Your first appointment covers diagnosis, imaging review, all options, surgical and non-surgical, and a clear explanation of what surgery involves and what it does not.</p></div>
+          <div class="expect-card"><div class="expect-card__num">02</div><h4>Pre-operative preparation</h4><p>Blood tests, anaesthesia review, medical fitness assessment, insurance pre-authorisation, and a briefing on what to bring, when to stop eating, and what to expect on admission day.</p></div>
+          <div class="expect-card"><div class="expect-card__num">03</div><h4>Surgery &amp; hospital stay</h4><p>Most elective orthopaedic procedures involve a 2–4 day hospital stay. Physiotherapy begins the day after most joint replacements. Pain is managed proactively throughout.</p></div>
+          <div class="expect-card"><div class="expect-card__num">04</div><h4>Recovery at home</h4><p>A written discharge plan, physiotherapy schedule, and follow-up appointment are provided before you leave. What to watch for, when to call, and what a normal recovery looks like.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REHABILITATION -->
+    <div class="content-section" id="section-rehab">
+      <div class="section-header">
+        <span class="eyebrow">Rehabilitation</span>
+        <h2>Recovery &amp; rehabilitation</h2>
+        <p>Surgery is only half the story. What happens in the weeks and months after the operation determines how fully you recover. These guides cover physiotherapy, exercises, pain management, and getting back to daily life.</p>
+      </div>
+      <div class="india-callout">
+        <div class="india-callout__icon">🇮🇳</div>
+        <div class="india-callout__text"><strong>Physiotherapy compliance is lower in India than it needs to be.</strong> Many patients discontinue exercises once pain reduces, well before strength and movement have fully returned. The patients who do best are those who follow through for the full recovery period, not just until they feel better.</div>
+      </div>
+
+      <div style="background:white;border:1px solid rgba(0,0,0,0.07);border-radius:8px;padding:2rem;margin-bottom:2rem">
+        <h3 style="font-family:'Playfair Display',serif;color:var(--navy);font-size:1.25rem;margin-bottom:1rem">Why rehabilitation matters as much as the surgery</h3>
+        <p style="font-size:0.92rem;line-height:1.7;color:#4a4a5a;margin-bottom:1rem">A technically perfect operation with poor rehabilitation gives a poor result. A good operation with disciplined rehabilitation gives an excellent one. The implant or the repair creates the potential for recovery; the weeks of structured exercise afterwards are what convert that potential into a working joint. Strength, balance, range of motion, and confidence in the limb are all rebuilt in rehabilitation, not in the operating theatre.</p>
+        <p style="font-size:0.92rem;line-height:1.7;color:#4a4a5a;margin-bottom:1.5rem">Every protocol below is organised into phases. Each phase has goals, precautions, exercises, and criteria that must be met before progressing to the next. Progression is based on what your body has achieved, not just on how many weeks have passed. Moving too fast risks damaging the surgery; moving too slow allows stiffness and weakness to set in.</p>
+
+        <h4 style="font-family:'Playfair Display',serif;color:var(--navy);font-size:1.05rem;margin-bottom:0.85rem">How to use these protocols</h4>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem">
+          <div style="background:var(--off-white);border-radius:6px;padding:1.1rem;border-left:3px solid var(--gold)">
+            <strong style="font-size:0.85rem;color:var(--navy);display:block;margin-bottom:0.35rem">1. Download your protocol</strong>
+            <span style="font-size:0.82rem;color:#4a4a5a;line-height:1.55">Each protocol is available as a PDF. Download the one that matches your surgery.</span>
+          </div>
+          <div style="background:var(--off-white);border-radius:6px;padding:1.1rem;border-left:3px solid var(--gold)">
+            <strong style="font-size:0.85rem;color:var(--navy);display:block;margin-bottom:0.35rem">2. Share it with your physiotherapist</strong>
+            <span style="font-size:0.82rem;color:#4a4a5a;line-height:1.55">These protocols are written to be used by your physiotherapist, wherever you are doing your rehabilitation.</span>
+          </div>
+          <div style="background:var(--off-white);border-radius:6px;padding:1.1rem;border-left:3px solid var(--gold)">
+            <strong style="font-size:0.85rem;color:var(--navy);display:block;margin-bottom:0.35rem">3. Progress by criteria, not dates</strong>
+            <span style="font-size:0.82rem;color:#4a4a5a;line-height:1.55">The timelines are guides. Move to the next phase only when the progression criteria are met.</span>
+          </div>
+          <div style="background:var(--off-white);border-radius:6px;padding:1.1rem;border-left:3px solid var(--gold)">
+            <strong style="font-size:0.85rem;color:var(--navy);display:block;margin-bottom:0.35rem">4. When in doubt, ask</strong>
+            <span style="font-size:0.82rem;color:#4a4a5a;line-height:1.55">Every recovery is individual. If something does not feel right, contact the clinic before pushing through.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="articles-list">
+        <a class="article-row" href="/tka-rehab-protocol-india"><div><span class="article-row__tag tag--joint">Joint Replacement</span><h3>Total Knee Replacement Rehabilitation Protocol</h3><p>Phase-by-phase physiotherapy guide after TKR: goals, exercises, precautions and progression criteria from Day 0 to Week 20. Take this to your physiotherapist.</p></div><div class="article-row__meta"><span class="status-badge status-badge--live">Live</span><span class="pdf-badge">📄 Download PDF</span></div></a>
+        <a class="article-row" href="/thr-rehab-protocol-india"><div><span class="article-row__tag tag--joint">Joint Replacement</span><h3>Total Hip Replacement Rehabilitation Protocol</h3><p>Phase-by-phase physiotherapy guide after THR: hospital phase through return to full activity. Includes Indian lifestyle precautions and home exercise programme.</p></div><div class="article-row__meta"><span class="status-badge status-badge--live">Live</span><span class="pdf-badge">📄 Download PDF</span></div></a>
+        <a class="article-row" href="/acl-rehab-protocol-india"><div><span class="article-row__tag tag--sports">Sports / Activity</span><h3>ACL Reconstruction Rehabilitation Protocol</h3><p>Six-phase rehabilitation protocol after ACL reconstruction: from graft protection in Week 0 through return to full sport at Month 12. Graft-type specific guidance included.</p></div><div class="article-row__meta"><span class="status-badge status-badge--live">Live</span><span class="pdf-badge">📄 Download PDF</span></div></a>
+        <a class="article-row" href="/meniscal-repair-protocol-india"><div><span class="article-row__tag tag--sports">Sports / Activity</span><h3>Meniscal Repair Rehabilitation Protocol</h3><p>Five-phase rehabilitation guide after meniscal repair surgery: from protecting the repair in the first three weeks through return to sport by Month 6.</p></div><div class="article-row__meta"><span class="status-badge status-badge--live">Live</span><span class="pdf-badge">📄 Download PDF</span></div></a>
+        <a class="article-row" href="/meniscal-root-repair-protocol-india"><div><span class="article-row__tag tag--sports">Sports / Activity</span><h3>Meniscal Root Repair Rehabilitation Protocol</h3><p>Strict protection protocol after meniscal root repair: non-weight-bearing for the first six weeks, with progressive loading through to return to sport at Month 9+.</p></div><div class="article-row__meta"><span class="status-badge status-badge--live">Live</span><span class="pdf-badge">📄 Download PDF</span></div></a>
+        <div class="article-row"><div><span class="article-row__tag tag--general">General</span><h3>Walking Aids After Orthopaedic Surgery: From Walker to Stick to None</h3><p>When to progress from a walker to crutches to a walking stick to independent walking, and what happens if you advance too quickly or too slowly.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+        <div class="article-row"><div><span class="article-row__tag tag--general">General</span><h3>Managing Pain During Orthopaedic Recovery: What Is Normal and What Is Not</h3><p>Pain after surgery is expected and manageable. What a normal pain trajectory looks like, which medications are used and when, and the warning signs that warrant a call to your surgeon.</p></div><div class="article-row__meta"><span class="status-badge status-badge--soon">Coming soon</span></div></div>
+      </div>
+    </div>
+
+
+  </main>
+</div>
+</div>
+
+<div class="disclaimer"><div class="disclaimer__inner"><strong>Medical disclaimer:</strong> These articles are for general patient education only, not a substitute for a consultation with a qualified orthopaedic surgeon. Every patient's situation is different. If you have concerns about a specific condition, please book a consultation.</div></div>
+
+<section class="appt-cta">
+  <div class="appt-cta__inner">
+    <span class="eyebrow">Take the next step</span>
+    <h2>Have a question? Book a consultation.</h2>
+    <p>Reading is a good start. A consultation with Dr. Satish gives you a specific answer to your specific problem, at KIMS Hospital, Ministers Road, Secunderabad.</p>
+    <div class="appt-cta__actions">
+      <a href="/contact" class="btn btn-gold">Book a Consultation</a>
+      <a href="https://wa.me/917075523360" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp Dr. Satish</a>
+    </div>
+    <div class="appt-cta__contact">
+      <div class="appt-cta__contact-item">📍 KIMS Hospital, Ministers Road, Secunderabad</div>
+      <div class="appt-cta__contact-item">📞 <a href="tel:+917075523360">+91 70755 23360</a></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div><div class="footer__brand">Dr. <span>Satish</span> Reddy. G</div><p class="footer__tagline">Consultant Orthopaedic Surgeon<br/>KIMS Hospital, Ministers Road, Secunderabad<br/><br/>MS Orth (Gold Medallist) &nbsp;·&nbsp; Fellowship-trained in Italy, UK &amp; Australia<br/>Pioneer of Orthopaedic Oncology, AP &amp; Telangana</p></div>
+    <div><h5>Navigate</h5><ul><li><a href="/about">About</a></li><li><a href="/specialties">Specialties</a></li><li><a href="/for-doctors">For Doctors</a></li><li><a href="/blog">Patient Education</a></li><li><a href="/contact">Contact &amp; Appointments</a></li></ul></div>
+    <div><h5>Contact</h5><div class="footer__contact-item">KIMS Hospital<br/>Ministers Road<br/>Secunderabad, Telangana</div><div class="footer__contact-item"><a href="tel:+917075523360">+91 70755 23360</a></div><div class="footer__contact-item"><a href="https://wa.me/917075523360" target="_blank" rel="noopener">WhatsApp</a></div></div>
+  </div>
+  <div class="footer__bottom">© 2025 Dr. Satish Reddy Gandavarapu. All rights reserved.</div>
+</footer>
+
+<a href="https://wa.me/917075523360" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp Dr. Satish">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  window.addEventListener('scroll', () => { document.querySelector('.nav').style.background = window.scrollY > 40 ? 'rgba(10,22,40,0.98)' : 'rgba(10,22,40,0.96)'; });
+
+  const sidebarData = {
+    knee: [
+      {label:'Knee Replacement Guide', href:'/knee-replacement-guide'},
+      {label:'Partial vs Total', href:'/partial-vs-total-knee-replacement'},
+      {label:'Bilateral Knee Replacement', href:'/bilateral-knee-replacement'},
+      {label:'Recovery Timeline', href:'/knee-replacement-recovery'},
+      {label:'Indian Lifestyle After Replacement', href:'/knee-replacement-indian-lifestyle'},
+      {label:'How Long Does It Last?', href:'/knee-replacement-lifespan'},
+      {label:'Revision Knee Replacement', href:'/revision-knee-replacement'},
+      'Robotic Knee Replacement',
+      'ACL Tear: Surgery vs. Physio',
+      'Meniscal Tears Explained',
+      'Knee Pain in Young Adults',
+      '12 Questions Before Surgery',
+      'Insurance for Knee Replacement'
+    ],
+    hip: ['Hip Replacement Guide','Avascular Necrosis (AVN)','Hip Fractures in the Elderly','Groin Pain, Is It Your Hip?','After Hip Replacement'],
+    shoulder: ['Rotator Cuff Tears','Frozen Shoulder & Diabetes','Shoulder Dislocation','Shoulder Replacement','Shoulder Pain in Manual Workers'],
+    'bone-tumour': ['Bone Tumour: What Happens Next?','Limb Salvage Surgery','Osteosarcoma in Young Patients','Giant Cell Tumour','Bone Metastases','Second Opinion for Bone Tumours'],
+    fracture: ['Non-Union of Fractures','Fractures Around a Joint','Road Accident Injuries','Fractures & Osteoporosis'],
+    spine: ['Hip/Knee Pain from Spine?','TB of Bone & Spine','Orthopaedic Surgeon vs. Physio'],
+    'bone-health': ['Osteoporosis in India','Vitamin D & Bone Health','Fluorosis & Bone Disease','Exercise for Bone Health'],
+    'surgery-prep': ['Getting a Second Opinion','Insurance Guide','Preparing Your Home','Questions to Ask Your Surgeon'],
+    rehab: [
+      {label:'TKR Rehabilitation Protocol', href:'/tka-rehab-protocol-india'},
+      {label:'THR Rehabilitation Protocol', href:'/thr-rehab-protocol-india'},
+      {label:'ACL Reconstruction Protocol', href:'/acl-rehab-protocol-india'},
+      {label:'Meniscal Repair Protocol', href:'/meniscal-repair-protocol-india'},
+      {label:'Meniscal Root Repair Protocol', href:'/meniscal-root-repair-protocol-india'},
+      'Walking Aids: Walker to Stick to None',
+      'Pain Management During Recovery'
+    ],
+  };
+
+  function showSection(id, btn) {
+    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('visible'));
+    const target = document.getElementById('section-' + id);
+    if (target) target.classList.add('visible');
+    document.querySelectorAll('.body-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    const links = sidebarData[id] || [];
+    document.getElementById('sidebarLinks').innerHTML = links.map((l, i) => {
+      if (typeof l === 'object' && l.href) {
+        return `<li><a href="${l.href}" class="${i===0?'active':''}">${l.label}</a></li>`;
+      }
+      return `<li><a href="#" class="${i===0?'active':''}" onclick="setSidebarActive(this);return false">${l}</a></li>`;
+    }).join('');
+    document.querySelector('.main-layout').scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+
+  function setSidebarActive(el) {
+    document.querySelectorAll('#sidebarLinks a').forEach(a => a.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  function doSearch() {
+    const q = document.getElementById('searchInput').value.toLowerCase().trim();
+    if (!q) return;
+    document.querySelectorAll('.content-section').forEach(s => s.classList.add('visible'));
+    document.querySelectorAll('.article-row').forEach(row => { row.style.display = row.innerText.toLowerCase().includes(q) ? '' : 'none'; });
+    document.querySelectorAll('.body-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('.main-layout').scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+
+  document.getElementById('searchInput').addEventListener('keydown', e => { if (e.key==='Enter') doSearch(); });
+
+  // Init
+  showSection('knee', document.querySelector('.body-btn'));
+</script>
+</body>
+</html>
