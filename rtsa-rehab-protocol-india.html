@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GSR rTSA Rehab Protocol</title>
+<style>
+  :root {
+    --navy:#0A1628; --navy-mid:#162040; --gold:#C9A84C; --gold-light:#E2C97E; --cream:#F8F6F2; --teal:#0f7b8c; --teal-light:#e6f4f6;
+    --amber:#e8820c; --amber-light:#fef4e6;
+    --green:#1e7d4b; --green-light:#e8f5ee;
+    --red:#c0392b; --red-light:#fdecea;
+    --purple:#6a1b9a; --purple-light:#fdf5ff;
+    --orange:#c0580a; --orange-light:#fff0e6;
+    --gray-50:#f8f9fa; --gray-100:#f0f2f4; --gray-200:#dee2e6;
+    --gray-500:#6c757d; --gray-800:#2c3e50;
+  }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Inter',sans-serif; font-size:13.5px; color:var(--gray-800); background:#e8ecf0; line-height:1.6; }
+
+  /* ── TOP NAVIGATION ── */
+  .app-header {
+    background:var(--navy);
+    padding:14px 24px 0;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 2px 12px rgba(0,0,0,0.25);
+  }
+  .app-header-top {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:12px;
+  }
+  .app-title {
+    color:white;
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:-0.2px;
+  }
+  .app-subtitle {
+    color:rgba(255,255,255,0.55);
+    font-size:11px;
+  }
+  .tab-bar {
+    display:flex;
+    gap:2px;
+    overflow-x:auto;
+    scrollbar-width:none;
+    padding-bottom:0;
+  }
+  .tab-bar::-webkit-scrollbar { display:none; }
+  .tab-btn {
+    background:rgba(255,255,255,0.08);
+    border:none;
+    color:rgba(255,255,255,0.6);
+    padding:9px 14px;
+    font-family:'Inter',sans-serif;
+    font-size:12px;
+    font-weight:500;
+    cursor:pointer;
+    border-radius:6px 6px 0 0;
+    white-space:nowrap;
+    transition:all 0.15s;
+    flex-shrink:0;
+  }
+  .tab-btn:hover { background:rgba(255,255,255,0.15); color:white; }
+  .tab-btn.active {
+    background:white;
+    color:var(--navy);
+    font-weight:700;
+  }
+
+  /* ── PRINT TOOLBAR ── */
+  .print-toolbar {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 20px;
+    background:white;
+    border-bottom:1px solid var(--gray-200);
+    position:sticky;
+    top:89px;
+    z-index:50;
+  }
+  .print-label { font-size:12.5px; color:var(--gray-500); }
+  .print-btn {
+    background:var(--navy);
+    color:white;
+    border:none;
+    border-radius:7px;
+    padding:8px 16px;
+    font-family:'Inter',sans-serif;
+    font-size:12.5px;
+    font-weight:600;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .print-btn:hover { background:#0f1e35; }
+
+  /* ── PROTOCOL PANEL ── */
+  .protocol-panel { background:var(--gray-50); min-height:100vh; }
+
+  /* ── PAGE (reused from individual files) ── */
+  .page {
+    max-width:900px;
+    margin:0 auto;
+    background:white;
+    box-shadow:0 2px 20px rgba(0,0,0,0.08);
+    margin-bottom:40px;
+  }
+
+  /* ── All the shared protocol CSS from individual files ── */
+  .header{background:var(--navy);color:white;padding:28px 36px 22px;display:flex;justify-content:space-between;align-items:flex-start;}
+  .header-left h1{font-family:'Merriweather',serif;font-size:22px;font-weight:700;margin-bottom:4px;}
+  .header-left .subtitle{font-size:12px;color:rgba(255,255,255,0.65);letter-spacing:.8px;text-transform:uppercase;}
+  .header-right{text-align:right;font-size:12px;color:rgba(255,255,255,0.75);line-height:1.8;}
+  .header-right strong{color:white;font-size:13px;font-weight:600;display:block;}
+  .disclaimer{background:var(--amber-light);border-left:4px solid var(--amber);padding:10px 36px;font-size:11.5px;color:#7a4a00;}
+  .content{padding:0 36px 36px;}
+  .phase-card{border-radius:10px;border:1.5px solid var(--gray-200);margin-bottom:20px;overflow:hidden;margin-top:16px;}
+  .phase-header{display:flex;align-items:center;gap:14px;padding:14px 20px;color:white;}
+  .phase-header.p1{background:#1a5276;} .phase-header.p2{background:#1a6b8a;}
+  .phase-header.p3{background:#0f7b8c;} .phase-header.p4{background:#1a7a4a;}
+  .phase-header.p5{background:#1e7d4b;} .phase-header.p6{background:#6d4c41;}
+  .phase-header.p7{background:#7b1a1a;}
+  .phase-badge{background:rgba(255,255,255,0.2);border-radius:6px;padding:4px 10px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;}
+  .phase-header h2{font-size:15px;font-weight:700;flex:1;}
+  .phase-header .phase-time{font-size:12px;opacity:.8;white-space:nowrap;}
+  .phase-body{padding:18px 20px;display:grid;gap:16px;}
+  .cols-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .cols-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+  .full-row{grid-column:1/-1;}
+  .mini-card{border-radius:7px;padding:13px 15px;}
+  .mini-card.goals{background:var(--green-light);border:1px solid #a8d5bc;}
+  .mini-card.precautions{background:var(--red-light);border:1px solid #f1a9a0;}
+  .mini-card.exercises{background:var(--teal-light);border:1px solid #9fd0d9;}
+  .mini-card.criteria{background:var(--amber-light);border:1px solid #f0c080;}
+  .mini-card.modalities{background:var(--gray-100);border:1px solid var(--gray-200);}
+  .mini-card.daily{background:var(--purple-light);border:1px solid #d7b8f5;}
+  .mini-card.sport{background:var(--orange-light);border:1px solid #f5c8a0;}
+  .mini-card.mobility{background:#fff9e6;border:1px solid #f0d890;}
+  .mini-card h3{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:9px;}
+  .mini-card.goals h3{color:var(--green);} .mini-card.precautions h3{color:var(--red);}
+  .mini-card.exercises h3{color:var(--teal);} .mini-card.criteria h3{color:#c07000;}
+  .mini-card.modalities h3{color:var(--gray-800);} .mini-card.daily h3{color:var(--purple);}
+  .mini-card.sport h3{color:var(--orange);} .mini-card.mobility h3{color:#c07a00;}
+  .mini-card ul{list-style:none;padding:0;}
+  .mini-card ul li{font-size:12.5px;padding:3px 0 3px 16px;position:relative;line-height:1.5;}
+  .mini-card ul li::before{content:'›';position:absolute;left:0;font-weight:700;font-size:15px;line-height:1.2;}
+  .mini-card.goals ul li::before{color:var(--green);} .mini-card.precautions ul li::before{color:var(--red);}
+  .mini-card.exercises ul li::before{color:var(--teal);} .mini-card.criteria ul li::before{color:#c07000;}
+  .mini-card.modalities ul li::before{color:var(--gray-500);} .mini-card.daily ul li::before{color:var(--purple);}
+  .mini-card.sport ul li::before{color:var(--orange);} .mini-card.mobility ul li::before{color:#c07a00;}
+  .warn-box,.dvt-alert,.disloc-alert{background:#fff3cd;border:1.5px solid #f5c542;border-radius:8px;padding:11px 16px;font-size:12px;display:flex;gap:10px;align-items:flex-start;}
+  .disloc-alert{background:var(--red-light);border-color:#f1a9a0;}
+  .warn-box .icon,.dvt-alert .icon,.disloc-alert .icon{font-size:18px;flex-shrink:0;}
+  .warn-box strong,.dvt-alert strong{color:#7a5000;display:block;font-size:12.5px;margin-bottom:3px;}
+  .disloc-alert strong{color:#7a1a1a;display:block;font-size:12.5px;margin-bottom:3px;}
+  .warn-box span,.dvt-alert span,.disloc-alert span{color:#5a3e00;}
+  .disloc-alert span{color:#5a1a1a;}
+  .section-divider{border:none;border-top:2px solid var(--gray-100);margin:24px 0 20px;}
+  .section-title{font-size:13px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;}
+  .activity-table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px;}
+  .activity-table th{background:var(--navy);color:white;padding:8px 12px;text-align:left;font-weight:600;font-size:11.5px;}
+  .activity-table td{padding:7px 12px;border-bottom:1px solid var(--gray-200);vertical-align:top;}
+  .activity-table tr:nth-child(even) td{background:var(--gray-50);}
+  .activity-table .yes{color:var(--green);font-weight:600;}
+  .activity-table .no{color:var(--red);font-weight:600;}
+  .activity-table .caution{color:var(--amber);font-weight:600;}
+  .footer{background:var(--navy);color:rgba(255,255,255,0.6);padding:14px 36px;font-size:11px;display:flex;justify-content:space-between;align-items:center;}
+  .footer strong{color:white;}
+  .med-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+  .med-item{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:7px;padding:10px 13px;font-size:12px;}
+  .med-item .med-class{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--gray-500);margin-bottom:4px;}
+  .med-item .med-name{font-weight:600;color:var(--navy);font-size:12.5px;}
+  .med-item .med-note{font-size:11px;color:var(--gray-500);margin-top:2px;}
+  /* Approach/graft/tear/key boxes */
+  .approach-box,.graft-box,.key-box,.key-box.blue{background:#e8f1f8;border:1.5px solid #9bc2e6;border-radius:8px;padding:14px 18px;}
+  .key-box.red{background:var(--red-light);border:1.5px solid #f1a9a0;}
+  .alert-box{background:var(--red-light);border:1.5px solid #f1a9a0;border-radius:8px;padding:14px 18px;font-size:12.5px;}
+  .alert-box h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--red);margin-bottom:8px;}
+  .alert-box ul{list-style:none;padding:0;}
+  .alert-box ul li{padding:2px 0 2px 16px;position:relative;}
+  .alert-box ul li::before{content:'›';position:absolute;left:0;font-weight:700;font-size:15px;line-height:1.2;color:var(--red);}
+  .approach-box h3,.graft-box h3,.key-box h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--navy);margin-bottom:10px;}
+  .key-box.red h3{color:var(--red);}
+  .approach-grid,.graft-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .approach-item,.graft-item{background:white;border-radius:6px;padding:10px 13px;border:1px solid #c5d9ec;}
+  .approach-item .approach-name,.graft-item .graft-name{font-weight:700;font-size:12.5px;color:var(--navy);margin-bottom:4px;}
+  .approach-item ul,.graft-item ul{list-style:none;padding:0;}
+  .approach-item ul li,.graft-item ul li{font-size:12px;padding:2px 0 2px 14px;position:relative;color:var(--red);line-height:1.5;}
+  .approach-item ul li::before,.graft-item ul li::before{content:'✗';position:absolute;left:0;font-size:11px;}
+  .graft-item p{font-size:12px;color:var(--gray-500);line-height:1.5;}
+  .key-box ul{list-style:none;padding:0;}
+  .key-box ul li{font-size:12.5px;padding:3px 0 3px 16px;position:relative;line-height:1.5;}
+  .key-box ul li::before{content:'›';position:absolute;left:0;font-weight:700;font-size:15px;line-height:1.2;color:var(--navy);}
+  .key-box.red ul li::before{color:var(--red);}
+  .tear-box{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0;}
+  .tear-item{border-radius:8px;padding:13px 16px;}
+  .tear-item.small{background:#e8f5ee;border:1.5px solid #a8d5bc;}
+  .tear-item.large{background:var(--red-light);border:1.5px solid #f1a9a0;}
+  .tear-item h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;margin-bottom:8px;}
+  .tear-item.small h3{color:var(--green);} .tear-item.large h3{color:var(--red);}
+  .tear-item ul{list-style:none;padding:0;}
+  .tear-item ul li{font-size:12px;padding:2px 0 2px 14px;position:relative;line-height:1.5;}
+  .tear-item ul li::before{content:'›';position:absolute;left:0;font-weight:700;font-size:14px;line-height:1.2;}
+  .tear-item.small ul li::before{color:var(--green);} .tear-item.large ul li::before{color:var(--red);}
+  .diff-row{background:#fffbe6;border:1px solid #f0d890;border-radius:7px;padding:10px 14px;font-size:12px;color:#7a5000;}
+  .diff-row strong{color:#5a3800;}
+  .timeline-bar{display:flex;margin:16px 0 4px;border-radius:8px;overflow:hidden;}
+  .tl-seg{flex:1;padding:8px 6px;text-align:center;font-size:10.5px;font-weight:700;color:white;line-height:1.3;}
+  .tl-seg.s1{background:#1a5276;} .tl-seg.s2{background:#1a6b8a;} .tl-seg.s3{background:#0f7b8c;}
+  .tl-seg.s4{background:#1a7a4a;} .tl-seg.s5{background:#1e7d4b;} .tl-seg.s6{background:#6d4c41;}
+  .tl-note{font-size:11px;color:var(--gray-500);margin-bottom:20px;text-align:center;}
+  .rom-table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:8px;}
+  .rom-table th{background:var(--navy);color:white;padding:7px 12px;text-align:left;font-size:11.5px;}
+  .rom-table td{padding:6px 12px;border-bottom:1px solid var(--gray-200);}
+  .rom-table tr:nth-child(even) td{background:var(--gray-50);}
+
+  /* ── PRINT ── */
+  @media print {
+    .app-header, .print-toolbar { display:none !important; }
+    .protocol-panel { display:block !important; }
+    body { background:white; font-size:12px; }
+    .page { box-shadow:none; max-width:100%; margin:0; }
+    .phase-card { break-inside:avoid; }
+    .phase-header,.mini-card,.footer,.tear-item,.diff-row,
+    .alert-box,.key-box,.approach-box,.graft-box,.tear-box,
+    .timeline-bar,.activity-table th { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:700px) {
+    .cols-2,.cols-3,.med-grid,.approach-grid,.graft-grid,.tear-box { grid-template-columns:1fr; }
+    .header { flex-direction:column; gap:10px; }
+    .header-right { text-align:left; }
+    .content { padding:0 16px 24px; }
+    .timeline-bar { flex-direction:column; }
+    .print-toolbar { flex-direction:column; gap:8px; align-items:flex-start; }
+  }
+
+  /* DOWNLOAD BAR */
+  .download-bar { background: #162040; border-bottom: 1px solid rgba(201,168,76,0.25); padding: 0.75rem 2.25rem; }
+  .download-bar__inner { display: flex; align-items: center; justify-content: space-between; max-width: 900px; margin: 0 auto; }
+  .download-bar__text { font-size: 0.85rem; color: rgba(255,255,255,0.75); }
+  .download-btn { background: #C9A84C; color: #0A1628; border: none; padding: 0.55rem 1.25rem; border-radius: 4px; font-weight: 700; font-size: 0.82rem; cursor: pointer; font-family: 'Inter', sans-serif; transition: background 0.2s; }
+  .download-btn:hover { background: #E2C97E; }
+  .gate-overlay { display: none; position: fixed; inset: 0; background: rgba(10,22,40,0.8); z-index: 9999; align-items: center; justify-content: center; padding: 1rem; }
+  .gate-overlay.open { display: flex; }
+  .gate-modal { background: white; border-radius: 10px; padding: 2rem; max-width: 460px; width: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.35); }
+  .gate-modal__header { margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 2px solid #C9A84C; }
+  .gate-modal__logo { font-family: 'Merriweather', serif; font-size: 1.2rem; font-weight: 700; color: #0A1628; }
+  .gate-modal__logo span { color: #C9A84C; }
+  .gate-modal__sub { font-size: 0.75rem; color: #6c757d; margin-top: 0.2rem; }
+  .gate-modal__title { font-family: 'Merriweather', serif; font-size: 1.05rem; color: #0A1628; margin-bottom: 0.4rem; }
+  .gate-modal__desc { font-size: 0.82rem; color: #6c757d; margin-bottom: 1.25rem; }
+  .gate-field { margin-bottom: 0.9rem; }
+  .gate-label { display: block; font-size: 0.78rem; font-weight: 600; color: #2c3e50; margin-bottom: 0.35rem; }
+  .gate-input { width: 100%; padding: 0.6rem 0.85rem; border: 1.5px solid #dee2e6; border-radius: 6px; font-size: 0.88rem; font-family: 'Inter', sans-serif; color: #2c3e50; outline: none; transition: border-color 0.2s; }
+  .gate-input:focus { border-color: #C9A84C; }
+  .gate-submit { width: 100%; padding: 0.75rem; background: #0A1628; color: white; border: none; border-radius: 6px; font-weight: 700; font-size: 0.9rem; cursor: pointer; font-family: 'Inter', sans-serif; margin-top: 0.25rem; transition: background 0.2s; }
+  .gate-submit:hover { background: #162040; }
+  .gate-cancel { width: 100%; padding: 0.5rem; background: none; border: none; color: #6c757d; font-size: 0.82rem; cursor: pointer; margin-top: 0.5rem; font-family: 'Inter', sans-serif; }
+  .gate-cancel:hover { color: #2c3e50; }
+  .gate-privacy { font-size: 0.72rem; color: #6c757d; margin-top: 0.85rem; line-height: 1.5; }
+  @media print { .download-bar, .gate-overlay, .review-banner { display: none !important; } }
+
+</style>
+</head>
+<body>
+
+  <!-- GOLD ACCENT BAR -->
+  <div style="height:4px;background:linear-gradient(90deg,#C9A84C,#E2C97E,#C9A84C);"></div>
+
+  <!-- DOWNLOAD BAR -->
+  <div class="download-bar" id="downloadBar">
+    <div class="download-bar__inner">
+      <span class="download-bar__text">&#128229; Download this protocol as PDF</span>
+      <button class="download-btn" onclick="openGate()">Download PDF</button>
+    </div>
+  </div>
+
+  <!-- GATE MODAL -->
+  <div class="gate-overlay" id="gateOverlay">
+    <div class="gate-modal">
+      <div class="gate-modal__header">
+        <div class="gate-modal__logo">Dr. <span>Satish</span> Reddy. G</div>
+        <p class="gate-modal__sub">KIMS Hospital, Ministers Road, Secunderabad</p>
+      </div>
+      <h2 class="gate-modal__title">Download Rehabilitation Protocol</h2>
+      <p class="gate-modal__desc">Enter your details below. The PDF will open immediately after submission.</p>
+      <form id="gateForm" action="https://formspree.io/f/mqevqegq" method="POST" onsubmit="handleGateSubmit(event)">
+        <input type="hidden" name="protocol" value="Reverse Shoulder Replacement Rehab Protocol" />
+        <div class="gate-field"><label class="gate-label">Full Name *</label><input class="gate-input" type="text" name="name" placeholder="Your name" required /></div>
+        <div class="gate-field"><label class="gate-label">Email Address *</label><input class="gate-input" type="email" name="email" placeholder="your@email.com" required /></div>
+        <div class="gate-field"><label class="gate-label">Phone Number *</label><input class="gate-input" type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required /></div>
+        <div class="gate-field"><label class="gate-label">I am a</label><select class="gate-input" name="role"><option value="Patient">Patient</option><option value="Physiotherapist">Physiotherapist</option><option value="Doctor">Doctor</option><option value="Caregiver">Caregiver / Family member</option></select></div>
+        <button class="gate-submit" type="submit">Download Now</button>
+        <button class="gate-cancel" type="button" onclick="closeGate()">Cancel</button>
+      </form>
+      <p class="gate-privacy">Your details are used only for follow-up by Dr. Satish&#39;s practice. We do not share them with third parties.</p>
+    </div>
+  </div>
+
+<div class="protocol-panel" id="panel-rtsa" style="display:block">
+  <div class="page" id="printable-rtsa">
+
+  <div class="header">
+    <div class="header-left">
+      <div class="subtitle">Post-operative Rehabilitation Protocol</div>
+      <h1>Reverse Total Shoulder Arthroplasty (rTSA)</h1>
+    </div>
+    <div class="header-right">
+      <strong>Dr. Satish Reddy Gandavarapu</strong>
+      MS Orthopaedics (Gold Medallist)<br>
+      Fellowship: Rizzoli (Italy) &middot; ROH (UK) &middot; Flinders (Australia)<br>
+      KIMS Hospital, Ministers Road, Secunderabad<br>
+      +91 70755 23360 &middot; drgsreddy.com
+    </div>
+  </div>
+  <div class="disclaimer">⚠️ Reverse shoulder replacement is mechanically different from a standard shoulder replacement. Dislocation precautions must be followed for at least 10–12 weeks. The deltoid: not the rotator cuff: now powers shoulder movement.</div>
+
+  <div class="content">
+
+    <div class="key-box red" style="margin-top:20px;">
+      <h3>🔴 Dislocation Precautions: Follow for Minimum 10–12 Weeks</h3>
+      <ul>
+        <li><strong>Avoid:</strong> The combination of shoulder extension + adduction + internal rotation together: this is the position that dislocates a reverse shoulder</li>
+        <li><strong>Avoid:</strong> Reaching behind your back (back pocket, tucking shirt in)</li>
+        <li><strong>Avoid:</strong> Lying flat without a towel roll under the elbow: shoulder must be slightly forward at all times when lying</li>
+        <li><strong>Avoid:</strong> Pushing up from a chair or bed with the operated arm</li>
+        <li><strong>Avoid:</strong> Sudden jerking, pulling, or throwing movements</li>
+        <li>Always be mindful of these positions even beyond 12 weeks</li>
+      </ul>
+    </div>
+
+    <div class="key-box blue">
+      <h3>🔑 Why Reverse TSA is Different from Standard TSA</h3>
+      <ul>
+        <li>In a reverse TSA, the ball and socket are swapped: this re-routes the deltoid to lift the arm instead of the rotator cuff</li>
+        <li>The rotator cuff is absent or irreparable: the deltoid is the primary focus of rehabilitation</li>
+        <li>Expected ROM is typically 90–120° elevation: not full overhead range in most patients</li>
+        <li>Dislocation risk is higher than standard TSA: respect precautions strictly</li>
+        <li>If tendon transfer was performed (latissimus dorsi or lower trapezius): your protocol will be slightly delayed; confirm with Dr. Satish Reddy</li>
+      </ul>
+    </div>
+
+    <!-- PHASE 1 -->
+    <div class="phase-card">
+      <div class="phase-header p1">
+        <span class="phase-badge">Phase 1</span>
+        <h2>Strict Protection Phase</h2>
+        <span class="phase-time">Week 0 – Week 6</span>
+      </div>
+      <div class="phase-body">
+        <div class="cols-2">
+          <div class="mini-card goals">
+            <h3>🎯 Goals</h3>
+            <ul>
+              <li>Protect the implant from dislocation</li>
+              <li>Control pain and swelling</li>
+              <li>Keep elbow, wrist and hand moving</li>
+              <li>Begin gentle scapular activation</li>
+              <li>Understand and follow dislocation precautions</li>
+            </ul>
+          </div>
+          <div class="mini-card precautions">
+            <h3>⚠️ Precautions</h3>
+            <ul>
+              <li>Sling at all times (4–6 weeks): day and night except showering and exercises</li>
+              <li>No active shoulder movement</li>
+              <li>No lifting with operated arm</li>
+              <li>No pushing up from chair or bed with operated arm</li>
+              <li>Elbow must be visible when lying down: support with towel/pillow</li>
+              <li>Keep wound dry: no soaking for 2 weeks</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mini-card exercises full-row">
+          <h3>🏃 Exercises: Week 0–6</h3>
+          <div class="cols-3">
+            <ul>
+              <li><strong>Elbow bending and straightening</strong>: full range slowly</li>
+              <li><strong>Wrist circles and flexion/extension</strong></li>
+              <li><strong>Finger bending and squeezing</strong></li>
+            </ul>
+            <ul>
+              <li><strong>Scapular retractions</strong>: gently squeeze shoulder blades in sling</li>
+              <li><strong>Shoulder hang (isolated rTSA only)</strong>: lean forward, arm hangs freely: no active movement</li>
+              <li><strong>Table slide (isolated rTSA only)</strong>: sit, slide arm forward on cloth</li>
+            </ul>
+            <ul>
+              <li><strong>Assisted elevation with stick (Week 4+, isolated rTSA)</strong>: good arm guides bad arm gently overhead</li>
+              <li><strong>Chin tucks</strong>: 5-sec holds</li>
+              <li><strong>Ice 3–5 times daily</strong></li>
+            </ul>
+          </div>
+        </div>
+        <div class="mini-card criteria full-row">
+          <h3>✅ Ready for Phase 2 When:</h3>
+          <ul>
+            <li>Understanding and compliance with dislocation precautions</li>
+            <li>Progressing shoulder passive/assisted ROM (isolated rTSA)</li>
+            <li>Independent with home exercises</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 2 -->
+    <div class="phase-card">
+      <div class="phase-header p2">
+        <span class="phase-badge">Phase 2</span>
+        <h2>Active Range of Motion &amp; Early Deltoid Activation</h2>
+        <span class="phase-time">Week 7 – Week 12</span>
+      </div>
+      <div class="phase-body">
+        <div class="cols-2">
+          <div class="mini-card goals">
+            <h3>🎯 Goals</h3>
+            <ul>
+              <li>Continue dislocation precautions</li>
+              <li>Progress assisted and active shoulder movement</li>
+              <li>Activate deltoid and scapular muscles</li>
+              <li>Progress to active shoulder movement</li>
+              <li>Begin weaning off sling</li>
+            </ul>
+          </div>
+          <div class="mini-card exercises">
+            <h3>🏃 Exercises</h3>
+            <ul>
+              <li><strong>Assisted elevation (lawn chair progression)</strong>: lying, use stick, then towel, then unassisted</li>
+              <li><strong>Active shoulder flexion</strong>: lying, arm up overhead slowly</li>
+              <li><strong>Rail slide/wall slide</strong>: slide arm up railing or wall</li>
+              <li><strong>Assisted ER with cane</strong>: gentle outward rotation, elbow bent</li>
+              <li><strong>Deltoid isometrics</strong>: flexion, abduction, adduction at wall</li>
+              <li><strong>Scapular retractions, standing</strong></li>
+              <li>No resistance with tendon transfer: until Week 12</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mini-card criteria full-row">
+          <h3>✅ Ready for Phase 3 When:</h3>
+          <ul>
+            <li>Improving functional use of shoulder in daily tasks</li>
+            <li>Can isometrically activate all parts of deltoid and scapular muscles</li>
+            <li>Active shoulder flexion progressing (aim 90° in standing by Week 12)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 3 -->
+    <div class="phase-card">
+      <div class="phase-header p3">
+        <span class="phase-badge">Phase 3</span>
+        <h2>Progressive Functional Strengthening</h2>
+        <span class="phase-time">Week 12 – Week 20</span>
+      </div>
+      <div class="phase-body">
+        <div class="cols-2">
+          <div class="mini-card goals">
+            <h3>🎯 Goals</h3>
+            <ul>
+              <li>Shoulder elevation 90–120° actively in standing</li>
+              <li>Good scapular control and shoulder mechanics</li>
+              <li>Begin resistance exercises</li>
+              <li>Return to light household and daily tasks</li>
+            </ul>
+          </div>
+          <div class="mini-card exercises">
+            <h3>🏃 Exercises</h3>
+            <ul>
+              <li><strong>Active shoulder flexion standing</strong>: raise arm in front, elbow straight</li>
+              <li><strong>Wall slide standing</strong>: slide arm up wall slowly</li>
+              <li><strong>Resistance band rows</strong>: seated and standing (light resistance)</li>
+              <li><strong>Resistance band shoulder extension</strong></li>
+              <li><strong>ER and IR with resistance band</strong> (begin tendon transfer patients here)</li>
+              <li><strong>Serratus anterior protraction</strong></li>
+              <li><strong>Biceps curls and triceps extension</strong></li>
+              <li><strong>Scapular Ws, Ts, Ys</strong>: prone</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mini-card daily full-row">
+          <h3>🏠 Daily Life</h3>
+          <ul>
+            <li><strong>Driving:</strong> Week 8–10 once off sling: surgeon clearance; off strong painkillers</li>
+            <li><strong>Two-wheeler:</strong> Month 4+: confirm with surgeon</li>
+            <li><strong>Light housework:</strong> Week 10–12: no reaching behind back, no heavy lifting</li>
+            <li><strong>Office work:</strong> Week 6–8 with sling; operated arm resting</li>
+            <li><strong>Lifting limit:</strong> No more than 0.5–1 kg until surgeon clears beyond this</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 4 -->
+    <div class="phase-card">
+      <div class="phase-header p4">
+        <span class="phase-badge">Phase 4</span>
+        <h2>Home Programme &amp; Return to Activity</h2>
+        <span class="phase-time">Month 4 onwards</span>
+      </div>
+      <div class="phase-body">
+        <div class="cols-2">
+          <div class="mini-card goals">
+            <h3>🎯 Goals</h3>
+            <ul>
+              <li>Return to light household and work activities</li>
+              <li>Return to recreational activities within surgeon-defined limits</li>
+              <li>Independent with home exercise programme</li>
+              <li>Maintain dislocation awareness permanently</li>
+            </ul>
+          </div>
+          <div class="mini-card exercises">
+            <h3>🏃 Long-term Programme</h3>
+            <ul>
+              <li>Continue all Phase 3 exercises: 3 times/week lifelong</li>
+              <li>Gradually increase resistance as tolerated</li>
+              <li>Activity-specific training as needed</li>
+              <li>Report any new clicking, catching, or instability early</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+    <div class="section-title">📋 Activity Guide</div>
+    <table class="activity-table">
+      <thead><tr><th>Activity</th><th>Allowed?</th><th>When</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Sling use</td><td class="caution">REQUIRED</td><td>4–6 weeks</td><td>Day and night; always except showering and exercises</td></tr>
+        <tr><td>Elbow/wrist/hand movement</td><td class="yes">YES</td><td>Day 1</td><td>Keep distal joints moving at all times</td></tr>
+        <tr><td>Light one-arm daily tasks</td><td class="caution">CAUTION</td><td>Week 1</td><td>No operated arm active shoulder movement; good arm does the work</td></tr>
+        <tr><td>Driving</td><td class="no">WAIT</td><td>Week 8–10</td><td>Off sling, surgeon clearance, off strong painkillers</td></tr>
+        <tr><td>Two-wheeler</td><td class="no">WAIT</td><td>Month 4+</td><td>Risk of fall; confirm with surgeon</td></tr>
+        <tr><td>Office/desk work</td><td class="caution">CAUTION</td><td>Week 6–8</td><td>Operated arm resting; no active shoulder tasks</td></tr>
+        <tr><td>Light housework</td><td class="caution">CAUTION</td><td>Week 10–12</td><td>No reaching behind back, no heavy tasks</td></tr>
+        <tr><td>Lifting (&lt;0.5–1 kg)</td><td class="caution">CAUTION</td><td>Month 3+</td><td>Surgeon clearance; no sudden lifts</td></tr>
+        <tr><td>Overhead reaching</td><td class="caution">CAUTION</td><td>Month 3+</td><td>Within comfortable range only; do not force</td></tr>
+        <tr><td>Swimming</td><td class="no">WAIT</td><td>Month 4+</td><td>Gentle strokes; avoid breaststroke; surgeon clearance</td></tr>
+        <tr><td>Cricket batting / overhead sport</td><td class="no">WAIT</td><td>Month 6+</td><td>Surgeon clearance; may have permanent limits</td></tr>
+        <tr><td>Reaching behind back</td><td class="no">AVOID</td><td>10–12 weeks minimum</td><td>Dislocation risk: the most dangerous position for rTSA</td></tr>
+        <tr><td>Pushing up from chair with operated arm</td><td class="no">AVOID</td><td>10–12 weeks minimum</td><td>Major dislocation risk: use good arm only</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="section-divider">
+    <div class="section-title">🚨 When to Contact Us</div>
+    <div class="cols-2">
+      <div class="mini-card precautions">
+        <h3>🔴 Come to Hospital Immediately</h3>
+        <ul>
+          <li>Sudden severe pain with arm appearing in an abnormal position</li>
+          <li>Feeling or sound of shoulder "coming out"</li>
+          <li>High fever with wound redness, swelling, or discharge</li>
+          <li>Arm becomes cold, pale, or numb suddenly</li>
+        </ul>
+      </div>
+      <div class="mini-card modalities">
+        <h3>🟡 Call Clinic Within 24 Hours</h3>
+        <ul>
+          <li>New pain or significant increase in pain</li>
+          <li>Wound not healing or looking infected</li>
+          <li>Shoulder stiffness not improving</li>
+          <li>Any new clicking, catching, or instability sensation</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+    <div class="section-title">📅 Follow-up Schedule</div>
+    <div class="cols-3">
+      <div class="mini-card goals">
+        <h3>🗓 Clinic Reviews</h3>
+        <ul>
+          <li><strong>2 weeks:</strong> Wound check, suture removal</li>
+          <li><strong>6 weeks:</strong> ROM, sling weaning, X-ray</li>
+          <li><strong>3 months:</strong> Strength and function review</li>
+          <li><strong>6 months:</strong> Full functional assessment</li>
+          <li><strong>1 year:</strong> Annual X-ray and review</li>
+        </ul>
+      </div>
+      <div class="mini-card exercises">
+        <h3>⚠️ Long-term Advice</h3>
+        <ul>
+          <li>Home programme 3 times/week: lifelong</li>
+          <li>Permanent weight limit: typically 1–2 kg unless cleared</li>
+          <li>Always be mindful of dislocation positions</li>
+          <li>Annual review to monitor implant</li>
+        </ul>
+      </div>
+      <div class="mini-card daily">
+        <h3>🏠 Daily Life Tips</h3>
+        <ul>
+          <li>Sleep on back: towel roll under operated elbow</li>
+          <li>Dress operated arm first, undress last</li>
+          <li>Never reach behind back without care</li>
+          <li>Use long-handled tools early on for dressing/bathing</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer">
+    <div><strong>Dr. Satish Reddy Gandavarapu</strong> · MS Orthopaedics (Gold Medallist) · Fellowship-Trained Orthopaedic Surgeon · KIMS Hospital, Ministers Road, Secunderabad · +91 70755 23360 · drgsreddy.com</div>
+    <div>Protocol Version 1.0 · 2025 · For clinical use only</div>
+  </div>
+
+  </div>
+</div>
+
+
+
+<script>
+  function openGate() {
+    document.getElementById('gateOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeGate() {
+    document.getElementById('gateOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  async function handleGateSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('.gate-submit');
+    btn.textContent = 'Submitting...';
+    btn.disabled = true;
+    try {
+      await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+    } catch(err) {}
+    closeGate();
+    window.print();
+  }
+  document.getElementById('gateOverlay').addEventListener('click', function(e) {
+    if (e.target === this) closeGate();
+  });
+</script>
+</body>
+</html>
