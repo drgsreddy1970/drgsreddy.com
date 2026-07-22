@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knee Replacement Decision Aid | Dr. Satish Reddy. G</title>
+<meta name="description" content="A guided tool to help you understand your options for knee arthritis, from weight loss and physiotherapy to injections and knee replacement, and prepare for your consultation.">
+<link rel="canonical" href="https://drgsreddy.com/knee-replacement-decision-aid.html">
+<meta property="og:title" content="Knee Replacement Decision Aid | Dr. Satish Reddy. G">
+<meta property="og:description" content="A guided tool to help you understand your options for knee arthritis and prepare for your consultation.">
+<meta property="og:url" content="https://drgsreddy.com/knee-replacement-decision-aid.html">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQJV3LV6SV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WQJV3LV6SV');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xd5ee60zrw");
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+:root{
+  --navy:#0A1628;
+  --gold:#C9A84C;
+  --gold-soft:#E4D28A;
+  --cream:#F8F6F2;
+  --ink:#1c2733;
+  --muted:#5c6673;
+  --line:#e4ded3;
+  --white:#ffffff;
+  --green:#2f7d4f;
+  --green-bg:#eaf5ee;
+  --amber:#b8860b;
+  --amber-bg:#fbf3dc;
+  --orange:#c05621;
+  --orange-bg:#fdeee2;
+  --red:#a02020;
+  --red-bg:#fbeaea;
+  --shadow:0 4px 20px rgba(10,22,40,.08);
+  --shadow-lg:0 12px 40px rgba(10,22,40,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;color:var(--navy);line-height:1.2}
+
+/* Header */
+.topbar{background:var(--navy);color:var(--cream);padding:14px 0}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--cream);text-decoration:none;letter-spacing:.2px}
+.brand span{color:var(--gold)}
+.backlink{color:var(--gold-soft);text-decoration:none;font-size:.85rem;font-weight:500;white-space:nowrap}
+.backlink:hover{color:var(--gold)}
+
+/* Hero */
+.hero{background:var(--navy);color:var(--cream);padding:44px 0 40px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;border:1px solid rgba(201,168,76,.22);border-radius:50%}
+.hero:before{content:"";position:absolute;right:10px;top:10px;width:150px;height:150px;border:1px solid rgba(201,168,76,.16);border-radius:50%}
+.eyebrow{color:var(--gold);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+.hero h1{color:var(--cream);font-size:2rem;margin-bottom:14px;max-width:20ch}
+.hero p{color:#c8cfd8;font-size:1.02rem;max-width:56ch}
+.progress-shell{height:5px;background:rgba(255,255,255,.12);border-radius:99px;margin-top:26px;overflow:hidden}
+.progress-bar{height:100%;width:0;background:var(--gold);border-radius:99px;transition:width .4s ease}
+
+/* Card */
+.stage{padding:34px 0 60px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:32px 30px;margin-bottom:22px}
+.step-label{color:var(--gold);font-weight:600;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.card h2{font-size:1.5rem;margin-bottom:8px}
+.lead{color:var(--muted);margin-bottom:22px}
+
+/* Notice / disclaimer */
+.notice{background:var(--cream);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;padding:16px 18px;font-size:.92rem;color:var(--ink)}
+.notice strong{color:var(--navy)}
+
+/* Questions */
+.q{margin-bottom:24px}
+.q:last-child{margin-bottom:0}
+.q-title{font-weight:600;color:var(--navy);margin-bottom:12px;font-size:1.02rem}
+.q-sub{font-weight:400;color:var(--muted);font-size:.88rem;display:block;margin-top:2px}
+.opts{display:grid;gap:10px}
+.opts.two{grid-template-columns:1fr 1fr}
+@media(max-width:520px){.opts.two{grid-template-columns:1fr}}
+.opt{
+  display:flex;align-items:center;gap:12px;
+  border:1.5px solid var(--line);border-radius:10px;
+  padding:13px 15px;cursor:pointer;background:var(--white);
+  transition:border-color .15s,background .15s;font-size:.95rem;color:var(--ink)
+}
+.opt:hover{border-color:var(--gold-soft);background:#fffdf7}
+.opt input{accent-color:var(--gold);width:17px;height:17px;flex-shrink:0}
+.opt.checked{border-color:var(--gold);background:#fffaf0}
+.opt-check{margin-left:auto;color:var(--gold);font-weight:700;opacity:0;transition:opacity .15s}
+.opt.checked .opt-check{opacity:1}
+
+/* number/text inputs */
+.field{margin-bottom:18px}
+.field label{display:block;font-weight:600;color:var(--navy);margin-bottom:7px;font-size:.98rem}
+.field input,.field select{
+  width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:9px;
+  font-family:inherit;font-size:1rem;color:var(--ink);background:var(--white)
+}
+.field input:focus,.field select:focus{outline:none;border-color:var(--gold)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:520px){.field-row{grid-template-columns:1fr}}
+.hint{font-size:.82rem;color:var(--muted);margin-top:5px}
+
+/* slider */
+.slider-wrap{margin:6px 0 4px}
+input[type=range]{width:100%;accent-color:var(--gold);height:6px}
+.slider-labels{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted);margin-top:6px}
+.slider-val{display:inline-block;background:var(--navy);color:var(--gold-soft);font-weight:600;padding:2px 12px;border-radius:99px;font-size:.85rem;margin-left:8px}
+
+/* buttons */
+.nav-row{display:flex;justify-content:space-between;gap:12px;margin-top:6px}
+.btn{
+  font-family:inherit;font-weight:600;font-size:.98rem;border:none;border-radius:99px;
+  padding:14px 30px;cursor:pointer;transition:transform .1s,box-shadow .2s,background .2s
+}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--gold);color:var(--navy);box-shadow:0 4px 14px rgba(201,168,76,.35)}
+.btn-primary:hover{background:#d4b661}
+.btn-ghost{background:transparent;color:var(--muted);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--muted);color:var(--navy)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn-full{width:100%}
+
+/* red flag result */
+.flag{border-radius:12px;padding:20px 22px;margin-bottom:18px;border:1px solid}
+.flag h3{margin-bottom:6px;font-size:1.25rem}
+.flag.red{background:var(--red-bg);border-color:#e6b8b8}
+.flag.red h3{color:var(--red)}
+.flag.orange{background:var(--orange-bg);border-color:#eccdb3}
+.flag.orange h3{color:var(--orange)}
+.flag-tag{display:inline-block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:3px 10px;border-radius:99px;margin-bottom:10px}
+.flag.red .flag-tag{background:var(--red);color:#fff}
+.flag.orange .flag-tag{background:var(--orange);color:#fff}
+.callnum{font-weight:700;color:var(--navy)}
+
+/* options grid */
+.option-block{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:16px;background:var(--white)}
+.option-head{background:var(--cream);padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px}
+.option-num{width:30px;height:30px;flex-shrink:0;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-weight:700;font-size:.9rem;font-family:'Playfair Display',serif}
+.option-head h3{font-size:1.18rem}
+.option-body{padding:18px 20px}
+.option-body p{margin-bottom:10px;font-size:.95rem}
+.tradeoff{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:9px;overflow:hidden;margin-top:12px}
+@media(max-width:520px){.tradeoff{grid-template-columns:1fr}}
+.tradeoff div{padding:12px 14px;font-size:.88rem}
+.tradeoff .pros{background:var(--green-bg);border-right:1px solid var(--line)}
+.tradeoff .cons{background:#faf6f0}
+.tradeoff h4{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;font-weight:700}
+.tradeoff .pros h4{color:var(--green)}
+.tradeoff .cons h4{color:var(--orange)}
+.tradeoff ul{list-style:none;margin:0}
+.tradeoff li{padding-left:16px;position:relative;margin-bottom:4px}
+.tradeoff li:before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.5}
+
+/* icon array */
+.iconarray{display:flex;flex-wrap:wrap;gap:3px;max-width:280px;margin:6px 0 4px}
+.iconarray svg{width:16px;height:16px}
+.ia-caption{font-size:.85rem;color:var(--muted);margin-bottom:12px}
+.ia-caption b{color:var(--navy)}
+
+/* summary */
+.summary-card{background:var(--navy);color:var(--cream);border-radius:16px;padding:30px;margin-bottom:20px}
+.summary-card h2{color:var(--cream)}
+.summary-card .lead{color:#c8cfd8}
+.sum-block{background:rgba(255,255,255,.06);border:1px solid rgba(201,168,76,.25);border-radius:11px;padding:16px 18px;margin-bottom:14px}
+.sum-block h4{color:var(--gold);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.sum-block p,.sum-block li{color:#dbe0e6;font-size:.94rem}
+.sum-block ul{margin:0;padding-left:18px}
+.sum-block li{margin-bottom:5px}
+
+/* gate form */
+.gate{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:26px;box-shadow:var(--shadow)}
+.gate .field input{background:var(--cream)}
+.privacy{font-size:.82rem;color:var(--muted);background:var(--green-bg);border:1px solid #cfe6d8;border-radius:9px;padding:12px 14px;margin:14px 0}
+.privacy b{color:var(--green)}
+
+/* misc */
+.hidden{display:none!important}
+.footer{background:var(--navy);color:#9aa5b1;padding:26px 0;font-size:.85rem;text-align:center}
+.footer a{color:var(--gold-soft);text-decoration:none}
+.err{color:var(--red);font-size:.85rem;margin-top:6px;display:none}
+.err.show{display:block}
+.fade{animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html" class="brand">Dr. <span>Satish</span> Reddy. G</a>
+    <a href="decision-tools.html" class="backlink">&larr; All decision tools</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Knee Osteoarthritis &middot; Decision Aid</div>
+    <h1>Understanding your knee options</h1>
+    <p>A short, guided walk through the choices for a painful arthritic knee, from weight loss and physiotherapy to injections and knee replacement, so you can talk to your surgeon with clarity.</p>
+    <div class="progress-shell"><div class="progress-bar" id="bar"></div></div>
+  </div>
+</div>
+
+<div class="stage">
+  <div class="wrap" id="stage">
+
+    <!-- STEP 0: INTRO -->
+    <section class="card fade" data-step="0">
+      <div class="step-label">Before you begin</div>
+      <h2>This is a tool to prepare you, not to diagnose you</h2>
+      <p class="lead">It takes about five minutes. Your answers stay on your own phone or computer and are not sent anywhere or saved by us.</p>
+      <div class="notice">
+        <strong>What this tool does:</strong> it helps you understand what usually happens with an arthritic knee, lays out every option side by side, and gives you a one page summary with the right questions to ask.<br><br>
+        <strong>What it does not do:</strong> it cannot examine you, read your X-ray, or tell you which treatment is right for you. Only a consultation and examination can do that. If your knee needs urgent attention, the next step will help you recognise that.
+      </div>
+      <div class="nav-row" style="margin-top:24px">
+        <span></span>
+        <button class="btn btn-primary" onclick="go(1)">Start &rarr;</button>
+      </div>
+    </section>
+
+    <!-- STEP 1: SAFETY CHECK (one-directional red flags) -->
+    <section class="card hidden" data-step="1">
+      <div class="step-label">Step 1 of 5 &middot; Safety check</div>
+      <h2>First, a quick safety check</h2>
+      <p class="lead">Some knee problems need attention sooner rather than later. Please answer honestly. This screen can only tell you to seek care sooner, never that everything is fine.</p>
+
+      <div class="q">
+        <div class="q-title">Is your knee hot, badly swollen, and very painful, together with fever or feeling unwell?<span class="q-sub">Fever meaning a temperature above 100.4&deg;F, or shivering and chills.</span></div>
+        <div class="opts two"><label class="opt"><input type="radio" name="rf_sepsis" value="yes"><span>Yes</span><span class="opt-check">&#10003;</span></label><label class="opt"><input type="radio" name="rf_sepsis" value="no"><span>No</span><span class="opt-check">&#10003;</span></label></div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">Did your knee pain begin right after a fall or injury, and you now cannot put weight on that leg at all?</div>
+        <div class="opts two"><label class="opt"><input type="radio" name="rf_trauma" value="yes"><span>Yes</span><span class="opt-check">&#10003;</span></label><label class="opt"><input type="radio" name="rf_trauma" value="no"><span>No</span><span class="opt-check">&#10003;</span></label></div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">Is your knee stuck so that you genuinely cannot straighten or bend it, as if it is jammed?<span class="q-sub">A truly locked knee, not simply a stiff or aching one.</span></div>
+        <div class="opts two"><label class="opt"><input type="radio" name="rf_lock" value="yes"><span>Yes</span><span class="opt-check">&#10003;</span></label><label class="opt"><input type="radio" name="rf_lock" value="no"><span>No</span><span class="opt-check">&#10003;</span></label></div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">Is your calf (below the knee) painful, swollen, warm, or red on that same leg?<span class="q-sub">Especially if this came on over a day or two without an injury.</span></div>
+        <div class="opts two"><label class="opt"><input type="radio" name="rf_dvt" value="yes"><span>Yes</span><span class="opt-check">&#10003;</span></label><label class="opt"><input type="radio" name="rf_dvt" value="no"><span>No</span><span class="opt-check">&#10003;</span></label></div>
+      </div>
+
+      <div class="err" id="err1">Please answer all four questions to continue.</div>
+      <div class="nav-row">
+        <button class="btn btn-ghost" onclick="go(0)">&larr; Back</button>
+        <button class="btn btn-primary" onclick="checkFlags()">Continue &rarr;</button>
+      </div>
+    </section>
+
+    <!-- STEP 1b: FLAG ALERT (shown only if a flag fires; does not block continuing) -->
+    <section class="card hidden" data-step="1.5">
+      <div id="flagBox"></div>
+      <div class="notice">You can still continue and read about knee options for later. Please treat the advice above as the more important next step.</div>
+      <div class="nav-row">
+        <button class="btn btn-ghost" onclick="go(1)">&larr; Back</button>
+        <button class="btn btn-primary" onclick="go(2)">Continue anyway &rarr;</button>
+      </div>
+    </section>
+
+    <!-- STEP 2: ABOUT YOU -->
+    <section class="card hidden" data-step="2">
+      <div class="step-label">Step 2 of 5 &middot; About you</div>
+      <h2>A little about you</h2>
+      <p class="lead">This helps tailor what you read. It is used only on this page and is not stored.</p>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="age">Age (years)</label>
+          <input type="number" id="age" min="18" max="110" placeholder="e.g. 62">
+        </div>
+        <div class="field">
+          <label for="height">Height (cm)</label>
+          <input type="number" id="height" min="120" max="220" placeholder="e.g. 165">
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="weight">Weight (kg)</label>
+          <input type="number" id="weight" min="30" max="200" placeholder="e.g. 78">
+        </div>
+        <div class="field">
+          <label for="side">Which knee?</label>
+          <select id="side">
+            <option value="">Select</option>
+            <option>Left</option>
+            <option>Right</option>
+            <option>Both knees</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">Do any of these apply to you?<span class="q-sub">Tick all that are true. These affect the conversation, not whether you can have treatment.</span></div>
+        <div class="opts">
+          <label class="opt"><input type="checkbox" name="co" value="Diabetes"><span>Diabetes</span><span class="opt-check">&#10003;</span></label>
+          <label class="opt"><input type="checkbox" name="co" value="Heart or blood pressure condition"><span>Heart or blood pressure condition</span><span class="opt-check">&#10003;</span></label>
+          <label class="opt"><input type="checkbox" name="co" value="On long term steroid medication"><span>On long term steroid medication</span><span class="opt-check">&#10003;</span></label>
+          <label class="opt"><input type="checkbox" name="co" value="Previous surgery on this knee"><span>Previous surgery on this knee</span><span class="opt-check">&#10003;</span></label>
+          <label class="opt"><input type="checkbox" name="co" value="None of these"><span>None of these</span><span class="opt-check">&#10003;</span></label>
+        </div>
+      </div>
+
+      <div class="nav-row">
+        <button class="btn btn-ghost" onclick="go(1)">&larr; Back</button>
+        <button class="btn btn-primary" onclick="go(3)">Continue &rarr;</button>
+      </div>
+    </section>
+
+    <!-- STEP 3: HOW IT AFFECTS YOU -->
+    <section class="card hidden" data-step="3">
+      <div class="step-label">Step 3 of 5 &middot; Your knee day to day</div>
+      <h2>How much is it affecting your life?</h2>
+      <p class="lead">There are no right answers. This simply captures how the knee is affecting the things you do.</p>
+
+      <div class="q">
+        <div class="q-title">On most days, how bad is the pain?<span id="painVal" class="slider-val">5 of 10</span></div>
+        <div class="slider-wrap">
+          <input type="range" id="pain" min="0" max="10" value="5" oninput="document.getElementById('painVal').textContent=this.value+' of 10'">
+          <div class="slider-labels"><span>No pain</span><span>Worst imaginable</span></div>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">Does the pain wake you at night, or keep you from sleeping?</div>
+        <div class="opts two"><label class="opt"><input type="radio" name="night" value="Yes, most nights"><span>Yes, most nights</span><span class="opt-check">&#10003;</span></label><label class="opt"><input type="radio" name="night" value="Rarely or never"><span>Rarely or never</span><span class="opt-check">&#10003;</span></label></div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">How far can you walk before the knee makes you stop?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="walk" value="As far as I like"><span>As far as I like</span><span class="opt-check">&#10003;</span></label>
+          <label class="opt"><input type="radio" name="walk" value="Fifteen minutes or so"><span>About fifteen minutes</span><span class="opt-check">&#10003;</span></label>
+          <label class="opt"><input type="radio" name="walk" value="Only around the house or street"><span>Only around the house or street</span><span class="opt-check">&#10003;</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">Which everyday activities have become hard because of the knee?<span class="q-sub">Tick all that apply.</span></div>
+        <div class="opts">
+          <label class="opt"><input type="checkbox" name="adl" value="Sitting cross legged on the floor"><span>Sitting cross legged on the floor</span><span class="opt-check">&#10003;</span></label>
+          <label class="opt"><input type="checkbox" name="adl" value="Squatting for the Indian style toilet"><span>Squatting for the Indian style toilet</span><span class="opt-check">&#10003;</span></label>
+          <label class="opt"><input type="checkbox" name="adl" value="Kneeling or sitting for prayer"><span>Kneeling or sitting for prayer</span><span class="opt-check">&#10003;</span></label>
+          <label class="opt"><input type="checkbox" name="adl" value="Climbing stairs"><span>Climbing stairs</span><span class="opt-check">&#10003;</span></label>
+          <label class="opt"><input type="checkbox" name="adl" value="Getting on or off a two wheeler"><span>Getting on or off a two wheeler</span><span class="opt-check">&#10003;</span></label>
+          <label class="opt"><input type="checkbox" name="adl" value="Standing up from a low chair"><span>Standing up from a low chair</span><span class="opt-check">&#10003;</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">What have you already tried?<span class="q-sub">Tick all that apply.</span></div>
+        <div class="opts">
+          <label class="opt"><input type="checkbox" name="tried" value="Losing weight"><span>Losing weight</span><span class="opt-check">&#10003;</span></label>
+          <label class="opt"><input type="checkbox" name="tried" value="Physiotherapy or exercises"><span>Physiotherapy or exercises</span><span class="opt-check">&#10003;</span></label>
+          <label class="opt"><input type="checkbox" name="tried" value="Pain relief tablets"><span>Pain relief tablets</span><span class="opt-check">&#10003;</span></label>
+          <label class="opt"><input type="checkbox" name="tried" value="An injection into the knee"><span>An injection into the knee</span><span class="opt-check">&#10003;</span></label>
+          <label class="opt"><input type="checkbox" name="tried" value="Nothing yet"><span>Nothing yet</span><span class="opt-check">&#10003;</span></label>
+        </div>
+      </div>
+
+      <div class="nav-row">
+        <button class="btn btn-ghost" onclick="go(2)">&larr; Back</button>
+        <button class="btn btn-primary" onclick="go(4)">Continue &rarr;</button>
+      </div>
+    </section>
+
+    <!-- STEP 4: WHAT MATTERS TO YOU -->
+    <section class="card hidden" data-step="4">
+      <div class="step-label">Step 4 of 5 &middot; What matters to you</div>
+      <h2>What matters most to you?</h2>
+      <p class="lead">Two people with the same X-ray can make very different, equally sensible choices. Your priorities are part of the decision.</p>
+
+      <div class="q">
+        <div class="q-title">How ready do you feel to consider an operation, if it were offered?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="ready" value="I want to avoid surgery for as long as possible"><span>I want to avoid surgery for as long as possible</span><span class="opt-check">&#10003;</span></label>
+          <label class="opt"><input type="radio" name="ready" value="I am open to it if it is the sensible next step"><span>I am open to it if it is the sensible next step</span><span class="opt-check">&#10003;</span></label>
+          <label class="opt"><input type="radio" name="ready" value="I feel ready and want a lasting solution"><span>I feel ready and want a lasting solution</span><span class="opt-check">&#10003;</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">A knee replacement gives lasting relief but needs a recovery of some weeks. A longer recovery for a more complete fix is&hellip;<span id="tradeVal" class="slider-val">Balanced</span></div>
+        <div class="slider-wrap">
+          <input type="range" id="trade" min="0" max="10" value="5" oninput="tradeLabel(this.value)">
+          <div class="slider-labels"><span>Not worth it to me</span><span>Very much worth it</span></div>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">What is your main hope from treatment?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="goal" value="To sleep and rest without pain"><span>To sleep and rest without pain</span><span class="opt-check">&#10003;</span></label>
+          <label class="opt"><input type="radio" name="goal" value="To walk and manage daily life comfortably"><span>To walk and manage daily life comfortably</span><span class="opt-check">&#10003;</span></label>
+          <label class="opt"><input type="radio" name="goal" value="To return to active things like travel or worship"><span>To return to active things like travel or worship</span><span class="opt-check">&#10003;</span></label>
+        </div>
+      </div>
+
+      <div class="nav-row">
+        <button class="btn btn-ghost" onclick="go(3)">&larr; Back</button>
+        <button class="btn btn-primary" onclick="buildSummary()">See my options &rarr;</button>
+      </div>
+    </section>
+
+    <!-- STEP 5: OPTIONS + SUMMARY -->
+    <section class="card hidden" data-step="5">
+      <div class="step-label">Step 5 of 5 &middot; Your options</div>
+      <h2>Your options, side by side</h2>
+      <p class="lead">For an arthritic knee these are the usual paths. They are not either or. Most people move through the earlier ones first, and the right time for surgery is a shared decision with your surgeon.</p>
+
+      <!-- Option 1 -->
+      <div class="option-block">
+        <div class="option-head"><span class="option-num">1</span><h3>Weight and activity</h3></div>
+        <div class="option-body">
+          <p>Every kilogram lost takes several times that load off the knee with each step. Along with switching to knee friendly movement such as walking, cycling, or swimming, this is the foundation the other options build on.</p>
+          <div class="tradeoff">
+            <div class="pros"><h4>Suits</h4><ul><li>Everyone, at any stage</li><li>Those carrying extra weight</li><li>Early to moderate arthritis</li></ul></div>
+            <div class="cons"><h4>Keep in mind</h4><ul><li>Takes months, not days</li><li>Needs steady effort</li><li>Helps pain but does not reverse the arthritis</li></ul></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option 2 -->
+      <div class="option-block">
+        <div class="option-head"><span class="option-num">2</span><h3>Physiotherapy and exercise</h3></div>
+        <div class="option-body">
+          <p>Strengthening the muscles around the knee, especially the thigh, can meaningfully reduce pain and improve how the joint feels and functions. A guided programme works far better than exercising blindly.</p>
+          <div class="tradeoff">
+            <div class="pros"><h4>Suits</h4><ul><li>Most people with knee arthritis</li><li>Those wanting to delay or avoid surgery</li><li>Preparing for surgery, if chosen later</li></ul></div>
+            <div class="cons"><h4>Keep in mind</h4><ul><li>Needs regular practice</li><li>Benefit builds over weeks</li><li>Does not repair the joint surface</li></ul></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option 3 -->
+      <div class="option-block">
+        <div class="option-head"><span class="option-num">3</span><h3>Pain relief medicines</h3></div>
+        <div class="option-body">
+          <p>Tablets, gels, and creams can ease flares and keep you moving. They are best used thoughtfully and for defined periods rather than continuously, and some need care if you have kidney, stomach, or heart conditions.</p>
+          <div class="tradeoff">
+            <div class="pros"><h4>Suits</h4><ul><li>Flare ups and bad patches</li><li>Alongside exercise and weight loss</li></ul></div>
+            <div class="cons"><h4>Keep in mind</h4><ul><li>Manages pain, not the cause</li><li>Long term use needs supervision</li><li>Not for everyone</li></ul></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option 4 -->
+      <div class="option-block">
+        <div class="option-head"><span class="option-num">4</span><h3>Injections into the knee</h3></div>
+        <div class="option-body">
+          <p>An injection can quieten a painful knee for a period of weeks to months. It can be a useful way to get through a difficult phase, or to buy time, though the relief is temporary and it does not change the underlying arthritis.</p>
+          <div class="tradeoff">
+            <div class="pros"><h4>Suits</h4><ul><li>A painful flare that is not settling</li><li>Buying time before deciding on surgery</li></ul></div>
+            <div class="cons"><h4>Keep in mind</h4><ul><li>Relief is temporary</li><li>Cannot be repeated endlessly</li><li>Does not halt the arthritis</li></ul></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option 5 -->
+      <div class="option-block">
+        <div class="option-head"><span class="option-num">5</span><h3>Knee replacement surgery</h3></div>
+        <div class="option-body">
+          <p>When arthritis is advanced and the earlier steps are no longer keeping pace with the pain, replacing the worn joint surfaces gives reliable, lasting relief for most people. It is a considered step, not a last resort, and the right moment is one you choose together with your surgeon.</p>
+
+          <div id="tkrArray"></div>
+
+          <p style="margin-top:10px">Modern knee replacements last many years for the great majority of people. Recovery involves several weeks of rehabilitation, and the effort you put into that rehabilitation strongly shapes the result.</p>
+          <p id="bilateralNote" class="hidden" style="font-size:.9rem;color:var(--muted)"></p>
+
+          <div class="tradeoff">
+            <div class="pros"><h4>Suits</h4><ul><li>Advanced arthritis on X-ray</li><li>Pain that is ruining sleep and daily life</li><li>When earlier steps no longer help enough</li></ul></div>
+            <div class="cons"><h4>Keep in mind</h4><ul><li>A recovery of several weeks</li><li>Small risks, as with any surgery</li><li>Best chosen at the right time, not too early</li></ul></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-row">
+        <button class="btn btn-ghost" onclick="go(4)">&larr; Back</button>
+        <button class="btn btn-primary" onclick="go(6)">See my summary &rarr;</button>
+      </div>
+    </section>
+
+    <!-- STEP 6: SUMMARY + GATE -->
+    <section class="card hidden" data-step="6" style="background:transparent;border:none;box-shadow:none;padding:0">
+      <div class="summary-card">
+        <div class="step-label">Your personal summary</div>
+        <h2>What to take to your consultation</h2>
+        <p class="lead">This pulls together what you told us and the questions worth asking. It is a starting point for the conversation, not a verdict.</p>
+        <div id="sumProfile"></div>
+        <div class="sum-block">
+          <h4>Questions to ask your surgeon</h4>
+          <ul id="sumQuestions"></ul>
+        </div>
+      </div>
+
+      <div class="gate" id="gateForm">
+        <h2 style="font-size:1.35rem;margin-bottom:6px">Get your summary as a PDF</h2>
+        <p style="color:var(--muted);margin-bottom:16px">Enter your details and the summary will download to your device, ready to print or carry to clinic.</p>
+
+        <div class="field">
+          <label for="gName">Full name</label>
+          <input type="text" id="gName" placeholder="Your name">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="gEmail">Email</label>
+            <input type="email" id="gEmail" placeholder="you@example.com">
+          </div>
+          <div class="field">
+            <label for="gPhone">Phone</label>
+            <input type="tel" id="gPhone" placeholder="+91">
+          </div>
+        </div>
+        <div class="field">
+          <label for="gRole">You are a</label>
+          <select id="gRole">
+            <option value="">Select</option>
+            <option>Patient</option>
+            <option>Family member</option>
+            <option>Doctor or health professional</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="privacy"><b>Your privacy:</b> only the contact details above are sent to us. Your answers about your knee and your health stay on this device and are never transmitted.</div>
+
+        <div class="err" id="errGate">Please fill in your name, a valid email, phone, and role.</div>
+        <button class="btn btn-primary btn-full" onclick="submitGate()">Download my summary (PDF)</button>
+      </div>
+
+      <div class="gate hidden" id="thanks" style="text-align:center">
+        <h2 style="font-size:1.4rem;margin-bottom:8px">Your summary is downloading</h2>
+        <p style="color:var(--muted);margin-bottom:18px">If it did not start, use the button below. Bring it to your appointment.</p>
+        <button class="btn btn-primary" onclick="makePDF()">Download again</button>
+        <div style="margin-top:22px">
+          <a href="decision-tools.html" class="backlink" style="color:var(--gold)">&larr; Back to all decision tools</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<div style="max-width:860px;margin:0 auto;padding:2rem 1.25rem 3rem">
+  <h2 style="font-family:'Playfair Display',Georgia,serif;color:#0A1628;font-size:1.3rem;margin-bottom:1rem">Read more before your consultation</h2>
+  <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;font-size:0.92rem">
+    <li><a href="knee-replacement-guide.html" style="color:#0A1628;border-bottom:2px solid #C9A84C;text-decoration:none">Knee Replacement Surgery: Everything You Need to Know</a> · the complete guide</li>
+    <li><a href="partial-vs-total-knee-replacement.html" style="color:#0A1628;border-bottom:2px solid #C9A84C;text-decoration:none">Partial vs Total Knee Replacement</a> · which operation suits which arthritis</li>
+    <li><a href="knee-replacement-recovery.html" style="color:#0A1628;border-bottom:2px solid #C9A84C;text-decoration:none">Recovery: An Honest Week-by-Week Timeline</a></li>
+    <li><a href="knee-replacement-indian-lifestyle.html" style="color:#0A1628;border-bottom:2px solid #C9A84C;text-decoration:none">Indian Lifestyle After Knee Replacement</a> · floor sitting, stairs, travel, prayer</li>
+    <li><a href="blog.html" style="color:#0A1628;border-bottom:2px solid #C9A84C;text-decoration:none">All Patient Education articles</a></li>
+  </ul>
+</div>
+<div class="footer">
+  <div class="wrap">
+    This tool is for education and does not replace a consultation. &nbsp;&middot;&nbsp;
+    <a href="index.html">Dr. G. Satish Reddy</a>, Consultant Orthopaedic Surgeon, KIMS Secunderabad
+  </div>
+</div>
+
+<script>
+/* ==== CONFIG ==== */
+/* Replace with the Formspree form ID used by the rehab PDF modal (collects name/email/phone/role), or a dedicated one. */
+var FORMSPREE_ENDPOINT = "https://formspree.io/f/xbdnloky";
+
+/* ==== STATE / NAV ==== */
+var STEPS = [0,1,1.5,2,3,4,5,6];
+var progressMap = {0:6,1:18,1.5:18,2:38,3:58,4:78,5:90,6:100};
+
+function show(step){
+  document.querySelectorAll('[data-step]').forEach(function(s){s.classList.add('hidden')});
+  var el = document.querySelector('[data-step="'+step+'"]');
+  el.classList.remove('hidden');
+  el.classList.remove('fade'); void el.offsetWidth; el.classList.add('fade');
+  document.getElementById('bar').style.width = (progressMap[step]||0)+'%';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function go(step){ show(step); }
+
+/* checkbox / radio visual state */
+document.addEventListener('change',function(e){
+  var opt = e.target.closest('.opt');
+  if(!opt) return;
+  if(e.target.type==='radio'){
+    var group = document.getElementsByName(e.target.name);
+    group.forEach(function(g){ g.closest('.opt').classList.remove('checked'); });
+  }
+  if(e.target.checked){ opt.classList.add('checked'); } else { opt.classList.remove('checked'); }
+});
+
+/* ==== STEP 1: RED FLAGS (one-directional) ==== */
+function val(name){ var el=document.querySelector('input[name="'+name+'"]:checked'); return el?el.value:null; }
+
+function checkFlags(){
+  var keys=['rf_sepsis','rf_trauma','rf_lock','rf_dvt'];
+  for(var i=0;i<keys.length;i++){ if(!val(keys[i])){ document.getElementById('err1').classList.add('show'); return; } }
+  document.getElementById('err1').classList.remove('show');
+
+  var red = (val('rf_sepsis')==='yes');           // possible joint infection
+  var orange = (val('rf_trauma')==='yes' || val('rf_lock')==='yes' || val('rf_dvt')==='yes');
+
+  if(red || orange){
+    var box = document.getElementById('flagBox');
+    if(red){
+      box.innerHTML =
+        '<div class="flag red"><span class="flag-tag">Please seek care now</span>'+
+        '<h3>This could be a joint infection</h3>'+
+        '<p>A hot, swollen, very painful knee with fever needs to be seen without delay, because a joint infection is treatable but time matters. Please go to a hospital emergency department now, or call the practice on <span class="callnum">+91 70755 23360</span> straight away.</p></div>';
+    } else {
+      box.innerHTML =
+        '<div class="flag orange"><span class="flag-tag">See a doctor soon</span>'+
+        '<h3>This is worth getting checked promptly</h3>'+
+        '<p>Based on what you described, it is safest to be examined in the next day or two rather than waiting. Please contact the practice on <span class="callnum">+91 70755 23360</span> to arrange an early appointment, or attend a hospital if you are worried.</p></div>';
+    }
+    show(1.5);
+  } else {
+    show(2);
+  }
+}
+
+/* ==== SLIDER LABELS ==== */
+function tradeLabel(v){
+  v=parseInt(v,10);
+  var t = v<=2?'Not worth it':v<=4?'Leaning against':v<=6?'Balanced':v<=8?'Leaning towards':'Very worth it';
+  document.getElementById('tradeVal').textContent=t;
+}
+
+/* ==== COLLECT ANSWERS ==== */
+function multi(name){ return Array.from(document.querySelectorAll('input[name="'+name+'"]:checked')).map(function(x){return x.value;}); }
+function num(id){ var v=parseFloat(document.getElementById(id).value); return isNaN(v)?null:v; }
+
+var DATA={};
+function collect(){
+  var h=num('height'), w=num('weight'), bmi=null;
+  if(h&&w){ bmi = +(w/Math.pow(h/100,2)).toFixed(1); }
+  DATA={
+    age:num('age'), height:h, weight:w, bmi:bmi,
+    side:document.getElementById('side').value||'Not specified',
+    comorbid:multi('co'),
+    pain:document.getElementById('pain').value,
+    night:val('night'),
+    walk:val('walk'),
+    adl:multi('adl'),
+    tried:multi('tried'),
+    ready:val('ready'),
+    trade:document.getElementById('trade').value,
+    goal:val('goal')
+  };
+  return DATA;
+}
+
+/* ==== ICON ARRAY ==== */
+function personSVG(fill){
+  return '<svg viewBox="0 0 24 24" fill="'+fill+'"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5z"/></svg>';
+}
+function iconArray(filled,total,fillColor,emptyColor){
+  var html='<div class="iconarray">';
+  for(var i=0;i<total;i++){ html+= personSVG(i<filled?fillColor:emptyColor); }
+  html+='</div>';
+  return html;
+}
+
+/* ==== BUILD OPTIONS (step 5) ==== */
+function buildSummary(){
+  collect();
+  /* NOTE: figures below are indicative ranges for patient education. Confirm/adjust before publishing. */
+  var arr = iconArray(8,10,'#2f7d4f','#d7dbe0');
+  document.getElementById('tkrArray').innerHTML =
+    arr + '<div class="ia-caption">Studies suggest that around <b>8 in 10</b> people are satisfied with their knee replacement and get lasting relief of their arthritis pain.</div>';
+
+  var bn = document.getElementById('bilateralNote');
+  if(DATA.side==='Both knees'){
+    bn.classList.remove('hidden');
+    var ageTxt = (DATA.age && DATA.age>70)
+      ? 'When both knees need replacing, they are usually done as two operations spaced at least six weeks apart. Doing both in one sitting is generally reserved for people below about 70 years of age and in good health, so this is worth discussing in detail.'
+      : 'When both knees need replacing, your surgeon will discuss whether to do them as two operations spaced at least six weeks apart, or both in one sitting, which depends on your age and general health.';
+    bn.textContent = ageTxt;
+  } else {
+    bn.classList.add('hidden');
+  }
+  show(5);
+}
+
+/* ==== BUILD SUMMARY (step 6) ==== */
+function buildQuestions(){
+  var qs = [
+    'How advanced is the arthritis on my X-ray, and what does that mean for me?',
+    'Given my situation, which options make the most sense to try first?',
+    'Would losing weight or physiotherapy change what you would recommend?',
+    'If I am not ready for surgery, what can I safely do in the meantime?'
+  ];
+  if(DATA.ready==='I feel ready and want a lasting solution'){
+    qs.push('If I choose surgery, what does recovery look like week by week?');
+    qs.push('What results can I realistically expect for the activities I care about?');
+  }
+  if(DATA.side==='Both knees'){
+    qs.push('Should both knees be done together or one at a time, and why?');
+  }
+  if(DATA.comorbid.indexOf('Diabetes')>-1 || DATA.comorbid.indexOf('Heart or blood pressure condition')>-1){
+    qs.push('Do my other health conditions change the risks or the plan for me?');
+  }
+  if(DATA.tried.indexOf('An injection into the knee')>-1){
+    qs.push('The injection I tried has worn off. What does that tell us about next steps?');
+  }
+  return qs;
+}
+
+function buildSummaryScreen(){
+  var p = document.getElementById('sumProfile');
+  var lines=[];
+  if(DATA.age) lines.push('Age '+DATA.age);
+  if(DATA.bmi) lines.push('Body mass index about '+DATA.bmi);
+  lines.push('Affected: '+DATA.side+' knee');
+  var profileHtml = '<div class="sum-block"><h4>Your picture in brief</h4><p>'+lines.join(' &middot; ')+'</p>';
+  profileHtml += '<p style="margin-top:8px">Pain most days: <b style="color:#fff">'+DATA.pain+' of 10</b>'+
+     (DATA.night?', '+DATA.night.toLowerCase():'')+'.</p>';
+  if(DATA.adl.length){ profileHtml += '<p style="margin-top:8px">Hard right now: '+DATA.adl.join(', ').toLowerCase()+'.</p>'; }
+  if(DATA.tried.length){ profileHtml += '<p style="margin-top:8px">Already tried: '+DATA.tried.join(', ').toLowerCase()+'.</p>'; }
+  var readTxt = DATA.ready ? '<p style="margin-top:8px">On surgery, you said: <b style="color:#fff">'+DATA.ready.toLowerCase()+'</b>.</p>' : '';
+  profileHtml += readTxt + '</div>';
+  p.innerHTML = profileHtml;
+
+  var ul=document.getElementById('sumQuestions'); ul.innerHTML='';
+  buildQuestions().forEach(function(q){ var li=document.createElement('li'); li.textContent=q; ul.appendChild(li); });
+}
+
+/* hook step 6 */
+var _go=go;
+go=function(step){ if(step===6){ buildSummaryScreen(); } _go(step); };
+
+/* ==== GATE + PDF ==== */
+function submitGate(){
+  var name=document.getElementById('gName').value.trim();
+  var email=document.getElementById('gEmail').value.trim();
+  var phone=document.getElementById('gPhone').value.trim();
+  var role=document.getElementById('gRole').value;
+  var ok = name && /\S+@\S+\.\S+/.test(email) && phone.length>=6 && role;
+  if(!ok){ document.getElementById('errGate').classList.add('show'); return; }
+  document.getElementById('errGate').classList.remove('show');
+
+  /* Send ONLY contact details to Formspree. Health answers never leave the device. */
+  try{
+    fetch(FORMSPREE_ENDPOINT,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({name:name,email:email,phone:phone,role:role,source:'Knee replacement decision aid'})
+    });
+  }catch(e){/* download proceeds regardless */}
+
+  document.getElementById('gateForm').classList.add('hidden');
+  document.getElementById('thanks').classList.remove('hidden');
+  makePDF();
+}
+
+function makePDF(){
+  var jsPDF = window.jspdf.jsPDF;
+  var doc=new jsPDF({unit:'pt',format:'a4'});
+  var W=595, M=48, y=64;
+  var navy=[10,22,40], gold=[201,168,76], ink=[28,39,51], muted=[92,102,115];
+
+  doc.setFillColor(navy[0],navy[1],navy[2]); doc.rect(0,0,W,96,'F');
+  doc.setTextColor(gold[0],gold[1],gold[2]); doc.setFont('helvetica','normal'); doc.setFontSize(9);
+  doc.text('KNEE OSTEOARTHRITIS  |  DECISION SUMMARY',M,40);
+  doc.setTextColor(248,246,242); doc.setFont('times','bold'); doc.setFontSize(20);
+  doc.text('For your consultation',M,68);
+  doc.setFont('helvetica','normal'); doc.setFontSize(9); doc.setTextColor(200,207,216);
+  doc.text('Dr. G. Satish Reddy, Consultant Orthopaedic Surgeon, KIMS Secunderabad',M,86);
+
+  y=128;
+  function h(t){ doc.setFont('times','bold'); doc.setFontSize(13); doc.setTextColor(navy[0],navy[1],navy[2]); doc.text(t,M,y); y+=8;
+    doc.setDrawColor(gold[0],gold[1],gold[2]); doc.setLineWidth(1.4); doc.line(M,y,M+40,y); y+=18; }
+  function body(t){ doc.setFont('helvetica','normal'); doc.setFontSize(10.5); doc.setTextColor(ink[0],ink[1],ink[2]);
+    var lines=doc.splitTextToSize(t,W-2*M); doc.text(lines,M,y); y+=lines.length*14+8; }
+  function bullet(t){ doc.setFont('helvetica','normal'); doc.setFontSize(10.5); doc.setTextColor(ink[0],ink[1],ink[2]);
+    doc.setFillColor(gold[0],gold[1],gold[2]); doc.circle(M+3,y-3,1.6,'F');
+    var lines=doc.splitTextToSize(t,W-2*M-16); doc.text(lines,M+14,y); y+=lines.length*14+6; }
+
+  h('Your picture in brief');
+  var bits=[];
+  if(DATA.age) bits.push('Age '+DATA.age);
+  if(DATA.bmi) bits.push('BMI about '+DATA.bmi);
+  bits.push('Affected: '+DATA.side+' knee');
+  body(bits.join('   .   '));
+  body('Pain most days: '+DATA.pain+' of 10'+(DATA.night?', '+DATA.night.toLowerCase():'')+'. Walking: '+(DATA.walk?DATA.walk.toLowerCase():'not stated')+'.');
+  if(DATA.adl.length) body('Hard right now: '+DATA.adl.join(', ').toLowerCase()+'.');
+  if(DATA.tried.length) body('Already tried: '+DATA.tried.join(', ').toLowerCase()+'.');
+  if(DATA.ready) body('On surgery you said: '+DATA.ready.toLowerCase()+'.');
+  y+=6;
+
+  h('The options to discuss');
+  bullet('Weight and activity: the foundation for every other option.');
+  bullet('Physiotherapy and exercise: strengthening the thigh muscles reduces pain for most people.');
+  bullet('Pain relief medicines: useful for flares, used thoughtfully.');
+  bullet('Injections: temporary relief that can buy time.');
+  bullet('Knee replacement: reliable lasting relief when arthritis is advanced and earlier steps no longer keep pace. Around 8 in 10 people are satisfied.');
+  y+=6;
+
+  if(y>640){ doc.addPage(); y=64; }
+  h('Questions to ask your surgeon');
+  buildQuestions().forEach(function(q){ if(y>770){ doc.addPage(); y=64; } bullet(q); });
+
+  y+=10;
+  doc.setDrawColor(228,222,211); doc.setLineWidth(1); doc.line(M,y,W-M,y); y+=16;
+  doc.setFont('helvetica','italic'); doc.setFontSize(8.5); doc.setTextColor(muted[0],muted[1],muted[2]);
+  var disc=doc.splitTextToSize('This summary is for education and to prepare you for your appointment. It is not a diagnosis and does not replace examination by a doctor. Figures given are general and may not apply to you. Practice contact: +91 70755 23360.',W-2*M);
+  doc.text(disc,M,y);
+
+  doc.save('Knee-decision-summary.pdf');
+}
+
+/* init */
+show(0);
+</script>
+</body>
+</html>
