@@ -194,6 +194,18 @@
       .form-row { grid-template-columns:1fr; }
     }
     @media (prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none!important; } }
+  
+    /* nav layout hardening: never wrap a label, collapse to hamburger before it can */
+    .nav__inner { gap: 1.25rem; flex-wrap: nowrap; }
+    .nav__brand { white-space: nowrap; flex-shrink: 0; }
+    .nav__links { flex-wrap: nowrap; gap: clamp(0.85rem, 1.5vw, 2rem); }
+    .nav__links li { flex-shrink: 0; }
+    .nav__links a { white-space: nowrap; }
+
+    @media (max-width: 1180px) {
+      .nav__links { display: none; }
+      .nav__hamburger { display: flex; }
+    }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQJV3LV6SV"></script>

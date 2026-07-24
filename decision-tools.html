@@ -109,6 +109,20 @@
       .tool-card { grid-template-columns:1fr; }
       .tool-card__meta { flex-direction:row; align-items:center; }
     }
+  
+    /* nav layout hardening: never wrap a label, collapse to hamburger before it can */
+    .nav__inner { gap: 1.25rem; flex-wrap: nowrap; }
+    .nav__brand { white-space: nowrap; flex-shrink: 0; }
+    .nav__links { flex-wrap: nowrap; gap: clamp(0.85rem, 1.5vw, 2rem); }
+    .nav__links li { flex-shrink: 0; }
+    .nav__links a { white-space: nowrap; }
+
+    @media (max-width: 1180px) {
+      .nav__links { display:none; position:absolute; top:72px; left:0; right:0;
+        background:var(--navy); flex-direction:column; padding:1.5rem 2rem; gap:1.25rem; }
+      .nav__links.open { display:flex; }
+      .nav__hamburger { display:flex; }
+    }
   </style>
 </head>
 <body>
