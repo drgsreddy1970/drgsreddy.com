@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+Disallow: /docs/
+Disallow: /tools/
+
 Sitemap: https://drgsreddy.com/sitemap.xml

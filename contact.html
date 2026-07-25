@@ -206,6 +206,11 @@
       .nav__links { display: none; }
       .nav__hamburger { display: flex; }
     }
+  
+    /* inline SVG icons, replacing emoji */
+    .icon { display:inline-block; vertical-align:-0.18em; color:var(--gold,#C9A84C); }
+    .body-btn__icon .icon { width:30px; height:30px; }
+    .pdf-badge .icon, .appt-cta__contact-item .icon { margin-right:0.35rem; }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQJV3LV6SV"></script>
@@ -222,6 +227,137 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "xd5ee60zrw");
+  </script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0A1628" />
+  <meta property="og:image" content="https://drgsreddy.com/og/contact.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Dr. Satish Reddy. G" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://drgsreddy.com/og/contact.jpg" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Physician",
+      "@id": "https://drgsreddy.com/#physician",
+      "name": "Dr. Satish Reddy Gandavarapu",
+      "honorificPrefix": "Dr.",
+      "jobTitle": "Consultant Orthopaedic Surgeon",
+      "url": "https://drgsreddy.com",
+      "image": "https://drgsreddy.com/dr-satish-about.jpg",
+      "telephone": "+91-70755-23360",
+      "medicalSpecialty": [
+        "Orthopedic",
+        "SurgicalOncology"
+      ],
+      "availableService": [
+        {
+          "@type": "MedicalProcedure",
+          "name": "Knee replacement surgery"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Hip replacement surgery"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Shoulder replacement surgery"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Limb salvage surgery for bone tumours"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Complex trauma and fracture surgery"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Arthroscopic and sports injury surgery"
+        }
+      ],
+      "worksFor": {
+        "@type": "Hospital",
+        "name": "KIMS Hospital, Secunderabad",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Ministers Road",
+          "addressLocality": "Secunderabad",
+          "addressRegion": "Telangana",
+          "addressCountry": "IN"
+        }
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "KIMS Hospital, Ministers Road",
+        "addressLocality": "Secunderabad",
+        "addressRegion": "Telangana",
+        "addressCountry": "IN"
+      },
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Rizzoli Orthopaedic Institute, Bologna, Italy"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Royal Orthopaedic Hospital, Birmingham, UK"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Flinders Medical Centre, Adelaide, Australia"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Indian School of Business, Hyderabad"
+        }
+      ],
+      "award": [
+        "Nicholas Andre Gold Medal, MS Orthopaedics",
+        "Villis R Marshall Fellowship, Flinders Medical Centre",
+        "Valedictorian, AMP Healthcare, ISB Hyderabad",
+        "AO Trauma Accredited Faculty"
+      ],
+      "knowsLanguage": [
+        "en",
+        "te",
+        "hi"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://drgsreddy.com/contact",
+      "name": "Contact & Appointments",
+      "description": "Book a consultation with Dr. Satish Reddy Gandavarapu at KIMS Hospital, Ministers Road, Secunderabad. Call, WhatsApp, or send an enquiry online.",
+      "about": {
+        "@id": "https://drgsreddy.com/#physician"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://drgsreddy.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact & Appointments",
+          "item": "https://drgsreddy.com/contact"
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -266,7 +402,7 @@
 <div class="quick-actions">
   <div class="quick-actions__inner">
     <div class="quick-action">
-      <div class="quick-action__icon">📞</div>
+      <div class="quick-action__icon"><svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2.2 2A16 16 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></svg></div>
       <h3>Call directly</h3>
       <p>Speak to us for immediate assistance or to book an appointment over the phone.</p>
       <a href="tel:+917075523360">+91 70755 23360</a>
@@ -278,7 +414,7 @@
       <a href="https://wa.me/917075523360" target="_blank" rel="noopener">+91 70755 23360</a>
     </div>
     <div class="quick-action">
-      <div class="quick-action__icon">📍</div>
+      <div class="quick-action__icon"><svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
       <h3>Visit us</h3>
       <p>KIMS Hospital, Ministers Road, Secunderabad, Telangana.</p>
       <a href="https://maps.google.com/?q=KIMS+Hospital+Ministers+Road+Secunderabad" target="_blank" rel="noopener">Get directions →</a>
@@ -412,14 +548,14 @@
         <div class="info-card__header"><h3>Clinic location</h3></div>
         <div class="info-card__body">
           <div class="info-row">
-            <div class="info-row__icon">🏥</div>
+            <div class="info-row__icon"><svg class="icon" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M9 10h6"/><path d="M9 14h6"/><path d="M9 18h3"/></svg></div>
             <div>
               <div class="info-row__label">Hospital</div>
               <div class="info-row__value">KIMS Hospital<br/>Ministers Road<br/>Secunderabad, Telangana, 500 003</div>
             </div>
           </div>
           <div class="info-row">
-            <div class="info-row__icon">📞</div>
+            <div class="info-row__icon"><svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2.2 2A16 16 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></svg></div>
             <div>
               <div class="info-row__label">Direct line</div>
               <div class="info-row__value"><a href="tel:+917075523360">+91 70755 23360</a></div>
@@ -458,14 +594,14 @@
             </div>
           </div>
           <div class="info-row">
-            <div class="info-row__icon">📋</div>
+            <div class="info-row__icon"><svg class="icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="16" rx="2"/><path d="M10 4V3h4v1"/><path d="M9 10h6"/><path d="M9 14h6"/></svg></div>
             <div>
               <div class="info-row__label">Enquiry form</div>
               <div class="info-row__value">Within one working day</div>
             </div>
           </div>
           <div class="info-row">
-            <div class="info-row__icon">🔬</div>
+            <div class="info-row__icon"><svg class="icon" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="5.5"/><circle cx="10" cy="10" r="1.8"/><path d="M14 14l6 6"/><path d="M4 20h9"/></svg></div>
             <div>
               <div class="info-row__label">Urgent oncology / trauma</div>
               <div class="info-row__value">Seen within 24–48 hours where clinically needed</div>

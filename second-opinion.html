@@ -277,6 +277,11 @@
       .nav__links { display: none; }
       .nav__hamburger { display: flex; }
     }
+  
+    /* inline SVG icons, replacing emoji */
+    .icon { display:inline-block; vertical-align:-0.18em; color:var(--gold,#C9A84C); }
+    .body-btn__icon .icon { width:30px; height:30px; }
+    .pdf-badge .icon, .appt-cta__contact-item .icon { margin-right:0.35rem; }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQJV3LV6SV"></script>
@@ -293,6 +298,149 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "xd5ee60zrw");
+  </script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0A1628" />
+  <meta property="og:image" content="https://drgsreddy.com/og/second-opinion.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Dr. Satish Reddy. G" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://drgsreddy.com/og/second-opinion.jpg" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalWebPage",
+      "url": "https://drgsreddy.com/second-opinion",
+      "name": "Free Orthopaedic Second Opinion",
+      "description": "Get a free specialist orthopaedic second opinion from Dr. Satish Reddy's team. Remote consultation for elective surgery, post-surgical complications, and urgent trauma opinions. KIMS Hospital, Secunderabad.",
+      "image": "https://drgsreddy.com/og/second-opinion.jpg",
+      "inLanguage": "en-IN",
+      "audience": {
+        "@type": "Patient"
+      },
+      "lastReviewed": "2026-07-24",
+      "reviewedBy": {
+        "@id": "https://drgsreddy.com/#physician"
+      },
+      "author": {
+        "@id": "https://drgsreddy.com/#physician"
+      },
+      "publisher": {
+        "@id": "https://drgsreddy.com/#physician"
+      }
+    },
+    {
+      "@type": "Physician",
+      "@id": "https://drgsreddy.com/#physician",
+      "name": "Dr. Satish Reddy Gandavarapu",
+      "honorificPrefix": "Dr.",
+      "jobTitle": "Consultant Orthopaedic Surgeon",
+      "url": "https://drgsreddy.com",
+      "image": "https://drgsreddy.com/dr-satish-about.jpg",
+      "telephone": "+91-70755-23360",
+      "medicalSpecialty": [
+        "Orthopedic",
+        "SurgicalOncology"
+      ],
+      "availableService": [
+        {
+          "@type": "MedicalProcedure",
+          "name": "Knee replacement surgery"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Hip replacement surgery"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Shoulder replacement surgery"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Limb salvage surgery for bone tumours"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Complex trauma and fracture surgery"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Arthroscopic and sports injury surgery"
+        }
+      ],
+      "worksFor": {
+        "@type": "Hospital",
+        "name": "KIMS Hospital, Secunderabad",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Ministers Road",
+          "addressLocality": "Secunderabad",
+          "addressRegion": "Telangana",
+          "addressCountry": "IN"
+        }
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "KIMS Hospital, Ministers Road",
+        "addressLocality": "Secunderabad",
+        "addressRegion": "Telangana",
+        "addressCountry": "IN"
+      },
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Rizzoli Orthopaedic Institute, Bologna, Italy"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Royal Orthopaedic Hospital, Birmingham, UK"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Flinders Medical Centre, Adelaide, Australia"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Indian School of Business, Hyderabad"
+        }
+      ],
+      "award": [
+        "Nicholas Andre Gold Medal, MS Orthopaedics",
+        "Villis R Marshall Fellowship, Flinders Medical Centre",
+        "Valedictorian, AMP Healthcare, ISB Hyderabad",
+        "AO Trauma Accredited Faculty"
+      ],
+      "knowsLanguage": [
+        "en",
+        "te",
+        "hi"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://drgsreddy.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Free Orthopaedic Second Opinion",
+          "item": "https://drgsreddy.com/second-opinion"
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -638,9 +786,9 @@
         <div class="side-card__header"><h4>What you will receive</h4></div>
         <div class="side-card__body">
           <div class="side-row"><div class="side-row__icon">📝</div><div><div class="side-row__label">Now, free</div>Written specialist opinion delivered to you</div></div>
-          <div class="side-row"><div class="side-row__icon">📄</div><div><div class="side-row__label">Coming soon</div>Formal written report in PDF format, suitable for insurance, second hospital, or legal purposes</div></div>
+          <div class="side-row"><div class="side-row__icon"><svg class="icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M12 12v5"/><path d="m9.5 14.5 2.5-2.5 2.5 2.5"/></svg></div><div><div class="side-row__label">Coming soon</div>Formal written report in PDF format, suitable for insurance, second hospital, or legal purposes</div></div>
           <div class="side-row"><div class="side-row__icon">📹</div><div><div class="side-row__label">If needed</div>Video consultation available to discuss findings in detail</div></div>
-          <div class="side-row" style="margin-bottom:0"><div class="side-row__icon">🏥</div><div><div class="side-row__label">Always available</div>Physical consultation always available at KIMS Hospital, Secunderabad</div></div>
+          <div class="side-row" style="margin-bottom:0"><div class="side-row__icon"><svg class="icon" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M9 10h6"/><path d="M9 14h6"/><path d="M9 18h3"/></svg></div><div><div class="side-row__label">Always available</div>Physical consultation always available at KIMS Hospital, Secunderabad</div></div>
         </div>
       </div>
 
