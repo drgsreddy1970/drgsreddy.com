@@ -984,7 +984,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     fetch(action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} })
       .then(r => {
-        if (r.ok) { showSuccess(); }
+        if (r.ok) { try { window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'lead_submit', lead_email: form.email.value, lead_phone: form.phone.value }); } catch (e) {} showSuccess(); }
         else { btn.disabled = false; btn.textContent = 'Submit for specialist review →'; alert('Something went wrong, please WhatsApp us directly on +91 70755 23360.'); }
       })
       .catch(() => { btn.disabled = false; btn.textContent = 'Submit for specialist review →'; alert('Something went wrong, please WhatsApp us directly on +91 70755 23360.'); });
