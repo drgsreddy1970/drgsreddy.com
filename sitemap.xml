@@ -378,4 +378,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url><loc>https://drgsreddy.com/privacy-policy</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://drgsreddy.com/terms</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://drgsreddy.com/medical-disclaimer</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
