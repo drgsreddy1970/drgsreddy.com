@@ -331,6 +331,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <button type="submit" class="btn btn-gold btn-lg submit-full" id="soBtn">Request my second opinion</button>
       </form>
 
+      <div class="re" id="soError" style="display:none;margin-top:12px">
+        We could not send that just now. Please WhatsApp us on
+        <a href="https://wa.me/917075523360" style="color:inherit">+91 70755 23360</a>
+        and we will pick it up straight away.
+      </div>
+
       <div class="success" id="soSuccess">
         <svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
         <h3>Request received</h3>
@@ -388,35 +394,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
   function handleSO(e){
     e.preventDefault();
-    var form = document.getElementById('soForm');
-    var action = form.getAttribute('action');
-    var btn = document.getElementById('soBtn');
-    var name = (document.getElementById('soFirst').value + ' ' + document.getElementById('soLast').value).trim();
-    var phone = document.getElementById('soPhone').value;
-    var email = document.getElementById('soEmail').value;
-    // CRM + WhatsApp lead intake (fire-and-forget, plain-text body to skip CORS preflight)
-    try {
-      var __lead = Object.assign({ action:'lead_intake', token:'gsr-lead-9f3k2x7q',
-        name:name, firstName:document.getElementById('soFirst').value, lastName:document.getElementById('soLast').value,
-        phone:phone, email:email }, window.__attribution||{});
-      fetch('https://script.google.com/macros/s/AKfycbzgeYVm2xoL2IcdaT37Q5GMCkzYCWeYEjwOdnL3trgh0pEZfz8TA7THVwUYThhumeNphw/exec', { method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(__lead), keepalive:true });
-    } catch(err){}
+    var form  = document.getElementById('soForm');
+    var btn   = document.getElementById('soBtn');
+    var first = (document.getElementById('soFirst').value || '').trim();
+    var last  = (document.getElementById('soLast').value || '').trim();
+    var name  = (first + ' ' + last).trim();
+    var phone = (document.getElementById('soPhone').value || '').trim();
+    var email = (document.getElementById('soEmail').value || '').trim();
 
-    var waMsg = encodeURIComponent('SECOND OPINION REQUEST\n\nName: ' + name + '\nMobile: ' + phone + '\n\nI have submitted the form on your website. Sending my scans/reports.');
-    document.getElementById('soWa').href = 'https://wa.me/917075523360?text=' + waMsg;
-
-    function fireLeadAndSucceed(){
-      try { if (window.__leadConversion) window.__leadConversion(email, phone); } catch(err){}
-      document.getElementById('soForm').style.display = 'none';
-      document.getElementById('soSuccess').style.display = 'block';
-      document.getElementById('soSuccess').scrollIntoView({behavior:'smooth', block:'center'});
-    }
-    if (action.indexOf('YOUR_FORM_ID') !== -1) { fireLeadAndSucceed(); return; }
     btn.disabled = true; btn.textContent = 'Sending...';
-    fetch(action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} })
-      .then(function(r){ if (r.ok) { fireLeadAndSucceed(); } else { btn.disabled=false; btn.textContent='Request my second opinion'; alert('Something went wrong. Please WhatsApp us on +91 70755 23360.'); } })
-      .catch(function(){ btn.disabled=false; btn.textContent='Request my second opinion'; alert('Network issue. Please WhatsApp us on +91 70755 23360.'); });
+
+    // Pre-fill the WhatsApp follow-up so patients can send reports after submitting
+    document.getElementById('soWa').href = 'https://wa.me/917075523360?text=' +
+      encodeURIComponent('SECOND OPINION REQUEST\n\nName: ' + name + '\nMobile: ' + phone +
+        '\n\nI have submitted the form on your website. Sending my scans/reports.');
+
+    var __lead = Object.assign({
+      action:'lead_intake', token:'gsr-lead-9f3k2x7q',
+      name:name, firstName:first, lastName:last, phone:phone, email:email,
+      landing_page: location.pathname, referrer: document.referrer || ''
+    }, window.__attribution || {});
+
+    // 1) CRM + WhatsApp intake. Plain CORS request so the result is readable.
+    //    Content-Type text/plain keeps this a "simple" request: no preflight OPTIONS,
+    //    which Apps Script does not answer. Do not change it to application/json.
+    var intake = fetch('https://script.google.com/macros/s/AKfycbzgeYVm2xoL2IcdaT37Q5GMCkzYCWeYEjwOdnL3trgh0pEZfz8TA7THVwUYThhumeNphw/exec', {
+      method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(__lead)
+    })
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(j){ return !!(j && j.ok && j.registered); })
+    .catch(function(){ return false; });
+
+    // 2) Formspree inbox copy
+    var inbox = fetch(form.getAttribute('action'), {
+      method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}
+    })
+    .then(function(r){ return r.ok; })
+    .catch(function(){ return false; });
+
+    // Success if EITHER path lands. The conversion is never gated on one vendor.
+    Promise.all([intake, inbox]).then(function(res){
+      var registered = res[0], mailed = res[1];
+
+      if (!registered && !mailed) {
+        btn.disabled = false; btn.textContent = 'Request my second opinion';
+        document.getElementById('soError').style.display = 'block';
+        try { console.error('[lead] both delivery paths failed'); } catch(err){}
+        return;
+      }
+      if (!registered || !mailed) {
+        try { console.warn('[lead] partial delivery', {registered:registered, mailed:mailed}); } catch(err){}
+      }
+
+      try { if (window.__leadConversion) window.__leadConversion(email, phone); } catch(err){}
+      form.style.display = 'none';
+      var ok = document.getElementById('soSuccess');
+      ok.style.display = 'block';
+      ok.scrollIntoView({behavior:'smooth', block:'center'});
+    });
   }
+
   function toggleFaq(btn){
     var open = btn.classList.contains('open');
     document.querySelectorAll('.faq-q').forEach(function(q){q.classList.remove('open')});

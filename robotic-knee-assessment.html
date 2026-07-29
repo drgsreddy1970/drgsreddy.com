@@ -333,6 +333,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <button type="submit" class="btn btn-gold btn-lg submit-full" id="kBtn">Request my assessment</button>
       </form>
 
+      <div class="re" id="kError" style="display:none;margin-top:12px">
+        We could not send that just now. Please WhatsApp us on
+        <a href="https://wa.me/917075523360" style="color:inherit">+91 70755 23360</a>
+        and we will pick it up straight away.
+      </div>
+
       <div class="success" id="kneeSuccess">
         <svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
         <h3>Request received</h3>
@@ -392,39 +398,64 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   // then submit to Formspree. The tag also auto-tracks WhatsApp and call clicks.
   function handleKnee(e){
     e.preventDefault();
-    var form = document.getElementById('kneeForm');
-    var action = form.getAttribute('action');
-    var btn = document.getElementById('kBtn');
-    var name = (document.getElementById('kFirst').value + ' ' + document.getElementById('kLast').value).trim();
-    var phone = document.getElementById('kPhone').value;
-    var email = document.getElementById('kEmail').value;
-    // CRM + WhatsApp lead intake (fire-and-forget, plain-text body to skip CORS preflight)
-    try {
-      var __lead = Object.assign({ action:'lead_intake', token:'gsr-lead-9f3k2x7q',
-        name:name, firstName:document.getElementById('kFirst').value, lastName:document.getElementById('kLast').value,
-        phone:phone, email:email }, window.__attribution||{});
-      fetch('https://script.google.com/macros/s/AKfycbzgeYVm2xoL2IcdaT37Q5GMCkzYCWeYEjwOdnL3trgh0pEZfz8TA7THVwUYThhumeNphw/exec', { method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(__lead), keepalive:true });
-    } catch(err){}
-
-
-    // Pre-fill the WhatsApp follow-up so patients can send reports after submitting
-    var waMsg = encodeURIComponent('ROBOTIC KNEE ASSESSMENT\n\nName: ' + name + '\nMobile: ' + phone + '\n\nI have submitted the form on your website. Sending my knee scans/reports.');
-    document.getElementById('kWa').href = 'https://wa.me/917075523360?text=' + waMsg;
-
-    function fireLeadAndSucceed(){
-      try { if (window.__leadConversion) window.__leadConversion(email, phone); } catch(err){}
-      document.getElementById('kneeForm').style.display = 'none';
-      document.getElementById('kneeSuccess').style.display = 'block';
-      document.getElementById('kneeSuccess').scrollIntoView({behavior:'smooth', block:'center'});
-    }
-
-    // If the Formspree endpoint is not set yet, still fire tracking and show success
-    if (action.indexOf('YOUR_ROBOTIC_KNEE_ID') !== -1) { fireLeadAndSucceed(); return; }
+    var form  = document.getElementById('kneeForm');
+    var btn   = document.getElementById('kBtn');
+    var first = (document.getElementById('kFirst').value || '').trim();
+    var last  = (document.getElementById('kLast').value || '').trim();
+    var name  = (first + ' ' + last).trim();
+    var phone = (document.getElementById('kPhone').value || '').trim();
+    var email = (document.getElementById('kEmail').value || '').trim();
 
     btn.disabled = true; btn.textContent = 'Sending...';
-    fetch(action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} })
-      .then(function(r){ if (r.ok) { fireLeadAndSucceed(); } else { btn.disabled=false; btn.textContent='Request my assessment'; alert('Something went wrong. Please WhatsApp us on +91 70755 23360.'); } })
-      .catch(function(){ btn.disabled=false; btn.textContent='Request my assessment'; alert('Network issue. Please WhatsApp us on +91 70755 23360.'); });
+
+    // Pre-fill the WhatsApp follow-up so patients can send reports after submitting
+    document.getElementById('kWa').href = 'https://wa.me/917075523360?text=' +
+      encodeURIComponent('ROBOTIC KNEE ASSESSMENT\n\nName: ' + name + '\nMobile: ' + phone +
+        '\n\nI have submitted the form on your website. Sending my knee scans/reports.');
+
+    var __lead = Object.assign({
+      action:'lead_intake', token:'gsr-lead-9f3k2x7q',
+      name:name, firstName:first, lastName:last, phone:phone, email:email,
+      landing_page: location.pathname, referrer: document.referrer || ''
+    }, window.__attribution || {});
+
+    // 1) CRM + WhatsApp intake. Plain CORS request so the result is readable.
+    //    Content-Type text/plain keeps this a "simple" request: no preflight OPTIONS,
+    //    which Apps Script does not answer. Do not change it to application/json.
+    var intake = fetch('https://script.google.com/macros/s/AKfycbzgeYVm2xoL2IcdaT37Q5GMCkzYCWeYEjwOdnL3trgh0pEZfz8TA7THVwUYThhumeNphw/exec', {
+      method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(__lead)
+    })
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(j){ return !!(j && j.ok && j.registered); })
+    .catch(function(){ return false; });
+
+    // 2) Formspree inbox copy
+    var inbox = fetch(form.getAttribute('action'), {
+      method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}
+    })
+    .then(function(r){ return r.ok; })
+    .catch(function(){ return false; });
+
+    // Success if EITHER path lands. The conversion is never gated on one vendor.
+    Promise.all([intake, inbox]).then(function(res){
+      var registered = res[0], mailed = res[1];
+
+      if (!registered && !mailed) {
+        btn.disabled = false; btn.textContent = 'Request my assessment';
+        document.getElementById('kError').style.display = 'block';
+        try { console.error('[lead] both delivery paths failed'); } catch(err){}
+        return;
+      }
+      if (!registered || !mailed) {
+        try { console.warn('[lead] partial delivery', {registered:registered, mailed:mailed}); } catch(err){}
+      }
+
+      try { if (window.__leadConversion) window.__leadConversion(email, phone); } catch(err){}
+      form.style.display = 'none';
+      var ok = document.getElementById('kneeSuccess');
+      ok.style.display = 'block';
+      ok.scrollIntoView({behavior:'smooth', block:'center'});
+    });
   }
 
   function toggleFaq(btn){
