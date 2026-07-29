@@ -14,10 +14,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <title>Dr. Satish Reddy. G, Consultant Orthopaedic Surgeon, Hyderabad</title>
   <meta name="description" content="Dr. Satish Reddy Gandavarapu, Gold Medallist, fellowship-trained in Italy, UK & Australia. Pioneer of Orthopaedic Oncology in AP & Telangana. Consulting at KIMS Hospital, Ministers Road, Secunderabad." />
   <link rel="canonical" href="https://drgsreddy.com/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>
+<link rel="preload" href="/Inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/PlayfairDisplay.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:400 900;font-display:swap;src:url('/PlayfairDisplay.woff2') format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:400 900;font-display:swap;src:url('/PlayfairDisplay-Italic.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('/Inter.woff2') format('woff2')}
+</style>
+<style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 
@@ -605,7 +609,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="about-snap">
   <div class="about-snap__inner">
     <div class="about-snap__photo" style="aspect-ratio:3/4;border-radius:4px;border:1px solid rgba(0,0,0,0.08);overflow:hidden;">
-      <img src="/dr-satish-photo.png" alt="Dr. Satish Reddy Gandavarapu" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" />
+      <picture><source srcset="/dr-satish-photo.webp" type="image/webp"><img src="/dr-satish-photo.jpg" alt="Dr. Satish Reddy Gandavarapu" width="1086" height="1448" loading="eager" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" /></picture>
     </div>
     <div class="about-snap__text">
       <span class="eyebrow">About Dr. Satish</span>
