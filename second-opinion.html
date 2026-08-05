@@ -316,10 +316,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <meta name="theme-color" content="#0A1628" />
   <meta property="og:image" content="https://drgsreddy.com/second-opinion.jpg" />
-  <meta property="og:title" content="Free Second Opinion | Dr. Satish Reddy. G">
-  <meta property="og:description" content="Been advised surgery and unsure? Send your reports for a free second opinion from a fellowship-trained orthopaedic surgeon at KIMS Secunderabad.">
-  <meta property="og:url" content="https://drgsreddy.com/second-opinion">
-  <meta property="og:type" content="website">
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Dr. Satish Reddy. G" />
@@ -931,7 +927,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="footer__contact-item"><a href="https://wa.me/917075523360" target="_blank" rel="noopener">WhatsApp</a></div>
     </div>
   </div>
-    <div class="footer__legal" style="margin-top:12px;font-size:0.85rem;opacity:.85"><a href='/privacy-policy'>Privacy Policy</a> &nbsp;&middot;&nbsp; <a href='/terms'>Terms of Use</a> &nbsp;&middot;&nbsp; <a href='/medical-disclaimer'>Medical Disclaimer</a></div>
+    <div class="footer__legal" style="margin-top:12px;font-size:0.85rem;opacity:.85"><a href="privacy-policy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="terms.html">Terms of Use</a> &nbsp;&middot;&nbsp; <a href="medical-disclaimer.html">Medical Disclaimer</a></div>
 <div class="footer__bottom">© 2025 Dr. Satish Reddy Gandavarapu. All rights reserved.</div>
 </footer>
 
@@ -1012,6 +1008,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
     if (!isOpen) { btn.classList.add('open'); answer.classList.add('open'); }
   }
+</script>
+
+<!-- Lead intake: send every submit to the CRM register + WhatsApp alert (fire-and-forget) -->
+<script>
+(function(){
+  document.addEventListener('submit', function(e){
+    var form = e.target; if(!form || form.tagName!=='FORM') return;
+    try{
+      var g=function(id){var el=document.getElementById(id); return el?el.value:'';};
+      var name=(g('firstName')+' '+g('lastName')).trim();
+      if(!g('phone') && !g('email')) return; // ignore non-lead forms
+      var lead=Object.assign({action:'lead_intake', token:'gsr-lead-9f3k2x7q',
+        name:name, firstName:g('firstName'), lastName:g('lastName'),
+        phone:g('phone'), email:g('email')}, window.__attribution||{});
+      fetch('https://script.google.com/macros/s/AKfycbzgeYVm2xoL2IcdaT37Q5GMCkzYCWeYEjwOdnL3trgh0pEZfz8TA7THVwUYThhumeNphw/exec',{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(lead),keepalive:true});
+    }catch(err){}
+  }, true);
+})();
 </script>
 </body>
 </html>
