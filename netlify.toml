@@ -1,7 +1,19 @@
 [build]
-  publish = "."
+publish = "."
 
 [[headers]]
-  for = "/dr-satish-photo.png"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+for = "/dr-satish-photo.png"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+# Sitemap generation.
+# Plugin is also enabled in the Netlify UI; when a plugin appears here as well,
+# this file's configuration takes precedence.
+[[plugins]]
+package = "@netlify/plugin-sitemap"
+
+  [plugins.inputs]
+  buildDir = "."
+  exclude = [
+    "./free-second-opinion.html"
+  ]
