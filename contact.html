@@ -37,7 +37,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     h3 { font-size:1.15rem; font-weight:600; }
     p { margin-bottom:1rem; }
     .eyebrow { font-size:0.72rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:0.75rem; }
-
     .btn { display:inline-block; padding:0.85rem 2rem; border-radius:var(--r); font-family:var(--font-b); font-size:0.9rem; font-weight:600; cursor:pointer; transition:all var(--t); }
     .btn-gold { background:var(--gold); color:var(--navy); border:none; }
     .btn-gold:hover { background:var(--gold-light); }
@@ -45,7 +44,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .btn-wa:hover { background:#1ebe5a; }
     .btn-outline { border:1.5px solid rgba(248,246,242,0.5); color:var(--cream); background:none; }
     .btn-outline:hover { border-color:var(--cream); background:rgba(248,246,242,0.08); }
-
     /* NAV */
     .nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(10,22,40,0.96); backdrop-filter:blur(8px); border-bottom:1px solid rgba(201,168,76,0.15); }
     .nav__inner { max-width:var(--max); margin:0 auto; padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:68px; }
@@ -61,12 +59,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .nav__mobile ul { list-style:none; display:flex; flex-direction:column; gap:1.2rem; }
     .nav__mobile a { color:rgba(248,246,242,0.85); font-size:1rem; font-weight:500; }
     .nav__mobile.open { display:block; }
-
     /* HERO */
     .page-hero { background:linear-gradient(145deg,var(--navy) 0%,#0D2B4E 100%); padding:8rem 2rem 4rem; text-align:center; }
     .page-hero h1 { color:var(--cream); margin-bottom:0.75rem; }
     .page-hero p { color:rgba(248,246,242,0.65); max-width:580px; margin:0 auto; font-size:1.05rem; line-height:1.75; }
-
     /* QUICK ACTIONS */
     .quick-actions { background:var(--navy-mid); border-bottom:1px solid rgba(201,168,76,0.15); padding:2rem; }
     .quick-actions__inner { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:1px; border:1px solid rgba(201,168,76,0.15); border-radius:var(--r); overflow:hidden; }
@@ -78,18 +74,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .quick-action p { color:rgba(248,246,242,0.55); font-size:0.82rem; margin-bottom:1rem; line-height:1.5; }
     .quick-action a { font-size:0.88rem; font-weight:600; color:var(--gold-light); border-bottom:1px solid rgba(201,168,76,0.4); padding-bottom:1px; transition:color var(--t); }
     .quick-action a:hover { color:var(--gold); }
-
     /* MAIN LAYOUT */
     .main { padding:5rem 2rem; background:var(--off-white); }
     .main__inner { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:1fr 420px; gap:4rem; align-items:start; }
-
     /* FORM SIDE */
     .form-card { background:white; border-radius:var(--r); border:1px solid rgba(0,0,0,0.07); overflow:hidden; }
     .form-card__header { background:var(--navy); padding:2rem; }
     .form-card__header h2 { color:var(--cream); font-size:1.5rem; margin-bottom:0.4rem; }
     .form-card__header p { color:rgba(248,246,242,0.6); font-size:0.88rem; margin-bottom:0; }
     .form-body { padding:2rem; }
-
     .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; }
     .form-group { margin-bottom:1.25rem; }
     .form-group label { display:block; font-size:0.8rem; font-weight:600; color:#4a4a5a; margin-bottom:0.45rem; letter-spacing:0.03em; }
@@ -106,31 +99,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .form-group textarea:focus { border-color:var(--gold); background:white; }
     .form-group textarea { resize:vertical; min-height:110px; }
     .form-group select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238A8A8A' d='M6 8L0 0h12z'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 1rem center; padding-right:2.5rem; }
-
     .radio-group { display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:0.25rem; }
     .radio-pill input[type=radio] { display:none; }
     .radio-pill label { display:block; padding:0.45rem 1rem; border:1px solid rgba(0,0,0,0.14); border-radius:2rem; font-size:0.8rem; font-weight:500; color:#5a5a6a; cursor:pointer; transition:all var(--t); }
     .radio-pill input[type=radio]:checked + label { background:var(--navy); color:var(--cream); border-color:var(--navy); }
     .radio-pill label:hover { border-color:var(--gold); color:var(--navy); }
-
     .form-submit { width:100%; padding:1rem; background:var(--navy); color:var(--cream); border:none; border-radius:var(--r); font-family:var(--font-d); font-size:1.05rem; font-weight:600; cursor:pointer; transition:background var(--t); margin-top:0.5rem; letter-spacing:0.03em; }
     .form-submit:hover { background:var(--navy-light); }
     .form-note { font-size:0.75rem; color:var(--gray); text-align:center; margin-top:0.85rem; line-height:1.55; }
-
     /* SUCCESS STATE */
     .form-success { display:none; padding:3rem 2rem; text-align:center; }
     .form-success__icon { font-size:3rem; margin-bottom:1rem; }
     .form-success h3 { margin-bottom:0.75rem; }
     .form-success p { color:var(--gray); font-size:0.9rem; }
-
     /* RIGHT SIDEBAR */
     .contact-sidebar { display:flex; flex-direction:column; gap:1.5rem; }
-
     .info-card { background:white; border-radius:var(--r); border:1px solid rgba(0,0,0,0.07); overflow:hidden; }
     .info-card__header { background:var(--navy-light); padding:1.25rem 1.5rem; border-bottom:1px solid rgba(201,168,76,0.12); }
     .info-card__header h3 { color:var(--cream); font-size:0.95rem; }
     .info-card__body { padding:1.5rem; }
-
     .info-row { display:flex; gap:0.85rem; align-items:flex-start; margin-bottom:1.1rem; }
     .info-row:last-child { margin-bottom:0; }
     .info-row__icon { font-size:1.1rem; flex-shrink:0; margin-top:0.1rem; }
@@ -138,19 +125,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .info-row__value { font-size:0.88rem; color:#3a3a4a; line-height:1.55; }
     .info-row__value a { color:var(--steel); font-weight:600; }
     .info-row__value a:hover { color:var(--navy); }
-
     .wa-card { background:var(--navy); border-radius:var(--r); padding:1.75rem; border:1px solid rgba(201,168,76,0.2); text-align:center; }
     .wa-card__icon { font-size:2rem; margin-bottom:0.75rem; }
     .wa-card h3 { color:var(--cream); font-size:1.05rem; margin-bottom:0.5rem; }
     .wa-card p { color:rgba(248,246,242,0.6); font-size:0.84rem; margin-bottom:1.25rem; line-height:1.55; }
     .wa-card .btn-wa { width:100%; text-align:center; display:block; }
-
     .hours-row { display:flex; justify-content:space-between; padding:0.6rem 0; border-bottom:1px solid rgba(0,0,0,0.06); font-size:0.85rem; }
     .hours-row:last-child { border-bottom:none; }
     .hours-row__day { color:#4a4a5a; font-weight:500; }
     .hours-row__time { color:var(--text); font-weight:600; }
     .hours-row__time.closed { color:var(--gray); font-weight:400; }
-
     /* MAP */
     .map-section { padding:0 2rem 5rem; background:var(--off-white); }
     .map-section__inner { max-width:var(--max); margin:0 auto; }
@@ -160,7 +144,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .map-directions { display:flex; flex-wrap:wrap; gap:1rem; margin-top:1.25rem; }
     .direction-chip { display:flex; align-items:center; gap:0.5rem; padding:0.6rem 1.1rem; background:white; border:1px solid rgba(0,0,0,0.08); border-radius:2rem; font-size:0.82rem; font-weight:500; color:#4a4a5a; transition:all var(--t); }
     .direction-chip:hover { border-color:var(--gold); color:var(--navy); }
-
     /* FAQ */
     .faq { padding:5rem 2rem; background:var(--cream); }
     .faq__inner { max-width:800px; margin:0 auto; }
@@ -174,7 +157,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .faq-q.open .faq-q__arrow { transform:rotate(180deg); }
     .faq-a { display:none; padding:0 1.5rem 1.25rem; font-size:0.9rem; color:#4a4a5a; line-height:1.75; }
     .faq-a.open { display:block; }
-
     /* FOOTER */
     .footer { background:var(--navy-mid); border-top:1px solid rgba(201,168,76,0.15); padding:3rem 2rem; }
     .footer__inner { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr; gap:3rem; }
@@ -188,11 +170,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .footer__contact-item { font-size:0.85rem; color:rgba(248,246,242,0.55); line-height:1.5; margin-bottom:0.5rem; }
     .footer__contact-item a { color:rgba(248,246,242,0.7); }
     .footer__bottom { max-width:var(--max); margin:2rem auto 0; border-top:1px solid rgba(248,246,242,0.06); padding-top:1.5rem; font-size:0.78rem; color:rgba(248,246,242,0.3); text-align:center; }
-
     .wa-float { position:fixed; bottom:2rem; right:2rem; z-index:200; width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(37,211,102,0.35); transition:transform var(--t); }
     .wa-float:hover { transform:scale(1.08); }
     .wa-float svg { width:28px; height:28px; fill:white; }
-
     @media (max-width:900px) {
       .main__inner { grid-template-columns:1fr; }
       .quick-actions__inner { grid-template-columns:1fr; }
@@ -205,19 +185,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .form-row { grid-template-columns:1fr; }
     }
     @media (prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none!important; } }
-  
+
     /* nav layout hardening: never wrap a label, collapse to hamburger before it can */
     .nav__inner { gap: 1.25rem; flex-wrap: nowrap; }
     .nav__brand { white-space: nowrap; flex-shrink: 0; }
     .nav__links { flex-wrap: nowrap; gap: clamp(0.85rem, 1.5vw, 2rem); }
     .nav__links li { flex-shrink: 0; }
     .nav__links a { white-space: nowrap; }
-
     @media (max-width: 1180px) {
       .nav__links { display: none; }
       .nav__hamburger { display: flex; }
     }
-  
+
     /* inline SVG icons, replacing emoji */
     .icon { display:inline-block; vertical-align:-0.18em; color:var(--gold,#C9A84C); }
     .body-btn__icon .icon { width:30px; height:30px; }
@@ -381,7 +360,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND2BW42W"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
 <!-- NAV -->
 <nav class="nav">
   <div class="nav__inner">
@@ -410,14 +388,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="/contact" onclick="toggleMenu()">Book Appointment</a></li>
   </ul>
 </div>
-
 <!-- HERO -->
 <section class="page-hero">
   <span class="eyebrow">Get in Touch</span>
   <h1>Contact &amp; Appointments</h1>
   <p>Consultations at KIMS Hospital, Ministers Road, Secunderabad. Call, WhatsApp, or use the form below. We respond within one working day.</p>
 </section>
-
 <!-- QUICK ACTIONS -->
 <div class="quick-actions">
   <div class="quick-actions__inner">
@@ -441,11 +417,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </div>
-
 <!-- MAIN -->
 <section class="main">
   <div class="main__inner">
-
     <!-- FORM -->
     <div class="form-card">
       <div class="form-card__header">
@@ -457,7 +431,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Replace YOUR_FORM_ID below with your Formspree form ID once set up -->
         <!-- e.g. action="https://formspree.io/f/mqevqegq" -->
         <form id="contactForm" action="https://formspree.io/f/mqevqegq" method="POST" onsubmit="handleSubmit(event)">
-
           <div class="form-row">
             <div class="form-group">
               <label for="firstName">First name <span class="req">*</span></label>
@@ -468,7 +441,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <input type="text" id="lastName" name="lastName" placeholder="e.g. Kumar" required />
             </div>
           </div>
-
           <div class="form-row">
             <div class="form-group">
               <label for="phone">Mobile number <span class="req">*</span></label>
@@ -479,7 +451,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <input type="email" id="email" name="email" placeholder="your@email.com" />
             </div>
           </div>
-
           <div class="form-group">
             <label for="patientType">I am a <span class="req">*</span></label>
             <select id="patientType" name="patientType" required>
@@ -491,7 +462,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <option value="other">Other</option>
             </select>
           </div>
-
           <div class="form-group">
             <label>Reason for enquiry <span class="req">*</span></label>
             <div class="radio-group">
@@ -502,7 +472,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class="radio-pill"><input type="radio" id="r5" name="reason" value="General enquiry" /><label for="r5">General enquiry</label></div>
             </div>
           </div>
-
           <div class="form-group">
             <label for="specialty">Area of concern</label>
             <select id="specialty" name="specialty">
@@ -518,12 +487,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <option value="Other">Other</option>
             </select>
           </div>
-
           <div class="form-group">
             <label for="message">Brief description of your concern <span class="req">*</span></label>
             <textarea id="message" name="message" placeholder="Please describe your symptoms, how long you have had them, and any prior treatment or imaging you have had." required></textarea>
           </div>
-
           <div class="form-group">
             <label for="preferred">Preferred time to be contacted</label>
             <select id="preferred" name="preferred">
@@ -534,15 +501,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <option value="Any time">Any time</option>
             </select>
           </div>
-
           <!-- Honeypot anti-spam -->
           <input type="text" name="_gotcha" style="display:none" />
           <input type="hidden" name="_subject" value="New appointment enquiry | Dr. Satish website" />
-
           <button type="submit" class="form-submit">Send enquiry →</button>
           <p class="form-note">Your information is used only to respond to your enquiry. We do not share your details with any third party.</p>
         </form>
-
         <!-- Success state -->
         <div class="form-success" id="formSuccess">
           <div class="form-success__icon">✅</div>
@@ -551,10 +515,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
     </div>
-
     <!-- RIGHT SIDEBAR -->
     <div class="contact-sidebar">
-
       <!-- WHATSAPP -->
       <div class="wa-card">
         <div class="wa-card__icon">💬</div>
@@ -562,7 +524,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>For most enquiries, including referrals, second opinions, and urgent oncology questions, WhatsApp gets the fastest response.</p>
         <a href="https://wa.me/917075523360" target="_blank" rel="noopener" class="btn btn-wa">Open WhatsApp chat</a>
       </div>
-
       <!-- LOCATION -->
       <div class="info-card">
         <div class="info-card__header"><h3>Clinic location</h3></div>
@@ -590,7 +551,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
       </div>
-
       <!-- HOURS -->
       <div class="info-card">
         <div class="info-card__header"><h3>Consultation hours</h3></div>
@@ -601,7 +561,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p style="font-size:0.78rem;color:var(--gray);margin-top:1rem;margin-bottom:0;line-height:1.55">These hours are for outpatient consultations. Surgical lists run on separate theatre schedules. Please call ahead to confirm specific timings.</p>
         </div>
       </div>
-
       <!-- RESPONSE TIMES -->
       <div class="info-card">
         <div class="info-card__header"><h3>What to expect</h3></div>
@@ -636,11 +595,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
-
 <!-- MAP -->
 <section class="map-section">
   <div class="map-section__inner">
@@ -661,7 +618,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
-
 <!-- FAQ -->
 <section class="faq">
   <div class="faq__inner">
@@ -671,7 +627,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p style="color:var(--gray);max-width:520px;margin:0.75rem auto 0;font-size:0.95rem">Questions that come up most often before a first appointment.</p>
     </div>
     <div class="faq__list">
-
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           What should I bring to my first consultation?
@@ -681,7 +636,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Bring all previous X-rays, MRI scans, CT scans, and reports, on a CD, USB, or printed if you have them. Also bring any discharge summaries, operation notes from previous surgeries, and a list of current medications. If you have imaging on a CD, bring the disc rather than just printed films, digital images are more useful for planning. If you do not have any reports yet, come anyway, we can arrange appropriate investigations from the clinic.
         </div>
       </div>
-
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           Do I need a referral letter to see Dr. Satish?
@@ -691,7 +645,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           No referral is required for a direct patient consultation. You are welcome to book an appointment directly by calling, WhatsApp, or via this form. If you are a doctor referring a patient, a brief clinical note via WhatsApp is sufficient, there is no formal referral form.
         </div>
       </div>
-
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           Is cashless treatment available at KIMS Hospital?
@@ -701,7 +654,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           KIMS Hospital is empanelled with most major insurance providers including Star Health, New India, United India, HDFC Ergo, Care Health, Niva Bupa, and Ayushman Bharat (PMJAY). Please bring your insurance card and policy documents when you come. For cashless admission, pre-authorisation from your insurer is usually required, this process can be initiated once a surgery date is confirmed.
         </div>
       </div>
-
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           How long does a first consultation typically take?
@@ -711,7 +663,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Allow 30–45 minutes for a first consultation. This includes reviewing your history, examining you, reviewing any imaging you have brought, discussing the diagnosis, and explaining all available treatment options, surgical and non-surgical. Complex oncology or trauma cases may take longer.
         </div>
       </div>
-
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           I have already had surgery elsewhere and it has not gone well. Can I be seen?
@@ -721,7 +672,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Yes. Second opinions and revision cases are actively welcomed. Please bring all previous operation notes, implant stickers (if available), and any post-operative imaging. Failed joint replacement, non-union of fractures, and complications after prior oncology surgery are all within Dr. Satish's expertise.
         </div>
       </div>
-
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           Is it possible to get a remote second opinion before travelling to Secunderabad?
@@ -731,11 +681,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Yes. For patients travelling from outside Hyderabad, it is possible to share imaging and reports via WhatsApp for an initial informal review before committing to the journey. Send your details to +91 70755 23360 along with a brief description of your problem, and we will advise whether a visit is likely to be productive and what to bring.
         </div>
       </div>
-
     </div>
   </div>
 </section>
-
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer__inner">
@@ -761,33 +709,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
     <div class="footer__legal" style="margin-top:12px;font-size:0.85rem;opacity:.85"><a href='/privacy-policy'>Privacy Policy</a> &nbsp;&middot;&nbsp; <a href='/terms'>Terms of Use</a> &nbsp;&middot;&nbsp; <a href='/medical-disclaimer'>Medical Disclaimer</a></div>
-<div class="footer__bottom">© 2025 Dr. Satish Reddy Gandavarapu. All rights reserved.</div>
+<div class="footer__bottom">© 2026 Dr. Satish Reddy Gandavarapu. All rights reserved.</div>
 </footer>
-
 <!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/917075523360" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp Dr. Satish">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
 </a>
-
 <script>
   function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
-
   window.addEventListener('scroll', () => {
     document.querySelector('.nav').style.background = window.scrollY > 40 ? 'rgba(10,22,40,0.98)' : 'rgba(10,22,40,0.96)';
   });
-
   // Form submit handler, shows success state; Formspree handles actual email delivery
   function handleSubmit(e) {
     const form = document.getElementById('contactForm');
     const action = form.getAttribute('action');
-
     // If Formspree ID not yet set, show success state locally and skip submission
     if (action.includes('YOUR_FORM_ID')) {
       e.preventDefault();
       showSuccess();
       return;
     }
-
     // Otherwise let Formspree handle it, then show success
     e.preventDefault();
     const data = new FormData(form);
@@ -795,13 +737,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       .then(r => { if (r.ok) { showSuccess(); } else { alert('Something went wrong, please call or WhatsApp us directly.'); } })
       .catch(() => { alert('Something went wrong, please call or WhatsApp us directly.'); });
   }
-
   function showSuccess() {
     document.getElementById('contactForm').style.display = 'none';
     const success = document.getElementById('formSuccess');
     success.style.display = 'block';
   }
-
   // FAQ accordion
   function toggleFaq(btn) {
     const answer = btn.nextElementSibling;
@@ -813,20 +753,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (!isOpen) { btn.classList.add('open'); answer.classList.add('open'); }
   }
 </script>
-
-<!-- Lead intake: send every submit to the CRM register + WhatsApp alert (fire-and-forget) -->
+<!-- Lead intake v2: full field capture -> new CRM workbook + reliable email alert -->
 <script>
 (function(){
+  var INTAKE_URL='https://script.google.com/macros/s/AKfycbzrVeYuFCrfjTk22PGKNY4LfuDqQJGGal9x8cRqjxwc41ohBneKicqKfDbIyWEYreds/exec';
+  var FORM_TYPE='contact';
+  function qp(n){ try{ return new URLSearchParams(location.search).get(n)||''; }catch(e){ return ''; } }
   document.addEventListener('submit', function(e){
-    var form = e.target; if(!form || form.tagName!=='FORM') return;
+    var form=e.target; if(!form || form.tagName!=='FORM') return;
     try{
-      var g=function(id){var el=document.getElementById(id); return el?el.value:'';};
-      var name=(g('firstName')+' '+g('lastName')).trim();
-      if(!g('phone') && !g('email')) return; // ignore non-lead forms
-      var lead=Object.assign({action:'lead_intake', token:'gsr-lead-9f3k2x7q',
-        name:name, firstName:g('firstName'), lastName:g('lastName'),
-        phone:g('phone'), email:g('email')}, window.__attribution||{});
-      fetch('https://script.google.com/macros/s/AKfycbzgeYVm2xoL2IcdaT37Q5GMCkzYCWeYEjwOdnL3trgh0pEZfz8TA7THVwUYThhumeNphw/exec',{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(lead),keepalive:true});
+      var lead={ formType:FORM_TYPE };
+      new FormData(form).forEach(function(v,k){ if(!(v instanceof File)) lead[k]=v; });
+      if(!lead.phone && !lead.email) return; // ignore non-lead forms
+      lead.utm_source   = lead.utm_source   || qp('utm_source');
+      lead.utm_medium   = lead.utm_medium   || qp('utm_medium');
+      lead.utm_campaign = lead.utm_campaign || qp('utm_campaign');
+      lead.utm_term     = lead.utm_term     || qp('utm_term');
+      lead.utm_content  = lead.utm_content  || qp('utm_content');
+      lead.gclid        = lead.gclid        || qp('gclid');
+      lead.fbclid       = lead.fbclid       || qp('fbclid');
+      lead.landing_page = lead.landing_page || (location.pathname + location.search);
+      lead.submit_page  = lead.submit_page  || location.pathname;
+      lead.referrer     = lead.referrer     || document.referrer || '';
+      if(window.__attribution){ for(var k in window.__attribution){ if(!lead[k]) lead[k]=window.__attribution[k]; } }
+      var body=new URLSearchParams();
+      for(var key in lead){ body.append(key, lead[key]); }
+      fetch(INTAKE_URL, { method:'POST', mode:'no-cors', keepalive:true, body:body });
     }catch(err){}
   }, true);
 })();
