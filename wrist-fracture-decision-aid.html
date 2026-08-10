@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wrist Fracture Decision Aid | Dr. G. Satish Reddy</title>
+<meta name="description" content="A short guide to a broken wrist. Understand when a cast is enough, when surgery helps, and what to ask, before you decide.">
+<link rel="canonical" href="https://drgsreddy.com/wrist-fracture-decision-aid">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WQJV3LV6SV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WQJV3LV6SV');
+</script>
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "xd5ee60zrw");
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+:root{
+  --navy:#0A1628;--gold:#C9A84C;--gold-soft:#E4D28A;--cream:#F8F6F2;
+  --ink:#1c2733;--muted:#5c6673;--line:#e4ded3;--white:#fff;
+  --green:#2f7d4f;--green-bg:#eaf5ee;--orange:#c05621;--orange-bg:#fdeee2;
+  --red:#a02020;--red-bg:#fbeaea;
+  --shadow:0 4px 20px rgba(10,22,40,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;color:var(--navy);line-height:1.2}
+.topbar{background:var(--navy);color:var(--cream);padding:14px 0}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--cream);text-decoration:none}
+.brand span{color:var(--gold)}
+.backlink{color:var(--gold-soft);text-decoration:none;font-size:.85rem;font-weight:500;white-space:nowrap}
+.backlink:hover{color:var(--gold)}
+.hero{background:var(--navy);color:var(--cream);padding:44px 0 40px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;border:1px solid rgba(201,168,76,.22);border-radius:50%}
+.hero:before{content:"";position:absolute;right:10px;top:10px;width:150px;height:150px;border:1px solid rgba(201,168,76,.16);border-radius:50%}
+.eyebrow{color:var(--gold);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+.hero h1{color:var(--cream);font-size:2rem;margin-bottom:14px;max-width:22ch;position:relative;z-index:2}
+.hero p{color:#c8cfd8;font-size:1.02rem;max-width:56ch;position:relative;z-index:2}
+.progress-shell{height:5px;background:rgba(255,255,255,.12);border-radius:99px;margin-top:26px;overflow:hidden}
+.progress-bar{height:100%;width:0;background:var(--gold);border-radius:99px;transition:width .4s ease}
+.stage{padding:34px 0 60px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:32px 30px;margin-bottom:22px}
+.step-label{color:var(--gold);font-weight:600;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.card h2{font-size:1.5rem;margin-bottom:8px}
+.lead{color:var(--muted);margin-bottom:22px}
+.notice{background:var(--cream);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;padding:16px 18px;font-size:.92rem}
+.notice strong{color:var(--navy)}
+.q{margin-bottom:24px}
+.q:last-of-type{margin-bottom:0}
+.q-title{font-weight:600;color:var(--navy);margin-bottom:12px;font-size:1.02rem}
+.q-sub{font-weight:400;color:var(--muted);font-size:.88rem;display:block;margin-top:2px}
+.opts{display:grid;gap:10px}
+.opts.two{grid-template-columns:1fr 1fr}
+@media(max-width:520px){.opts.two{grid-template-columns:1fr}}
+.opt{display:flex;align-items:center;gap:12px;border:1.5px solid var(--line);border-radius:10px;padding:13px 15px;cursor:pointer;background:var(--white);transition:border-color .15s,background .15s;font-size:.95rem}
+.opt:hover{border-color:var(--gold-soft);background:#fffdf7}
+.opt input{accent-color:var(--gold);width:17px;height:17px;flex-shrink:0}
+.opt.checked{border-color:var(--gold);background:#fffaf0}
+.opt-check{margin-left:auto;color:var(--gold);font-weight:700;opacity:0;transition:opacity .15s}
+.opt.checked .opt-check{opacity:1}
+.field{margin-bottom:18px}
+.field label{display:block;font-weight:600;color:var(--navy);margin-bottom:7px;font-size:.98rem}
+.field input,.field select{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:9px;font-family:inherit;font-size:1rem;color:var(--ink);background:var(--white)}
+.field input:focus,.field select:focus{outline:none;border-color:var(--gold)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:520px){.field-row{grid-template-columns:1fr}}
+input[type=range]{width:100%;accent-color:var(--gold);height:6px}
+.slider-labels{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted);margin-top:6px}
+.slider-val{display:inline-block;background:var(--navy);color:var(--gold-soft);font-weight:600;padding:2px 12px;border-radius:99px;font-size:.85rem;margin-left:8px}
+.nav-row{display:flex;justify-content:space-between;gap:12px;margin-top:24px}
+.btn{font-family:inherit;font-weight:600;font-size:.98rem;border:none;border-radius:99px;padding:14px 30px;cursor:pointer;transition:transform .1s,background .2s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--gold);color:var(--navy);box-shadow:0 4px 14px rgba(201,168,76,.35)}
+.btn-primary:hover{background:#d4b661}
+.btn-ghost{background:transparent;color:var(--muted);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--muted);color:var(--navy)}
+.btn-full{width:100%}
+.flag{border-radius:12px;padding:20px 22px;margin-bottom:18px;border:1px solid}
+.flag h3{margin-bottom:6px;font-size:1.25rem}
+.flag.red{background:var(--red-bg);border-color:#e6b8b8}
+.flag.red h3{color:var(--red)}
+.flag.orange{background:var(--orange-bg);border-color:#eccdb3}
+.flag.orange h3{color:var(--orange)}
+.flag-tag{display:inline-block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:3px 10px;border-radius:99px;margin-bottom:10px}
+.flag.red .flag-tag{background:var(--red);color:#fff}
+.flag.orange .flag-tag{background:var(--orange);color:#fff}
+.callnum{font-weight:700;color:var(--navy)}
+.option-block{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:16px;background:var(--white)}
+.option-head{background:var(--cream);padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px}
+.option-num{width:30px;height:30px;flex-shrink:0;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-weight:700;font-size:.9rem;font-family:'Playfair Display',serif}
+.option-head h3{font-size:1.18rem}
+.option-body{padding:18px 20px}
+.option-body p{margin-bottom:10px;font-size:.95rem}
+.tradeoff{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:9px;overflow:hidden;margin-top:12px}
+@media(max-width:520px){.tradeoff{grid-template-columns:1fr}}
+.tradeoff div{padding:12px 14px;font-size:.88rem}
+.tradeoff .pros{background:var(--green-bg);border-right:1px solid var(--line)}
+.tradeoff .cons{background:#faf6f0}
+.tradeoff h4{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;font-weight:700}
+.tradeoff .pros h4{color:var(--green)}
+.tradeoff .cons h4{color:var(--orange)}
+.tradeoff ul{list-style:none}
+.tradeoff li{padding-left:16px;position:relative;margin-bottom:4px}
+.tradeoff li:before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.5}
+.iconarray{display:flex;flex-wrap:wrap;gap:3px;max-width:280px;margin:6px 0 4px}
+.iconarray svg{width:16px;height:16px}
+.ia-caption{font-size:.85rem;color:var(--muted);margin-bottom:12px}
+.ia-caption b{color:var(--navy)}
+.summary-card{background:var(--navy);color:var(--cream);border-radius:16px;padding:30px;margin-bottom:20px}
+.summary-card h2{color:var(--cream)}
+.summary-card .lead{color:#c8cfd8}
+.sum-block{background:rgba(255,255,255,.06);border:1px solid rgba(201,168,76,.25);border-radius:11px;padding:16px 18px;margin-bottom:14px}
+.sum-block h4{color:var(--gold);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.sum-block p,.sum-block li{color:#dbe0e6;font-size:.94rem}
+.sum-block ul{padding-left:18px}
+.sum-block li{margin-bottom:5px}
+.gate{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:26px;box-shadow:var(--shadow)}
+.gate .field input{background:var(--cream)}
+.privacy{font-size:.82rem;color:var(--muted);background:var(--green-bg);border:1px solid #cfe6d8;border-radius:9px;padding:12px 14px;margin:14px 0}
+.privacy b{color:var(--green)}
+.hidden{display:none!important}
+.footer{background:var(--navy);color:#9aa5b1;padding:26px 0;font-size:.85rem;text-align:center}
+.footer a{color:var(--gold-soft);text-decoration:none}
+.err{color:var(--red);font-size:.85rem;margin-top:6px;display:none}
+.err.show{display:block}
+.fade{animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="/" class="brand">Dr. G. Satish <span>Reddy</span></a>
+    <a href="/decision-tools" class="backlink">&larr; All decision tools</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Distal Radius Fracture &middot; Decision Aid</div>
+    <h1>A broken wrist: cast or surgery?</h1>
+    <p>This is deliberately short, because most people read it within a day or two of the injury. It covers what needs urgent attention, what the choices are, and what actually decides between them.</p>
+    <div class="progress-shell"><div class="progress-bar" id="bar"></div></div>
+  </div>
+</div>
+
+<div class="stage"><div class="wrap" id="stage"></div></div>
+
+<div class="footer">
+  <div class="wrap">
+    This tool is for education and does not replace a consultation. &nbsp;&middot;&nbsp;
+    <a href="/">Dr. G. Satish Reddy</a>, Consultant Orthopaedic Surgeon, KIMS Secunderabad
+  </div>
+</div>
+
+<script>
+var CONFIG = {"source": "Wrist fracture decision aid", "pdfHeader": "WRIST FRACTURE  |  DECISION SUMMARY", "pdfTitle": "For your consultation", "pdfName": "Wrist-fracture-summary.pdf", "intro": {"h2": "Read the safety check first, even if you are in a hurry", "lead": "This takes about three minutes. Your answers stay on your own phone and are not sent anywhere or saved by us.", "notice": "<strong>Why this is short:</strong> a broken wrist is usually decided within days, often while you are in pain and already in a plaster. So this covers only what changes the decision.<br><br><strong>The one thing worth knowing up front:</strong> in older adults with lower demands on the hand, a well managed cast often gives function at one year that is close to what surgery achieves, even when the X-ray looks less perfect. In younger adults and in higher demand hands, restoring the anatomy matters more."}, "safety": {"h2": "First, a quick safety check", "lead": "A few features need attention within hours rather than days. Please answer honestly. This screen can only tell you to seek care sooner, never that everything is fine.", "questions": [{"id": "rf_open", "level": "red", "title": "Is there a wound over the break, or is bone visible through the skin?", "sub": "", "flagH": "This is an open fracture and needs hospital care now", "flagP": "A break with a wound over it carries a real risk of infection in the bone and needs cleaning and antibiotics urgently. Please go to a hospital emergency department now, cover the wound with a clean dry cloth, do not wash anything into it, and call the practice on {num} on the way."}, {"id": "rf_circ", "level": "red", "title": "Are the fingers pale, blue, cold, or numb, or is the pain getting rapidly worse rather than settling?", "sub": "Particularly pain that is far worse than expected, or worse when the fingers are moved.", "flagH": "This needs to be seen immediately", "flagP": "These signs can mean the blood supply or the nerves are under pressure, and that is time critical. If you are in a plaster or bandage, get to a hospital emergency department now so it can be released. Please call the practice on {num} on the way."}, {"id": "rf_median", "level": "orange", "title": "Is there persistent numbness or pins and needles in the thumb, index, and middle fingers?", "sub": "", "flagH": "This should be assessed today", "flagP": "Numbness in that pattern suggests pressure on the median nerve at the wrist, which sometimes needs releasing rather than waiting. Please contact the practice on {num} today, or attend a hospital if it is worsening."}, {"id": "rf_deform", "level": "orange", "title": "Is the wrist visibly bent or out of shape, and has it not yet been assessed?", "sub": "", "flagH": "This should be straightened sooner rather than later", "flagP": "A displaced wrist fracture is easier to reduce in the first few days, and leaving it bent makes later treatment harder. Please attend a hospital today, or call the practice on {num}."}]}, "screens": [{"label": "About you", "h2": "A little about you and your hand", "lead": "Age and what you need the hand to do are the two things that most change this decision.", "questions": [{"id": "age", "type": "number", "title": "Age (years)", "ph": "e.g. 58", "min": 12, "max": 110}, {"id": "side", "type": "select", "title": "Which wrist?", "options": ["Left", "Right", "Both"]}, {"id": "dom", "type": "radio", "title": "Is that your dominant hand?", "options": ["Yes", "No"]}, {"id": "demand", "type": "radio", "title": "What do you most need this hand for?", "options": ["Heavy manual work or lifting", "Skilled or fine work, such as writing, surgery, music, crafts", "Driving, two wheeler use, and general daily tasks", "Mainly light daily activity"]}, {"id": "co", "type": "checkbox", "title": "Do any of these apply?", "sub": "Tick all that are true.", "options": ["Diabetes", "Osteoporosis or thin bones", "I smoke", "I have broken a bone before from a minor fall", "None of these"]}]}, {"label": "The injury", "h2": "What has happened so far", "lead": "This helps you know where you are in the pathway.", "questions": [{"id": "when", "type": "radio", "title": "When did the injury happen?", "options": ["Today", "Within the last three days", "Between three days and two weeks ago", "More than two weeks ago"]}, {"id": "how", "type": "radio", "title": "How did it happen?", "options": ["A fall from standing height", "A fall from a height, or down stairs", "A road accident", "A sports injury"]}, {"id": "done", "type": "radio", "title": "What has been done so far?", "options": ["Nothing yet", "X-ray done, nothing else", "In a plaster or splint", "The bone has been straightened and put in plaster", "Surgery already done"]}]}], "options": {"label": "Your options", "h2": "The treatments, and what decides between them", "lead": "These are ordered from least to most invasive. The right one depends on how the break sits on the X-ray, how stable it is, and what you need the hand to do.", "pdfTitle": "The treatments to discuss", "items": [{"title": "Cast alone", "body": "If the bone is in an acceptable position and is stable, a cast for around six weeks lets it heal without any intervention. The wrist is then stiff and needs some weeks of movement work to loosen.", "pdf": "for stable breaks in acceptable position. Six weeks in plaster, then movement work.", "cond": [{"field": "age", "op": "gte", "value": 65, "text": "At your age this option deserves genuine weight. In older adults, function at one year after cast treatment is often close to that after surgery, even when the X-ray looks less than perfect. It is a real choice, not a compromise."}], "suits": ["Undisplaced or minimally displaced breaks", "Stable fracture patterns", "Older adults with lower demands on the hand"], "mind": ["Needs X-ray checks in the first two weeks in case it slips", "Stiffness afterwards is normal and needs work", "A small bump or slight angle may remain"]}, {"title": "Straightening the bone, then a cast", "body": "If the bone is out of position but the pattern is stable, it can be pushed back into place under local or regional anaesthetic and held in a cast. This is done as early as practical, because it becomes harder after the first week or so.", "pdf": "the bone is reduced and held in plaster. Best done early.", "suits": ["Displaced but stable patterns", "Where anatomy can be restored without metal", "Patients who prefer to avoid surgery"], "mind": ["Can slip again in the first two weeks, so it needs checking", "Repeat X-rays are part of the plan, not a sign something is wrong", "If it slips, surgery may still be needed"]}, {"title": "Wires through the skin", "body": "Fine wires are passed through the skin to hold the bone once it has been straightened. The wires are removed in clinic after several weeks. It is a smaller procedure than a plate, and leaves very little scarring.", "pdf": "fine wires hold the reduced bone, removed in clinic after some weeks.", "suits": ["Simple displaced breaks that will not stay put in plaster", "Where a plate would be more than is needed"], "mind": ["The wire ends need keeping clean and dry", "A second short visit is needed to remove them", "Not suitable for very fragmented breaks"]}, {"title": "Plate and screws", "body": "The bone is exposed through a small incision and held with a plate. This gives the most secure fixation and usually allows movement to start early, which is why it is favoured when the hand needs to be working sooner or when the break is complex.", "pdf": "secure fixation allowing early movement. Favoured for complex breaks or higher demand hands.", "cond": [{"field": "demand", "op": "eq", "value": "Skilled or fine work, such as writing, surgery, music, crafts", "text": "You said the hand is needed for skilled work. That raises the value of restoring anatomy accurately and getting movement started early, which is the main argument for a plate."}], "suits": ["Fragmented or unstable breaks", "Younger patients and higher demand hands", "Where early movement matters", "Breaks involving the joint surface"], "mind": ["An operation with the usual small risks", "A scar on the front of the wrist", "Metal is usually left in place unless it causes irritation"]}, {"title": "External frame", "body": "A frame outside the skin holds the bone out to length using pins above and below the break. It is used less often now, mainly for very fragmented breaks, severe swelling, or when there is a wound that makes internal fixation unsafe.", "pdf": "used for severely fragmented breaks, bad swelling, or when a wound makes internal fixation unsafe.", "suits": ["Severely fragmented breaks", "Open injuries or bad swelling", "As a temporary measure before definitive surgery"], "mind": ["The frame is bulky and needs pin site care", "Used less often than in the past", "Usually removed after several weeks"]}]}, "summary": {"h2": "What to take to your appointment", "lead": "This pulls together what you told us and the questions worth asking.", "profileTitle": "Your picture in brief", "questionsTitle": "Questions to ask your surgeon", "profile": [{"field": "age", "label": "Age"}, {"field": "side", "label": "Injured", "suffix": " wrist"}, {"field": "dom", "label": "Dominant hand"}, {"field": "demand", "label": "Hand needed for"}, {"field": "when", "label": "Injury"}, {"field": "how", "label": "Mechanism"}, {"field": "done", "label": "So far"}], "questions": ["Is my break in an acceptable position, and is it stable?", "If I choose a cast, how likely is it to slip, and when would we know?", "Does the break go into the joint surface, and does that change things?", "What will my wrist realistically be like at three months and at a year?"], "rules": [{"field": "age", "op": "gte", "value": 65, "add": "At my age, would a cast give me a similar result to surgery in the long run?"}, {"field": "age", "op": "lte", "value": 40, "add": "At my age, how important is it to restore the anatomy exactly?"}, {"field": "demand", "op": "eq", "value": "Heavy manual work or lifting", "add": "When could I return to heavy work, and does that change which treatment you would advise?"}, {"field": "demand", "op": "eq", "value": "Skilled or fine work, such as writing, surgery, music, crafts", "add": "My work needs fine hand control. Does that argue for fixing it rather than casting it?"}, {"field": "dom", "op": "eq", "value": "Yes", "add": "This is my dominant hand. How will I manage day to day, and for how long?"}, {"field": "co", "op": "includes", "value": "Osteoporosis or thin bones", "add": "Should this fracture trigger a bone density check and treatment for osteoporosis?"}, {"field": "co", "op": "includes", "value": "I have broken a bone before from a minor fall", "add": "This is not my first fracture from a minor fall. Should my bone health be investigated?"}, {"field": "co", "op": "includes", "value": "Diabetes", "add": "Does my diabetes change the risk of stiffness or slow healing?"}, {"field": "done", "op": "eq", "value": "The bone has been straightened and put in plaster", "add": "When will the next X-ray be, and what would make you change the plan?"}]}};
+var EMERGENCY = "7075523360";
+var FORMSPREE = "https://formspree.io/f/xbdnloky";
+
+/* ---------- state ---------- */
+var stepIndex = 0;
+var SCREENS = [];
+var DATA = {};
+
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+/* ---------- build screen list ---------- */
+function buildScreens(){
+  SCREENS.push({type:'intro'});
+  if(CONFIG.safety) SCREENS.push({type:'safety'});
+  CONFIG.screens.forEach(function(s){ SCREENS.push({type:'questions',data:s}); });
+  SCREENS.push({type:'options'});
+  SCREENS.push({type:'summary'});
+}
+
+/* ---------- render helpers ---------- */
+function renderQuestion(q){
+  var h = '<div class="q" data-qid="'+q.id+'">';
+  if(q.type==='number'||q.type==='select'){
+    h += '<div class="field"><label for="'+q.id+'">'+q.title+'</label>';
+    if(q.type==='number'){
+      h += '<input type="number" id="'+q.id+'" placeholder="'+(q.ph||'')+'"'+(q.min?' min="'+q.min+'"':'')+(q.max?' max="'+q.max+'"':'')+'>';
+    } else {
+      h += '<select id="'+q.id+'"><option value="">Select</option>';
+      q.options.forEach(function(o){ h += '<option>'+o+'</option>'; });
+      h += '</select>';
+    }
+    h += '</div></div>';
+    return h;
+  }
+  h += '<div class="q-title">'+q.title+(q.sub?'<span class="q-sub">'+q.sub+'</span>':'')+'</div>';
+  if(q.type==='slider'){
+    h += '<input type="range" id="'+q.id+'" min="'+(q.min||0)+'" max="'+(q.max||10)+'" value="'+(q.val||5)+'">';
+    h += '<div class="slider-labels"><span>'+q.left+'</span><span>'+q.right+'</span></div>';
+  } else {
+    var cls = (q.type==='radio' && q.options.length===2 && q.options.join('').length<20) ? 'opts two' : 'opts';
+    h += '<div class="'+cls+'">';
+    q.options.forEach(function(o){
+      var t = (q.type==='checkbox')?'checkbox':'radio';
+      h += '<label class="opt"><input type="'+t+'" name="'+q.id+'" value="'+esc(o)+'"><span>'+o+'</span><span class="opt-check">&#10003;</span></label>';
+    });
+    h += '</div>';
+  }
+  h += '</div>';
+  return h;
+}
+
+function renderScreen(){
+  var s = SCREENS[stepIndex];
+  var total = SCREENS.length-1;
+  document.getElementById('bar').style.width = Math.round((stepIndex/total)*100)+'%';
+  var el = document.getElementById('stage');
+  var h = '';
+
+  if(s.type==='intro'){
+    h += '<section class="card fade"><div class="step-label">Before you begin</div>';
+    h += '<h2>'+CONFIG.intro.h2+'</h2>';
+    h += '<p class="lead">'+CONFIG.intro.lead+'</p>';
+    h += '<div class="notice">'+CONFIG.intro.notice+'</div>';
+    h += '<div class="nav-row"><span></span><button class="btn btn-primary" onclick="next()">Start &rarr;</button></div></section>';
+  }
+
+  else if(s.type==='safety'){
+    h += '<section class="card fade"><div class="step-label">Safety check</div>';
+    h += '<h2>'+CONFIG.safety.h2+'</h2>';
+    h += '<p class="lead">'+CONFIG.safety.lead+'</p>';
+    CONFIG.safety.questions.forEach(function(q){
+      h += renderQuestion({id:q.id,title:q.title,sub:q.sub,type:'radio',options:['Yes','No']});
+    });
+    h += '<div class="err" id="errSafety">Please answer every question to continue.</div>';
+    h += '<div class="nav-row"><button class="btn btn-ghost" onclick="prev()">&larr; Back</button><button class="btn btn-primary" onclick="checkSafety()">Continue &rarr;</button></div></section>';
+  }
+
+  else if(s.type==='flagged'){
+    h += '<section class="card fade">'+s.html;
+    h += '<div class="notice">You can still continue and read the rest of this tool. Please treat the advice above as the more important next step.</div>';
+    h += '<div class="nav-row"><button class="btn btn-ghost" onclick="prev()">&larr; Back</button><button class="btn btn-primary" onclick="next()">Continue anyway &rarr;</button></div></section>';
+  }
+
+  else if(s.type==='questions'){
+    var d = s.data;
+    h += '<section class="card fade"><div class="step-label">'+d.label+'</div>';
+    h += '<h2>'+d.h2+'</h2><p class="lead">'+d.lead+'</p>';
+    d.questions.forEach(function(q){ h += renderQuestion(q); });
+    h += '<div class="nav-row"><button class="btn btn-ghost" onclick="prev()">&larr; Back</button><button class="btn btn-primary" onclick="next()">Continue &rarr;</button></div></section>';
+  }
+
+  else if(s.type==='options'){
+    collect();
+    var o = CONFIG.options;
+    h += '<section class="card fade"><div class="step-label">'+o.label+'</div>';
+    h += '<h2>'+o.h2+'</h2><p class="lead">'+o.lead+'</p>';
+    o.items.forEach(function(it,i){
+      h += '<div class="option-block"><div class="option-head"><span class="option-num">'+(i+1)+'</span><h3>'+it.title+'</h3></div><div class="option-body">';
+      h += '<p>'+it.body+'</p>';
+      if(it.array){ h += iconArray(it.array.filled,it.array.total)+'<div class="ia-caption">'+it.array.caption+'</div>'; }
+      if(it.extra){ h += '<p>'+it.extra+'</p>'; }
+      var cond = conditionalNote(it);
+      if(cond){ h += '<p style="font-size:.9rem;color:var(--muted)">'+cond+'</p>'; }
+      h += '<div class="tradeoff"><div class="pros"><h4>'+(o.prosLabel||'Suits')+'</h4><ul>';
+      it.suits.forEach(function(x){ h += '<li>'+x+'</li>'; });
+      h += '</ul></div><div class="cons"><h4>'+(o.consLabel||'Keep in mind')+'</h4><ul>';
+      it.mind.forEach(function(x){ h += '<li>'+x+'</li>'; });
+      h += '</ul></div></div></div></div>';
+    });
+    h += '<div class="nav-row"><button class="btn btn-ghost" onclick="prev()">&larr; Back</button><button class="btn btn-primary" onclick="next()">See my summary &rarr;</button></div></section>';
+  }
+
+  else if(s.type==='summary'){
+    collect();
+    h += '<div class="summary-card"><div class="step-label">Your personal summary</div>';
+    h += '<h2>'+CONFIG.summary.h2+'</h2><p class="lead">'+CONFIG.summary.lead+'</p>';
+    h += '<div class="sum-block"><h4>'+CONFIG.summary.profileTitle+'</h4>'+profileHTML()+'</div>';
+    h += '<div class="sum-block"><h4>'+CONFIG.summary.questionsTitle+'</h4><ul>';
+    buildQuestions().forEach(function(q){ h += '<li>'+esc(q)+'</li>'; });
+    h += '</ul></div></div>';
+    h += '<div class="gate" id="gateForm"><h2 style="font-size:1.35rem;margin-bottom:6px">Get your summary as a PDF</h2>';
+    h += '<p style="color:var(--muted);margin-bottom:16px">Enter your details and the summary will download to your device, ready to print or carry to clinic.</p>';
+    h += '<div class="field"><label for="gName">Full name</label><input type="text" id="gName" placeholder="Your name"></div>';
+    h += '<div class="field-row"><div class="field"><label for="gEmail">Email</label><input type="email" id="gEmail" placeholder="you@example.com"></div>';
+    h += '<div class="field"><label for="gPhone">Phone</label><input type="tel" id="gPhone" placeholder="+91"></div></div>';
+    h += '<div class="field"><label for="gRole">You are a</label><select id="gRole"><option value="">Select</option><option>Patient</option><option>Family member</option><option>Doctor or health professional</option><option>Other</option></select></div>';
+    h += '<div class="privacy"><b>Your privacy:</b> only the contact details above are sent to us. Your answers about your health stay on this device and are never transmitted.</div>';
+    h += '<div class="err" id="errGate">Please fill in your name, a valid email, phone, and role.</div>';
+    h += '<button class="btn btn-primary btn-full" onclick="submitGate()">Download my summary (PDF)</button></div>';
+    h += '<div class="gate hidden" id="thanks" style="text-align:center"><h2 style="font-size:1.4rem;margin-bottom:8px">Your summary is downloading</h2>';
+    h += '<p style="color:var(--muted);margin-bottom:18px">If it did not start, use the button below. Bring it to your appointment.</p>';
+    h += '<button class="btn btn-primary" onclick="makePDF()">Download again</button>';
+    h += '<div style="margin-top:22px"><a href="/decision-tools" class="backlink" style="color:var(--gold)">&larr; Back to all decision tools</a></div></div>';
+  }
+
+  el.innerHTML = h;
+  restore();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ---------- conditional note on an option ---------- */
+function conditionalNote(it){
+  if(!it.cond) return '';
+  for(var i=0;i<it.cond.length;i++){
+    if(test(it.cond[i])) return it.cond[i].text;
+  }
+  return '';
+}
+
+/* ---------- rule testing ---------- */
+function test(r){
+  var v = DATA[r.field];
+  if(r.op==='eq') return v===r.value;
+  if(r.op==='ne') return v!==r.value;
+  if(r.op==='includes') return Array.isArray(v) && v.indexOf(r.value)>-1;
+  if(r.op==='gte') return v!==null && v!==undefined && parseFloat(v)>=r.value;
+  if(r.op==='lte') return v!==null && v!==undefined && parseFloat(v)<=r.value;
+  if(r.op==='truthy') return !!v;
+  return false;
+}
+
+/* ---------- navigation ---------- */
+function next(){ collect(); if(stepIndex<SCREENS.length-1){ stepIndex++; renderScreen(); } }
+function prev(){ collect(); if(stepIndex>0){ if(SCREENS[stepIndex-1].type==='flagged'){ stepIndex-=2; } else { stepIndex--; } renderScreen(); } }
+
+function checkSafety(){
+  var all = true, red=false, orange=false, redQ=null, orangeQ=null;
+  CONFIG.safety.questions.forEach(function(q){
+    var el = document.querySelector('input[name="'+q.id+'"]:checked');
+    if(!el){ all=false; return; }
+    if(el.value==='Yes'){
+      if(q.level==='red'){ red=true; if(!redQ) redQ=q; }
+      else { orange=true; if(!orangeQ) orangeQ=q; }
+    }
+  });
+  if(!all){ document.getElementById('errSafety').classList.add('show'); return; }
+  collect();
+  if(red||orange){
+    var q = red?redQ:orangeQ;
+    var cls = red?'red':'orange';
+    var tag = red?'Please seek care now':'See a doctor soon';
+    var html = '<div class="flag '+cls+'"><span class="flag-tag">'+tag+'</span><h3>'+q.flagH+'</h3><p>'+q.flagP.replace('{num}','<span class="callnum">+91 '+EMERGENCY.slice(0,5)+' '+EMERGENCY.slice(5)+'</span>')+'</p></div>';
+    SCREENS.splice(stepIndex+1,0,{type:'flagged',html:html});
+  }
+  next();
+}
+
+/* ---------- data ---------- */
+function collect(){
+  var all = [];
+  if(CONFIG.safety) CONFIG.safety.questions.forEach(function(q){ all.push({id:q.id,type:'radio'}); });
+  CONFIG.screens.forEach(function(s){ s.questions.forEach(function(q){ all.push(q); }); });
+  all.forEach(function(q){
+    var el;
+    if(q.type==='checkbox'){
+      var got = document.querySelectorAll('input[name="'+q.id+'"]:checked');
+      if(got.length) DATA[q.id] = Array.from(got).map(function(x){return x.value;});
+    } else if(q.type==='number'||q.type==='select'||q.type==='slider'){
+      el = document.getElementById(q.id);
+      if(el && el.value!=='') DATA[q.id] = el.value;
+    } else {
+      el = document.querySelector('input[name="'+q.id+'"]:checked');
+      if(el) DATA[q.id] = el.value;
+    }
+  });
+  if(DATA.height && DATA.weight){
+    DATA.bmi = (parseFloat(DATA.weight)/Math.pow(parseFloat(DATA.height)/100,2)).toFixed(1);
+  }
+}
+
+function restore(){
+  Object.keys(DATA).forEach(function(k){
+    var v = DATA[k];
+    var el = document.getElementById(k);
+    if(el && (el.tagName==='INPUT'||el.tagName==='SELECT') && el.type!=='radio'){ el.value = v; }
+    if(Array.isArray(v)){
+      v.forEach(function(x){
+        var c = document.querySelector('input[name="'+k+'"][value="'+CSS.escape(x)+'"]');
+        if(c){ c.checked=true; c.closest('.opt').classList.add('checked'); }
+      });
+    } else {
+      var r = document.querySelector('input[name="'+k+'"][value="'+CSS.escape(v)+'"]');
+      if(r && r.type==='radio'){ r.checked=true; r.closest('.opt').classList.add('checked'); }
+    }
+  });
+  document.querySelectorAll('input[type=range]').forEach(function(el){ sliderLabel(el); });
+}
+
+/* ---------- interaction ---------- */
+document.addEventListener('change',function(e){
+  var opt = e.target.closest('.opt');
+  if(opt){
+    if(e.target.type==='radio'){
+      document.getElementsByName(e.target.name).forEach(function(g){ g.closest('.opt').classList.remove('checked'); });
+    }
+    if(e.target.checked) opt.classList.add('checked'); else opt.classList.remove('checked');
+  }
+});
+document.addEventListener('input',function(e){ if(e.target.type==='range') sliderLabel(e.target); });
+
+function sliderLabel(el){
+  var q = findQ(el.id);
+  if(!q) return;
+  var host = el.closest('.q').querySelector('.q-title');
+  var old = host.querySelector('.slider-val');
+  if(old) old.remove();
+  var span = document.createElement('span');
+  span.className='slider-val';
+  span.textContent = q.labels ? q.labels[Math.min(q.labels.length-1,Math.floor(el.value/(( (q.max||10)+1)/q.labels.length)))] : (el.value+' of '+(q.max||10));
+  host.appendChild(span);
+}
+function findQ(id){
+  var f=null;
+  CONFIG.screens.forEach(function(s){ s.questions.forEach(function(q){ if(q.id===id) f=q; }); });
+  return f;
+}
+
+/* ---------- icon array ---------- */
+function iconArray(filled,total){
+  var p='<svg viewBox="0 0 24 24" fill="COL"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5z"/></svg>';
+  var h='<div class="iconarray">';
+  for(var i=0;i<total;i++){ h += p.replace('COL', i<filled?'#2f7d4f':'#d7dbe0'); }
+  return h+'</div>';
+}
+
+/* ---------- summary ---------- */
+function profileLines(){
+  var out=[];
+  CONFIG.summary.profile.forEach(function(p){
+    var v = DATA[p.field];
+    if(v===undefined||v===null||v==='') return;
+    if(Array.isArray(v)){ if(!v.length) return; v = v.join(', ').toLowerCase(); }
+    if(p.suffix) v = v + p.suffix;
+    out.push(p.label ? p.label+': '+v : v);
+  });
+  if(DATA.bmi) out.push('Body mass index about '+DATA.bmi);
+  return out;
+}
+function profileHTML(){
+  return '<p>'+profileLines().map(esc).join('<br>')+'</p>';
+}
+function buildQuestions(){
+  var qs = CONFIG.summary.questions.slice();
+  (CONFIG.summary.rules||[]).forEach(function(r){ if(test(r)) qs.push(r.add); });
+  return qs;
+}
+
+/* ---------- gate + pdf ---------- */
+function submitGate(){
+  var name=document.getElementById('gName').value.trim();
+  var email=document.getElementById('gEmail').value.trim();
+  var phone=document.getElementById('gPhone').value.trim();
+  var role=document.getElementById('gRole').value;
+  if(!(name && /\S+@\S+\.\S+/.test(email) && phone.length>=6 && role)){
+    document.getElementById('errGate').classList.add('show'); return;
+  }
+  document.getElementById('errGate').classList.remove('show');
+  try{
+    fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({name:name,email:email,phone:phone,role:role,source:CONFIG.source})});
+  }catch(e){}
+  document.getElementById('gateForm').classList.add('hidden');
+  document.getElementById('thanks').classList.remove('hidden');
+  makePDF();
+}
+
+function makePDF(){
+  var doc=new window.jspdf.jsPDF({unit:'pt',format:'a4'});
+  var W=595,M=48,y=64;
+  var navy=[10,22,40],gold=[201,168,76],ink=[28,39,51],muted=[92,102,115];
+  doc.setFillColor(10,22,40); doc.rect(0,0,W,96,'F');
+  doc.setTextColor(201,168,76); doc.setFont('helvetica','normal'); doc.setFontSize(9);
+  doc.text(CONFIG.pdfHeader,M,40);
+  doc.setTextColor(248,246,242); doc.setFont('times','bold'); doc.setFontSize(20);
+  doc.text(CONFIG.pdfTitle,M,68);
+  doc.setFont('helvetica','normal'); doc.setFontSize(9); doc.setTextColor(200,207,216);
+  doc.text('Dr. G. Satish Reddy, Consultant Orthopaedic Surgeon, KIMS Secunderabad',M,86);
+  y=128;
+  function h(t){ if(y>720){doc.addPage();y=64;} doc.setFont('times','bold'); doc.setFontSize(13); doc.setTextColor(10,22,40); doc.text(t,M,y); y+=8;
+    doc.setDrawColor(201,168,76); doc.setLineWidth(1.4); doc.line(M,y,M+40,y); y+=18; }
+  function body(t){ doc.setFont('helvetica','normal'); doc.setFontSize(10.5); doc.setTextColor(28,39,51);
+    var L=doc.splitTextToSize(t,W-2*M); if(y+L.length*14>790){doc.addPage();y=64;} doc.text(L,M,y); y+=L.length*14+8; }
+  function bullet(t){ doc.setFont('helvetica','normal'); doc.setFontSize(10.5); doc.setTextColor(28,39,51);
+    var L=doc.splitTextToSize(t,W-2*M-16); if(y+L.length*14>790){doc.addPage();y=64;}
+    doc.setFillColor(201,168,76); doc.circle(M+3,y-3,1.6,'F'); doc.text(L,M+14,y); y+=L.length*14+6; }
+
+  h(CONFIG.summary.profileTitle);
+  profileLines().forEach(function(l){ body(l); });
+  y+=4;
+  h(CONFIG.options.pdfTitle||'The options to discuss');
+  CONFIG.options.items.forEach(function(it){ bullet(it.title+': '+(it.pdf||stripTags(it.body).slice(0,150))); });
+  y+=4;
+  h(CONFIG.summary.questionsTitle);
+  buildQuestions().forEach(function(q){ bullet(q); });
+  y+=10;
+  if(y>740){doc.addPage();y=64;}
+  doc.setDrawColor(228,222,211); doc.setLineWidth(1); doc.line(M,y,W-M,y); y+=16;
+  doc.setFont('helvetica','italic'); doc.setFontSize(8.5); doc.setTextColor(92,102,115);
+  var d=doc.splitTextToSize('This summary is for education and to prepare you for your appointment. It is not a diagnosis and does not replace examination by a doctor. Figures given are general and may not apply to you. Practice contact: +91 '+EMERGENCY.slice(0,5)+' '+EMERGENCY.slice(5)+'.',W-2*M);
+  doc.text(d,M,y);
+  doc.save(CONFIG.pdfName);
+}
+function stripTags(s){ return s.replace(/<[^>]*>/g,''); }
+
+/* ---------- init ---------- */
+NodeList.prototype.forEach = NodeList.prototype.forEach || Array.prototype.forEach;
+buildScreens();
+renderScreen();
+</script>
+</body>
+</html>
