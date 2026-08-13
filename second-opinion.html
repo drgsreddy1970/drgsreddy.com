@@ -334,7 +334,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "@id": "https://drgsreddy.com/#physician",
       "name": "Dr. Satish Reddy Gandavarapu",
       "honorificPrefix": "Dr.",
-      "jobTitle": "Consultant Orthopaedic Surgeon",
+      "jobTitle": "Sr. Consultant Orthopaedic Surgeon",
       "url": "https://drgsreddy.com",
       "image": "https://drgsreddy.com/dr-satish-about.jpg",
       "telephone": "+91-70755-23360",
@@ -863,7 +863,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="footer__inner">
     <div>
       <div class="footer__brand">Dr. <span>Satish</span> Reddy. G</div>
-      <p class="footer__tagline">Consultant Orthopaedic Surgeon<br/>KIMS Hospital, Ministers Road, Secunderabad<br/><br/>MS Orth (Gold Medallist) &nbsp;·&nbsp; Fellowship-trained in Italy, UK &amp; Australia<br/>Pioneer of Orthopaedic Oncology, AP &amp; Telangana</p>
+      <p class="footer__tagline">Sr. Consultant Orthopaedic Surgeon<br/>KIMS Hospital, Ministers Road, Secunderabad<br/><br/>MS Orth (Gold Medallist) &nbsp;·&nbsp; Fellowship-trained in Italy, UK &amp; Australia<br/>Pioneer of Orthopaedic Oncology, AP &amp; Telangana</p>
     </div>
     <div>
       <h5>Navigate</h5>
@@ -979,6 +979,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var body=new URLSearchParams();
       for(var key in lead){ body.append(key, lead[key]); }
       fetch(INTAKE_URL, { method:'POST', mode:'no-cors', keepalive:true, body:body });
+    }catch(err){}
+  }, true);
+})();
+</script>
+
+<!-- Lead intake: send every submit to the CRM register + WhatsApp alert (fire-and-forget) -->
+<script>
+(function(){
+  document.addEventListener('submit', function(e){
+    var form=e.target; if(!form || form.tagName!=='FORM') return;
+    try{
+      var fd=new FormData(form);
+      var v=function(k){ var x=fd.get(k); return x?String(x):''; };
+      var first=v('firstName'), last=v('lastName'), phone=v('phone'), email=v('email');
+      var name=(first+' '+last).trim() || v('name');
+      if(!phone && !email) return;
+      var lead=Object.assign({action:'lead_intake', token:'gsr-lead-9f3k2x7q',
+        name:name, firstName:first, lastName:last, phone:phone, email:email}, window.__attribution||{});
+      fetch('https://script.google.com/macros/s/AKfycbzgeYVm2xoL2IcdaT37Q5GMCkzYCWeYEjwOdnL3trgh0pEZfz8TA7THVwUYThhumeNphw/exec',{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(lead),keepalive:true});
     }catch(err){}
   }, true);
 })();

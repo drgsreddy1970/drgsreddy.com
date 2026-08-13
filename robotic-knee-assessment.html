@@ -444,5 +444,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if(!open){ btn.classList.add('open'); btn.nextElementSibling.classList.add('open'); }
   }
 </script>
+
+<!-- Lead intake: send every submit to the CRM register + WhatsApp alert (fire-and-forget) -->
+<script>
+(function(){
+  document.addEventListener('submit', function(e){
+    var form=e.target; if(!form || form.tagName!=='FORM') return;
+    try{
+      var fd=new FormData(form);
+      var v=function(k){ var x=fd.get(k); return x?String(x):''; };
+      var first=v('firstName'), last=v('lastName'), phone=v('phone'), email=v('email');
+      var name=(first+' '+last).trim() || v('name');
+      if(!phone && !email) return;
+      var lead=Object.assign({action:'lead_intake', token:'gsr-lead-9f3k2x7q',
+        name:name, firstName:first, lastName:last, phone:phone, email:email}, window.__attribution||{});
+      fetch('https://script.google.com/macros/s/AKfycbzgeYVm2xoL2IcdaT37Q5GMCkzYCWeYEjwOdnL3trgh0pEZfz8TA7THVwUYThhumeNphw/exec',{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(lead),keepalive:true});
+    }catch(err){}
+  }, true);
+})();
+</script>
 </body>
 </html>
