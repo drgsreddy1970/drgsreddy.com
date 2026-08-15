@@ -482,7 +482,7 @@ Cal("init", { origin: "https://cal.com" });
 var ATTR = window.__attribution || {};
 function _enc(v){ return encodeURIComponent(v || ""); }
 var _qp = "utm_source=" + _enc(ATTR.utm_source) + "&utm_medium=" + _enc(ATTR.utm_medium) + "&utm_campaign=" + _enc(ATTR.utm_campaign) + "&utm_content=" + _enc(ATTR.utm_content) + "&utm_term=" + _enc(ATTR.gclid || ATTR.utm_term);
-Cal("inline", { elementOrSelector: "#cal-inline", calLink: "satish-reddy-gandavarapu-jj2w4s?" + _qp, config: { layout: "month_view" } });
+Cal("inline", { elementOrSelector: "#cal-inline", calLink: "satish-reddy-gandavarapu-jj2w4s/new-consult?" + _qp, config: { layout: "month_view" } });
 Cal("ui", { styles: { branding: { brandColor: "#C9A84C" } }, hideEventTypeDetails: false, layout: "month_view" });
 Cal("on", { action: "bookingSuccessful", callback: function (e) { try { if (window.fbq) fbq('track', 'Schedule'); } catch (err) {} } });
 </script>
