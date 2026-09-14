@@ -734,22 +734,72 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   window.addEventListener('scroll', () => {
     document.querySelector('.nav').style.background = window.scrollY > 40 ? 'rgba(10,22,40,0.98)' : 'rgba(10,22,40,0.96)';
   });
-  // Form submit handler, shows success state; Formspree handles actual email delivery
+  // Form submit — CRM intake (Apps Script, writes the Contact & Appointments tab)
+  // and the Formspree inbox copy run in parallel. The conversion fires if EITHER
+  // lands, so a Formspree hiccup can no longer silently suppress it. This page
+  // previously never called window.__leadConversion at all, so no contact-form
+  // submission has ever been counted as a Google Ads / Meta conversion.
   function handleSubmit(e) {
+    e.preventDefault();
     const form = document.getElementById('contactForm');
     const action = form.getAttribute('action');
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
     // If Formspree ID not yet set, show success state locally and skip submission
     if (action.includes('YOUR_FORM_ID')) {
-      e.preventDefault();
       showSuccess();
       return;
     }
-    // Otherwise let Formspree handle it, then show success
-    e.preventDefault();
-    const data = new FormData(form);
-    fetch(action, { method:'POST', body:data, headers:{'Accept':'application/json'} })
-      .then(r => { if (r.ok) { showSuccess(); } else { alert('Something went wrong, please call or WhatsApp us directly.'); } })
-      .catch(() => { alert('Something went wrong, please call or WhatsApp us directly.'); });
+
+    function qp(n) { try { return new URLSearchParams(location.search).get(n) || ''; } catch (e) { return ''; } }
+
+    // 1) CRM + email intake, to the lead-intake web app (writes the Contact &
+    //    Appointments tab of the Lead Register). Content-Type text/plain keeps
+    //    this a "simple" request: no preflight OPTIONS, which Apps Script does
+    //    not answer. keepalive lets it survive navigation.
+    var lead = { formType: 'contact' };
+    new FormData(form).forEach(function (v, k) { if (!(v instanceof File)) lead[k] = v; });
+    lead.utm_source   = lead.utm_source   || qp('utm_source');
+    lead.utm_medium   = lead.utm_medium   || qp('utm_medium');
+    lead.utm_campaign = lead.utm_campaign || qp('utm_campaign');
+    lead.utm_term     = lead.utm_term     || qp('utm_term');
+    lead.utm_content  = lead.utm_content  || qp('utm_content');
+    lead.gclid        = lead.gclid        || qp('gclid');
+    lead.fbclid       = lead.fbclid       || qp('fbclid');
+    lead.landing_page = lead.landing_page || (location.pathname + location.search);
+    lead.submit_page  = lead.submit_page  || location.pathname;
+    lead.referrer     = lead.referrer     || document.referrer || '';
+    if (window.__attribution) { for (var k in window.__attribution) { if (!lead[k]) lead[k] = window.__attribution[k]; } }
+
+    var intake = fetch('https://script.google.com/macros/s/AKfycbzrVeYuFCrfjTk22PGKNY4LfuDqQJGGal9x8cRqjxwc41ohBneKicqKfDbIyWEYreds/exec', {
+      method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(lead), keepalive: true
+    })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { return !!(j && j.ok && j.registered); })
+      .catch(function () { return false; });
+
+    // 2) Formspree inbox copy (email alert)
+    var inbox = fetch(action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+      .then(function (r) { return r.ok; })
+      .catch(function () { return false; });
+
+    // Success if EITHER path lands. The conversion is never gated on one vendor.
+    Promise.all([intake, inbox]).then(function (res) {
+      var registered = res[0], mailed = res[1];
+      if (!registered && !mailed) {
+        alert('Something went wrong, please call or WhatsApp us directly.');
+        return;
+      }
+      if (!registered || !mailed) {
+        try { console.warn('[lead] partial delivery', { registered: registered, mailed: mailed }); } catch (e) {}
+      }
+      try {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({ event: 'lead_submit', lead_email: email, lead_phone: phone });
+        if (window.__leadConversion) window.__leadConversion(email, phone);
+      } catch (e) {}
+      showSuccess();
+    });
   }
   function showSuccess() {
     document.getElementById('contactForm').style.display = 'none';
@@ -766,36 +816,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Open clicked if it was closed
     if (!isOpen) { btn.classList.add('open'); answer.classList.add('open'); }
   }
-</script>
-<!-- Lead intake v2: full field capture -> new CRM workbook + reliable email alert -->
-<script>
-(function(){
-  var INTAKE_URL='https://script.google.com/macros/s/AKfycbzrVeYuFCrfjTk22PGKNY4LfuDqQJGGal9x8cRqjxwc41ohBneKicqKfDbIyWEYreds/exec';
-  var FORM_TYPE='contact';
-  function qp(n){ try{ return new URLSearchParams(location.search).get(n)||''; }catch(e){ return ''; } }
-  document.addEventListener('submit', function(e){
-    var form=e.target; if(!form || form.tagName!=='FORM') return;
-    try{
-      var lead={ formType:FORM_TYPE };
-      new FormData(form).forEach(function(v,k){ if(!(v instanceof File)) lead[k]=v; });
-      if(!lead.phone && !lead.email) return; // ignore non-lead forms
-      lead.utm_source   = lead.utm_source   || qp('utm_source');
-      lead.utm_medium   = lead.utm_medium   || qp('utm_medium');
-      lead.utm_campaign = lead.utm_campaign || qp('utm_campaign');
-      lead.utm_term     = lead.utm_term     || qp('utm_term');
-      lead.utm_content  = lead.utm_content  || qp('utm_content');
-      lead.gclid        = lead.gclid        || qp('gclid');
-      lead.fbclid       = lead.fbclid       || qp('fbclid');
-      lead.landing_page = lead.landing_page || (location.pathname + location.search);
-      lead.submit_page  = lead.submit_page  || location.pathname;
-      lead.referrer     = lead.referrer     || document.referrer || '';
-      if(window.__attribution){ for(var k in window.__attribution){ if(!lead[k]) lead[k]=window.__attribution[k]; } }
-      var body=new URLSearchParams();
-      for(var key in lead){ body.append(key, lead[key]); }
-      fetch(INTAKE_URL, { method:'POST', mode:'no-cors', keepalive:true, body:body });
-    }catch(err){}
-  }, true);
-})();
 </script>
 
 <!-- Lead intake: send every submit to the CRM register + WhatsApp alert (fire-and-forget) -->

@@ -1,0 +1,4 @@
+# Any sub-path under /second-opinion/ (e.g. /second-opinion/knee, /second-opinion/acl —
+# used as ad landing-page URLs) rewrites to the real page instead of 404ing.
+# 200 = rewrite (URL bar keeps the original path, so gclid/UTM params survive).
+/second-opinion/*  /second-opinion.html  200
